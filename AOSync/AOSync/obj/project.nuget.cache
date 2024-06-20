@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "dgSpecHash": "SrX0gW5Sc+c=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Uzivatel\\source\\repos\\aliteosyncapp\\AOSync\\AOSync\\AOSync.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Uzivatel\\.nuget\\packages\\microsoft.extensions.configuration\\8.0.0\\microsoft.extensions.configuration.8.0.0.nupkg.sha512",
+    "C:\\Users\\Uzivatel\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\Uzivatel\\.nuget\\packages\\microsoft.extensions.configuration.commandline\\8.0.0\\microsoft.extensions.configuration.commandline.8.0.0.nupkg.sha512",
+    "C:\\Users\\Uzivatel\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "C:\\Users\\Uzivatel\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\Uzivatel\\.nuget\\packages\\system.commandline.parser\\0.1.1\\system.commandline.parser.0.1.1.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Balíček System.CommandLine.Parser 0.1.1 se místo cílové architektury projektu net8.0 obnovil pomocí .NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1. Balíček nemusí být plně kompatibilní s vaším projektem.",
+      "libraryId": "System.CommandLine.Parser",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
+}
