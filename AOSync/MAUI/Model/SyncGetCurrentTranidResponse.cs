@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AOSync.Model
+﻿namespace MAUI.Model
 {
-    internal class SyncGetCurrentTranid_Response
+    internal class syncGetCurrentTranidResponse
     {
         public string tranid { get; set; }
         public bool iserror { get; set; }

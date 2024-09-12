@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-public class SyncGetChanges_Request
+namespace MAUI.Model;
+
+public class syncGetChanges
 {
     [Required]
     [StringLength(14, MinimumLength = 14, ErrorMessage = "Company must be exactly 14 characters long.")]

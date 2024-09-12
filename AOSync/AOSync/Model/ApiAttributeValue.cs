@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AOSync.Model
 {
-    internal class ApiAttributeValue
+    public class apiAttributeValue
     {
         public string id { get; set; }
         public string type { get; set; }

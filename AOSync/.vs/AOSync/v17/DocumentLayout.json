@@ -7,12 +7,32 @@
       "RelativeMoniker": "D:0:0:{270C45A7-1A1A-466D-96DF-329B069FE7D8}|AOSync\\AOSync.csproj|solutionrelative:aosync\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{270C45A7-1A1A-466D-96DF-329B069FE7D8}|AOSync\\AOSync.csproj|c:\\users\\uzivatel\\source\\repos\\aliteosyncapp\\aosync\\aosync\\model\\syncgetchanges_request.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{270C45A7-1A1A-466D-96DF-329B069FE7D8}|AOSync\\AOSync.csproj|solutionrelative:aosync\\model\\syncgetchanges_request.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{270C45A7-1A1A-466D-96DF-329B069FE7D8}|AOSync\\AOSync.csproj|c:\\users\\uzivatel\\source\\repos\\aliteosyncapp\\aosync\\aosync\\model\\httpclientextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{270C45A7-1A1A-466D-96DF-329B069FE7D8}|AOSync\\AOSync.csproj|solutionrelative:aosync\\model\\httpclientextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{270C45A7-1A1A-466D-96DF-329B069FE7D8}|AOSync\\AOSync.csproj|c:\\users\\uzivatel\\source\\repos\\aliteosyncapp\\aosync\\aosync\\model\\syncgettaskinforesult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{270C45A7-1A1A-466D-96DF-329B069FE7D8}|AOSync\\AOSync.csproj|solutionrelative:aosync\\model\\syncgettaskinforesult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{270C45A7-1A1A-466D-96DF-329B069FE7D8}|AOSync\\AOSync.csproj|c:\\users\\uzivatel\\source\\repos\\aliteosyncapp\\aosync\\aosync\\model\\syncgetsimplecomponentsresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{270C45A7-1A1A-466D-96DF-329B069FE7D8}|AOSync\\AOSync.csproj|solutionrelative:aosync\\model\\syncgetsimplecomponentsresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{270C45A7-1A1A-466D-96DF-329B069FE7D8}|AOSync\\AOSync.csproj|c:\\users\\uzivatel\\source\\repos\\aliteosyncapp\\aosync\\aosync\\db\\servicebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{270C45A7-1A1A-466D-96DF-329B069FE7D8}|AOSync\\AOSync.csproj|solutionrelative:aosync\\db\\servicebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{270C45A7-1A1A-466D-96DF-329B069FE7D8}|AOSync\\AOSync.csproj|c:\\users\\uzivatel\\source\\repos\\aliteosyncapp\\aosync\\aosync\\db\\serviceinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{270C45A7-1A1A-466D-96DF-329B069FE7D8}|AOSync\\AOSync.csproj|solutionrelative:aosync\\db\\serviceinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{270C45A7-1A1A-466D-96DF-329B069FE7D8}|AOSync\\AOSync.csproj|c:\\users\\uzivatel\\source\\repos\\aliteosyncapp\\aosync\\aosync\\db\\dataservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{270C45A7-1A1A-466D-96DF-329B069FE7D8}|AOSync\\AOSync.csproj|solutionrelative:aosync\\db\\dataservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{270C45A7-1A1A-466D-96DF-329B069FE7D8}|AOSync\\AOSync.csproj|c:\\users\\uzivatel\\source\\repos\\aliteosyncapp\\aosync\\aosync\\db\\entities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{270C45A7-1A1A-466D-96DF-329B069FE7D8}|AOSync\\AOSync.csproj|solutionrelative:aosync\\db\\entities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -21,7 +41,7 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
+          "DockedWidth": 225,
           "SelectedChildIndex": 0,
           "Children": [
             {
@@ -32,37 +52,107 @@
               "RelativeDocumentMoniker": "AOSync\\Program.cs",
               "ToolTip": "C:\\Users\\Uzivatel\\source\\repos\\aliteosyncapp\\AOSync\\AOSync\\Program.cs",
               "RelativeToolTip": "AOSync\\Program.cs",
-              "ViewState": "AQIAAD4AAAAAAAAAAAAawFoAAAA9AAAA",
+              "ViewState": "AQIAACMCAAAAAAAAAAAcwDkCAABLAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-20T11:06:42.09Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SyncGetChanges_Request.cs",
-              "DocumentMoniker": "C:\\Users\\Uzivatel\\source\\repos\\aliteosyncapp\\AOSync\\AOSync\\Model\\SyncGetChanges_Request.cs",
-              "RelativeDocumentMoniker": "AOSync\\Model\\SyncGetChanges_Request.cs",
-              "ToolTip": "C:\\Users\\Uzivatel\\source\\repos\\aliteosyncapp\\AOSync\\AOSync\\Model\\SyncGetChanges_Request.cs",
-              "RelativeToolTip": "AOSync\\Model\\SyncGetChanges_Request.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAABeAAAA",
+              "DocumentIndex": 3,
+              "Title": "SyncGetSimpleComponentsResult.cs",
+              "DocumentMoniker": "C:\\Users\\Uzivatel\\source\\repos\\aliteosyncapp\\AOSync\\AOSync\\Model\\SyncGetSimpleComponentsResult.cs",
+              "RelativeDocumentMoniker": "AOSync\\Model\\SyncGetSimpleComponentsResult.cs",
+              "ToolTip": "C:\\Users\\Uzivatel\\source\\repos\\aliteosyncapp\\AOSync\\AOSync\\Model\\SyncGetSimpleComponentsResult.cs",
+              "RelativeToolTip": "AOSync\\Model\\SyncGetSimpleComponentsResult.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAABUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T13:55:20.817Z",
+              "WhenOpened": "2024-07-10T16:44:28.073Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
+              "Title": "ServiceBase.cs",
+              "DocumentMoniker": "C:\\Users\\Uzivatel\\source\\repos\\aliteosyncapp\\AOSync\\AOSync\\DB\\ServiceBase.cs",
+              "RelativeDocumentMoniker": "AOSync\\DB\\ServiceBase.cs",
+              "ToolTip": "C:\\Users\\Uzivatel\\source\\repos\\aliteosyncapp\\AOSync\\AOSync\\DB\\ServiceBase.cs",
+              "RelativeToolTip": "AOSync\\DB\\ServiceBase.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAIwBcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-10T15:48:58.206Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "HttpClientExtension.cs",
               "DocumentMoniker": "C:\\Users\\Uzivatel\\source\\repos\\aliteosyncapp\\AOSync\\AOSync\\Model\\HttpClientExtension.cs",
               "RelativeDocumentMoniker": "AOSync\\Model\\HttpClientExtension.cs",
               "ToolTip": "C:\\Users\\Uzivatel\\source\\repos\\aliteosyncapp\\AOSync\\AOSync\\Model\\HttpClientExtension.cs",
               "RelativeToolTip": "AOSync\\Model\\HttpClientExtension.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAkAAAA",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAgwBwAAABcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T13:54:18.408Z",
+              "WhenOpened": "2024-07-10T15:34:24.404Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SyncGetTaskInfoResult.cs",
+              "DocumentMoniker": "C:\\Users\\Uzivatel\\source\\repos\\aliteosyncapp\\AOSync\\AOSync\\Model\\SyncGetTaskInfoResult.cs",
+              "RelativeDocumentMoniker": "AOSync\\Model\\SyncGetTaskInfoResult.cs",
+              "ToolTip": "C:\\Users\\Uzivatel\\source\\repos\\aliteosyncapp\\AOSync\\AOSync\\Model\\SyncGetTaskInfoResult.cs",
+              "RelativeToolTip": "AOSync\\Model\\SyncGetTaskInfoResult.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAUwA0AAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-10T17:00:37.332Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DataServices.cs",
+              "DocumentMoniker": "C:\\Users\\Uzivatel\\source\\repos\\aliteosyncapp\\AOSync\\AOSync\\DB\\DataServices.cs",
+              "RelativeDocumentMoniker": "AOSync\\DB\\DataServices.cs",
+              "ToolTip": "C:\\Users\\Uzivatel\\source\\repos\\aliteosyncapp\\AOSync\\AOSync\\DB\\DataServices.cs",
+              "RelativeToolTip": "AOSync\\DB\\DataServices.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-10T15:48:48.629Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Entities.cs",
+              "DocumentMoniker": "C:\\Users\\Uzivatel\\source\\repos\\aliteosyncapp\\AOSync\\AOSync\\DB\\Entities.cs",
+              "RelativeDocumentMoniker": "AOSync\\DB\\Entities.cs",
+              "ToolTip": "C:\\Users\\Uzivatel\\source\\repos\\aliteosyncapp\\AOSync\\AOSync\\DB\\Entities.cs",
+              "RelativeToolTip": "AOSync\\DB\\Entities.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAA8wEQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-10T15:37:44.447Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ServiceInterface.cs",
+              "DocumentMoniker": "C:\\Users\\Uzivatel\\source\\repos\\aliteosyncapp\\AOSync\\AOSync\\DB\\ServiceInterface.cs",
+              "RelativeDocumentMoniker": "AOSync\\DB\\ServiceInterface.cs",
+              "ToolTip": "C:\\Users\\Uzivatel\\source\\repos\\aliteosyncapp\\AOSync\\AOSync\\DB\\ServiceInterface.cs",
+              "RelativeToolTip": "AOSync\\DB\\ServiceInterface.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-10T15:49:05.463Z"
             }
           ]
         }
