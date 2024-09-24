@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vms="clr-namespace:MAUI.ViewModels"
+             x:Class="MAUI.Views.ProjectDetailView">
+
+    <ContentPage.BindingContext>
+        <vms:ProjectDetailViewModel x:Name="ViewModel" />
+    </ContentPage.BindingContext>
+
+    <Grid RowDefinitions="Auto,*" RowSpacing="20">
+
+        <Grid ColumnDefinitions="*,Auto,Auto" ColumnSpacing="20" Padding="20">
+            <Entry x:Name="ProjectNameEntry" Text="{Binding Project.Name}" Grid.Column="0" />
+            <Switch IsToggled="{Binding Project.Archived}" Grid.Column="1" />
+            <Button Text="Submit Changes"
+                    Command="{Binding SubmitChangesCommand}"
+                    Grid.Column="2"
+                    VerticalOptions="End" />
+        </Grid>
+
+        <CollectionView ItemsSource="{Binding Sections}"
+                        Margin="20"
+                        Grid.Row="1">
+            <CollectionView.Header>
+                <Grid ColumnDefinitions="*,*,*,*" ColumnSpacing="20" Padding="0,0,0,10">
+                    <Label Text="Id" FontSize="18" Grid.Column="0" TextColor="Azure" FontAttributes="Bold" />
+                    <Label Text="ExternalId" FontSize="18" Grid.Column="1" TextColor="Azure" FontAttributes="Bold" />
+                    <Label Text="Name" FontSize="18" Grid.Column="2" TextColor="Azure" FontAttributes="Bold" />
+                    <Label Text="Archived" FontSize="18" Grid.Column="3" TextColor="Azure" FontAttributes="Bold" />
+                </Grid>
+            </CollectionView.Header>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid ColumnDefinitions="*,*,*,*" ColumnSpacing="20" Padding="20">
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Command="{Binding Source={x:Reference ViewModel}, Path=SectionSelectedCommand}"
+                                CommandParameter="{Binding .}" />
+                        </Grid.GestureRecognizers>
+                        <Label Text="{Binding Id}" FontSize="18" Grid.Column="0" TextColor="Azure" />
+                        <Label Text="{Binding ExternalId}" FontSize="18" Grid.Column="1" TextColor="Azure" />
+                        <Label Text="{Binding Name}" FontSize="18" Grid.Column="2" TextColor="Azure" />
+                        <Label Text="{Binding  ProjectId}" FontSize="18" Grid.Column="3" TextColor="Azure" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>
