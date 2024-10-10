@@ -1,8 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using AOSync.COMMON.Converters;
+using Newtonsoft.Json;
 
-namespace AOSync.MAUI.Model;
+namespace AOSync.COMMON.Model;
 
-internal class syncGetTransaction
+public class syncGetTransaction
 {
     public string tranid { get; set; } = null!;
     public string ts { get; set; } = null!;

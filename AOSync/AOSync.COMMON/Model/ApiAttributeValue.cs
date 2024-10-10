@@ -1,4 +1,4 @@
-﻿namespace AOSync.MAUI.Model;
+﻿namespace AOSync.COMMON.Model;
 
 public class apiAttributeValue
 {

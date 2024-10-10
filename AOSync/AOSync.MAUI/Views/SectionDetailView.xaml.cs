@@ -1,8 +1,9 @@
-﻿using AOSync.MAUI.ViewModels;
+﻿using AOSync.BL.Services;
+using AOSync.MAUI.ViewModels;
 
 namespace AOSync.MAUI.Views;
 
-public class SectionDetailView : ContentPage
+public partial class SectionDetailView : ContentPage
 {
     private readonly SectionDetailViewModel _viewModel;
 
@@ -10,7 +11,7 @@ public class SectionDetailView : ContentPage
     {
         InitializeComponent();
         _viewModel = new SectionDetailViewModel();
-        _viewModel.Initialize(App.ServiceProvider, App.ServiceProvider.GetRequiredService<DataReloadService>());
+        _viewModel.Initialize(App._serviceProvider, App._serviceProvider.GetRequiredService<DataReloadService>());
         BindingContext = _viewModel;
     }
 

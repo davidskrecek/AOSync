@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace AOSync.BL.Model;
+namespace AOSync.COMMON.Model;
 
 public class syncParent
 {

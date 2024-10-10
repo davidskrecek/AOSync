@@ -1,6 +1,6 @@
-﻿namespace AOSync.BL.Model;
+﻿namespace AOSync.COMMON.Model;
 
-internal class UserSettings
+public class UserSettings
 {
     public string UserName { get; set; } = null!;
     public string CompanyId { get; set; } = null!;
