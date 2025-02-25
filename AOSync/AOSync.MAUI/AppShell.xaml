@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell
+    x:Class="AOSync.MAUI.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:AOSync.MAUI.Views"
+    FlyoutBehavior="Disabled"
+    Title="AOSync.MAUI">
+
+    <TabBar>
+        <ShellContent
+            Title="Projects"
+            ContentTemplate="{DataTemplate views:ProjectListView}"
+            Route="ProjectList" /> <!-- Route as string -->
+        <ShellContent
+            Title="Users"
+            ContentTemplate="{DataTemplate views:UserListView}"
+            Route="UserList" /> <!-- Route as string -->
+        <ShellContent
+            Title="Time Sheets"
+            ContentTemplate="{DataTemplate views:TimeSheetListView}"
+            Route="TimeSheetList" /> <!-- Route as string -->
+    </TabBar>
+</Shell>

@@ -1,0 +1,1 @@
+C:\Users\skrec\Documents\work\aliteosyncapp\AOSync\AOSync.MAUI\AOSync.MAUI.csproj;x64
