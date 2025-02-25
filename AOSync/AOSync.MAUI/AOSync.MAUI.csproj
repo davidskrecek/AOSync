@@ -1,21 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
         <OutputType>Exe</OutputType>
+        <TargetFramework>net9.0-windows10.0.19041.0</TargetFramework>
         <UseMaui>true</UseMaui>
         <SingleProject>true</SingleProject>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-
-        <!-- Set the Windows SDK Package Version -->
-        <WindowsSdkPackageVersion>10.0.19041.41</WindowsSdkPackageVersion>
-
-        <!-- Application settings -->
-        <ApplicationTitle>MAUI</ApplicationTitle>
-        <ApplicationId>com.companyname.maui</ApplicationId>
-        <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
-        <ApplicationVersion>1</ApplicationVersion>
+        <SelfContained>false</SelfContained>
+        
+        <ApplicationTitle>AOSync</ApplicationTitle>
+        <WindowsPackageType>None</WindowsPackageType>
     </PropertyGroup>
 
     <ItemGroup>
@@ -29,18 +24,24 @@
 
     <ItemGroup>
         <!-- Ensure all PackageReferences are compatible with Windows -->
-        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
-        <PackageReference Include="epj.RouteGenerator" Version="1.0.1"/>
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.8"/>
-        <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="8.0.1"/>
-        <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0"/>
-        <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.90" />
-        <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.90" />
-        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0"/>
-        <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="8.0.2"/>
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+        <PackageReference Include="epj.RouteGenerator" Version="1.0.4" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.1" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.1">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.1" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="9.0.1" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.1" />
+        <PackageReference Include="Microsoft.Maui.Controls" Version="9.0.30" />
+        <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="9.0.30" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.1" />
+        <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="9.0.0-preview.2.efcore.9.0.0" />
         <PackageReference Include="System.Collections" Version="4.3.0"/>
         <PackageReference Include="System.Diagnostics.Debug" Version="4.3.0"/>
         <PackageReference Include="System.IO.FileSystem.Primitives" Version="4.3.0"/>
+        <PackageReference Include="System.Reflection.TypeExtensions" Version="4.7.0" />
         <PackageReference Include="System.Runtime.Extensions" Version="4.3.1" />
         <PackageReference Include="System.Runtime.Handles" Version="4.3.0"/>
         <PackageReference Include="System.Runtime.InteropServices" Version="4.3.0"/>
@@ -49,12 +50,19 @@
     <ItemGroup>
         <ProjectReference Include="..\AOSync.BL\AOSync.BL.csproj"/>
         <ProjectReference Include="..\AOSync.COMMON\AOSync.COMMON.csproj"/>
+        <ProjectReference Include="..\AOSync.DAL\AOSync.DAL.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.864.35">
+        <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2903.40">
             <Aliases>WebView2Alias</Aliases>
         </PackageReference>
     </ItemGroup>
 
+    <ItemGroup>
+        <None Include="..\appsettings.json">
+            <Link>appsettings.json</Link>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
 </Project>

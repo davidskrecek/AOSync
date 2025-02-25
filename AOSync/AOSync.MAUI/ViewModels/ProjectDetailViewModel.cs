@@ -6,11 +6,11 @@ using CommunityToolkit.Mvvm.ComponentModel;
 namespace AOSync.MAUI.ViewModels;
 
 [QueryProperty(nameof(ProjectId), nameof(ProjectId))]
-public partial class ProjectDetailViewModel : BaseViewModel
+public class ProjectDetailViewModel : BaseViewModel
 {
-    [ObservableProperty] private ProjectEntity _project;
-
-    [ObservableProperty] private IEnumerable<SectionEntity> _sections;
+    public ProjectEntity Project { get; private set; }
+    
+    public ICollection<SectionEntity> Sections { get; private set; }
 
     private IServiceProvider _serviceProvider;
 
@@ -44,7 +44,7 @@ public partial class ProjectDetailViewModel : BaseViewModel
 
         using var scope = _serviceProvider.CreateScope();
         var projectService = scope.ServiceProvider.GetRequiredService<IProjectService>();
-        Project = await projectService.GetByIdAsync(new Guid(ProjectId));
+        Project = (await projectService.GetByIdAsync(new Guid(ProjectId)))!;
     }
 
     private async Task LoadSections()
@@ -61,7 +61,7 @@ public partial class ProjectDetailViewModel : BaseViewModel
     {
         if (selectedSection != null)
             await Shell.Current.GoToAsync(
-                $"///{Routes.ProjectListView}/{Routes.ProjectDetailView}/{Routes.SectionDetailView}?SectionId={selectedSection.Id}");
+                $"///ProjectListView/ProjectDetailView/SectionDetailView?SectionId={selectedSection.Id}");
     }
 
     private async void OnSubmitChanges()

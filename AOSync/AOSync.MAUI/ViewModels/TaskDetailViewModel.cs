@@ -9,15 +9,15 @@ namespace AOSync.MAUI.ViewModels;
 [QueryProperty(nameof(TaskId), nameof(TaskId))]
 public partial class TaskDetailViewModel : BaseViewModel
 {
-    [ObservableProperty] private string _commentContent = string.Empty;
+    public string CommentContent { get; private set; } = string.Empty;
 
-    [ObservableProperty] private IEnumerable<CommentEntity> _comments;
+    public IEnumerable<CommentEntity> Comments { get; private set; }
 
     private IServiceProvider _serviceProvider;
 
-    [ObservableProperty] private TaskEntity _task;
+    public TaskEntity Task { get; private set; }
 
-    [ObservableProperty] private string _taskId;
+    public string TaskId;
 
     public TaskDetailViewModel()
     {
@@ -50,7 +50,7 @@ public partial class TaskDetailViewModel : BaseViewModel
 
         using var scope = _serviceProvider.CreateScope();
         var taskService = scope.ServiceProvider.GetRequiredService<ITaskService>();
-        Task = await taskService.GetByIdAsync(new Guid(TaskId));
+        Task = (await taskService.GetByIdAsync(new Guid(TaskId)))!;
     }
 
     private async Task LoadComments()
@@ -85,7 +85,7 @@ public partial class TaskDetailViewModel : BaseViewModel
                 TaskId = new Guid(TaskId),
                 Text = CommentContent,
                 IsCreated = true,
-                UserEmail = "david.skrecek@gmail.com"
+                //Email = "david.skrecek@gmail.com"
             };
             await commentService.AddAsync(comment);
             CommentContent = string.Empty;

@@ -8,13 +8,13 @@ namespace AOSync.MAUI.ViewModels;
 [QueryProperty(nameof(SectionId), nameof(SectionId))]
 public partial class SectionDetailViewModel : BaseViewModel
 {
-    [ObservableProperty] private SectionEntity _section;
+    public SectionEntity Section { get; private set; }
 
     private IServiceProvider _serviceProvider;
 
-    [ObservableProperty] private IEnumerable<TaskEntity> _tasks;
+    public IEnumerable<TaskEntity> Tasks { get; private set; }
 
-    [ObservableProperty] private string sectionId;
+    public string SectionId;
 
     public SectionDetailViewModel()
     {
@@ -42,7 +42,7 @@ public partial class SectionDetailViewModel : BaseViewModel
 
         using var scope = _serviceProvider.CreateScope();
         var sectionService = scope.ServiceProvider.GetService<ISectionService>();
-        Section = await sectionService.GetByIdAsync(new Guid(sectionId));
+        Section = await sectionService.GetByIdAsync(new Guid(SectionId));
     }
 
     private async Task LoadTasks()
@@ -52,13 +52,13 @@ public partial class SectionDetailViewModel : BaseViewModel
 
         using var scope = _serviceProvider.CreateScope();
         var taskService = scope.ServiceProvider.GetRequiredService<ITaskService>();
-        Tasks = await taskService.GetTasksBySectionId(new Guid(sectionId));
+        Tasks = await taskService.GetTasksBySectionId(new Guid(SectionId));
     }
 
     private async void OnTaskSelected(TaskEntity selectedTask)
     {
         if (selectedTask != null)
             await Shell.Current.GoToAsync(
-                $"///{Routes.ProjectListView}/{Routes.ProjectDetailView}/{Routes.SectionDetailView}/{Routes.TaskDetailView}?TaskId={selectedTask.Id}");
+                $"///ProjectListView/ProjectDetailView/SectionDetailView/TaskDetailView?TaskId={selectedTask.Id}");
     }
 }

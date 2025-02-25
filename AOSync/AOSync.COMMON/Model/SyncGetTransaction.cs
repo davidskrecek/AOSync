@@ -9,7 +9,7 @@ public class syncGetTransaction
     public string ts { get; set; } = null!;
     public string usercompany { get; set; } = null!;
 
-    [JsonConverter(typeof(ComponentBaseConverter))]
+    [JsonConverter(typeof(ChangesToDefClassConverter))]
     public List<ComponentBase> changes { get; set; } = new();
 
     public override string ToString()

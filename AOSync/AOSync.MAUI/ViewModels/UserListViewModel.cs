@@ -6,21 +6,21 @@ namespace AOSync.MAUI.ViewModels;
 
 public partial class UserListViewModel : BaseViewModel
 {
-    [ObservableProperty] private IEnumerable<UserEntity> _users = [];
+    public IEnumerable<UserEntity> Users { get; private set; } = [];
 
     public async void Initialize(IServiceProvider serviceProvider, DataReloadService dataReloadService)
     {
-        _serviceProvider = serviceProvider;
+        ServiceProvider = serviceProvider;
         dataReloadService.RegisterReloadAction(LoadUsers);
         await LoadUsers();
     }
 
     private async Task LoadUsers()
     {
-        if (_serviceProvider == null)
+        if (ServiceProvider == null)
             throw new InvalidOperationException("ServiceProvider not initialized.");
 
-        using var scope = _serviceProvider.CreateScope();
+        using var scope = ServiceProvider.CreateScope();
         var userService = scope.ServiceProvider.GetRequiredService<IUserService>();
         Users = await userService.GetAllAsync();
     }
