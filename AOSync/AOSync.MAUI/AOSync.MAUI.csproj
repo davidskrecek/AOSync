@@ -60,9 +60,8 @@
     </ItemGroup>
 
     <ItemGroup>
-        <None Include="..\appsettings.json">
-            <Link>appsettings.json</Link>
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </None>
+      <Content Include="..\AOSync.COMMON\appsettings.json">
+        <Link>appsettings.json</Link>
+      </Content>
     </ItemGroup>
 </Project>

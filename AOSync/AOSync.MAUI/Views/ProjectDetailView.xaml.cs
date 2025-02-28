@@ -1,5 +1,4 @@
-﻿using AOSync.BL.Services;
-using AOSync.MAUI.ViewModels;
+﻿using AOSync.MAUI.ViewModels;
 
 namespace AOSync.MAUI.Views;
 
@@ -11,7 +10,7 @@ public partial class ProjectDetailView : ContentPage
     {
         InitializeComponent();
         _viewModel = new ProjectDetailViewModel();
-        _viewModel.Initialize(App._serviceProvider, App._serviceProvider.GetRequiredService<DataReloadService>());
+        _viewModel.Initialize(App._serviceProvider);
         BindingContext = _viewModel;
     }
 

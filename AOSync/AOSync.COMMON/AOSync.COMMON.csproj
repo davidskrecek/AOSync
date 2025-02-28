@@ -37,7 +37,9 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\AOSync.DAL\AOSync.DAL.csproj"/>
+      <None Update="appsettings.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
 </Project>

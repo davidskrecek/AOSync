@@ -1,4 +1,4 @@
-﻿namespace AOSync.DAL.DB;
+﻿namespace AOSync.DAL.Entities;
 
 public class EntityBase
 {

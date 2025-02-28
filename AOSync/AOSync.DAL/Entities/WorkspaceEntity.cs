@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace AOSync.DAL.DB;
+namespace AOSync.DAL.Entities;
 
 public class WorkspaceEntity : EntityBase
 {

@@ -12,13 +12,5 @@
             Title="Projects"
             ContentTemplate="{DataTemplate views:ProjectListView}"
             Route="ProjectList" /> <!-- Route as string -->
-        <ShellContent
-            Title="Users"
-            ContentTemplate="{DataTemplate views:UserListView}"
-            Route="UserList" /> <!-- Route as string -->
-        <ShellContent
-            Title="Time Sheets"
-            ContentTemplate="{DataTemplate views:TimeSheetListView}"
-            Route="TimeSheetList" /> <!-- Route as string -->
     </TabBar>
 </Shell>

@@ -70,27 +70,3 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = AOSync.MAUI.Views.ProjectListView.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\ProjectListView.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\ProjectListView.xaml
-
-[C:/Users/skrec/Documents/work/aliteosyncapp/AOSync/AOSync.MAUI/Views/SectionDetailView.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = AOSync.MAUI.Views.SectionDetailView.xaml
-build_metadata.AdditionalFiles.TargetPath = Views\SectionDetailView.xaml
-build_metadata.AdditionalFiles.RelativePath = Views\SectionDetailView.xaml
-
-[C:/Users/skrec/Documents/work/aliteosyncapp/AOSync/AOSync.MAUI/Views/TaskDetailView.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = AOSync.MAUI.Views.TaskDetailView.xaml
-build_metadata.AdditionalFiles.TargetPath = Views\TaskDetailView.xaml
-build_metadata.AdditionalFiles.RelativePath = Views\TaskDetailView.xaml
-
-[C:/Users/skrec/Documents/work/aliteosyncapp/AOSync/AOSync.MAUI/Views/TimeSheetListView.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = AOSync.MAUI.Views.TimeSheetListView.xaml
-build_metadata.AdditionalFiles.TargetPath = Views\TimeSheetListView.xaml
-build_metadata.AdditionalFiles.RelativePath = Views\TimeSheetListView.xaml
-
-[C:/Users/skrec/Documents/work/aliteosyncapp/AOSync/AOSync.MAUI/Views/UserListView.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = AOSync.MAUI.Views.UserListView.xaml
-build_metadata.AdditionalFiles.TargetPath = Views\UserListView.xaml
-build_metadata.AdditionalFiles.RelativePath = Views\UserListView.xaml

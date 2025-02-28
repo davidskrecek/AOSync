@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AOSync.DAL.Entities;
+using Microsoft.EntityFrameworkCore;
 
-namespace AOSync.DAL.DB
+namespace AOSync.DAL.DatabaseContext
 {
     public class AOSyncDbContext : DbContext
     {

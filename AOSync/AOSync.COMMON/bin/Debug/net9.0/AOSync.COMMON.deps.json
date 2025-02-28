@@ -8,7 +8,6 @@
     ".NETCoreApp,Version=v9.0": {
       "AOSync.COMMON/1.0.0": {
         "dependencies": {
-          "AOSync.DAL": "1.0.0",
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "8.0.8",
           "Microsoft.EntityFrameworkCore": "9.0.1",
@@ -1335,21 +1334,6 @@
             "fileVersion": "0.8.0.0"
           }
         }
-      },
-      "AOSync.DAL/1.0.0": {
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore": "9.0.1",
-          "Microsoft.EntityFrameworkCore.Relational": "9.0.1",
-          "Microsoft.Extensions.Configuration.FileExtensions": "9.0.0",
-          "Microsoft.Extensions.Configuration.Json": "9.0.0",
-          "Pomelo.EntityFrameworkCore.MySql": "9.0.0-preview.2.efcore.9.0.0"
-        },
-        "runtime": {
-          "AOSync.DAL.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
       }
     }
   },
@@ -2261,11 +2245,6 @@
       "sha512": "sha512-Z62eNBIu8E8YtbqlMy57tK3dV1+m2b9NhPeaYovB5exmLKvrGCqOhJTzrEUH5VyUWU6vwX3c1XHJGhW5HVs8dA==",
       "path": "zstdsharp.port/0.8.0",
       "hashPath": "zstdsharp.port.0.8.0.nupkg.sha512"
-    },
-    "AOSync.DAL/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     }
   }
 }

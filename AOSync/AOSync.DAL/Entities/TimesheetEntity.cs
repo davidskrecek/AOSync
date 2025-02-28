@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace AOSync.DAL.DB;
+namespace AOSync.DAL.Entities;
 
 public class TimesheetEntity : EntityBase
 {

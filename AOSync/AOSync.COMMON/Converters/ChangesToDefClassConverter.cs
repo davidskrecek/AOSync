@@ -1,5 +1,4 @@
-﻿using AOSync.COMMON.Model;
-using AOSync.COMMON.Models;
+﻿using AOSync.COMMON.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 

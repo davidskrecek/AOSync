@@ -1,9 +1,9 @@
-﻿using System.Diagnostics;
+﻿using AOSync.DAL.DatabaseContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 
-namespace AOSync.DAL.DB;
+namespace AOSync.DAL.Factory;
 
 public class AOSyncDbContextFactory : IDesignTimeDbContextFactory<AOSyncDbContext>
 {

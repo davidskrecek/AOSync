@@ -126,11 +126,7 @@
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
-            "projectReferences": {
-              "C:\\Users\\skrec\\Documents\\work\\aliteosyncapp\\AOSync\\AOSync.DAL\\AOSync.DAL.csproj": {
-                "projectPath": "C:\\Users\\skrec\\Documents\\work\\aliteosyncapp\\AOSync\\AOSync.DAL\\AOSync.DAL.csproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {
@@ -274,7 +270,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net8.0"
+          "net9.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -282,9 +278,13 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
-            "projectReferences": {}
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\Users\\skrec\\Documents\\work\\aliteosyncapp\\AOSync\\AOSync.COMMON\\AOSync.COMMON.csproj": {
+                "projectPath": "C:\\Users\\skrec\\Documents\\work\\aliteosyncapp\\AOSync\\AOSync.COMMON\\AOSync.COMMON.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -299,8 +299,8 @@
         }
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net9.0": {
+          "targetAlias": "net9.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -340,20 +340,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.12, 8.0.12]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.12, 8.0.12]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.12, 8.0.12]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"

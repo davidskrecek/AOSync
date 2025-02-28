@@ -1,15 +1,21 @@
 ﻿using AOSync.BL;
-using AOSync.BL.Services;
 using AOSync.COMMON;
-using AOSync.COMMON.ApiClient;
+using AOSync.BL.ApiClient;
 using AOSync.COMMON.Converters;
-using AOSync.DAL.DB;
+using AOSync.DAL.DatabaseContext;
+using AOSync.DAL.Repositories;
+using AOSync.DAL.Repositories.Interfaces;
 using AOSync.MAUI.Extensions;
 using AOSync.MAUI.ViewModels;
 using AOSync.MAUI.Views;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Linq;
+using System.Reflection;
+using AOSync.COMMON.Installers;
 
 namespace AOSync.MAUI;
 
@@ -37,61 +43,76 @@ public static class MauiProgram
             .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
             .AddEnvironmentVariables()
             .Build();
-        
+
+        // Determine which profile to use; default to "Alfa" if not set.
         var profile = configuration["ConfigurationProfile"] ?? "Alfa";
-        var profileConfig = configuration.GetSection(profile);
+    
+        // Get the configuration section for the selected profile.
+        var profileSection = configuration.GetSection(profile);
 
         var services = builder.Services;
 
-        // Add the configuration object
+        // Register the global configuration.
         services.AddSingleton<IConfiguration>(configuration);
         services.AddLogging();
-        
-        // Add HttpClient with apikey and base url configured
+
+        // Register HttpClient with configuration values.
         services.AddHttpClient<HttpClient>(client =>
         {
-            client.BaseAddress = new Uri(profileConfig["BaseUrl"]!);
-            client.DefaultRequestHeaders.Add("apikey", profileConfig["APIKey"]);
+            client.BaseAddress = new Uri(profileSection["BaseUrl"]!);
+            client.DefaultRequestHeaders.Add("apikey", profileSection["APIKey"]);
         });
 
-        // Add ApplicationDbContext and configure MySQL connection
+        // Add ApplicationDbContext with MySQL connection.
         services.AddDbContext<AOSyncDbContext>(options =>
-            options.UseMySql(profileConfig.GetConnectionString("ConnectionString"),
+            options.UseMySql(profileSection["ConnectionString"],
                 new MySqlServerVersion(new Version(8, 0, 21))
             )
         );
 
-        // Add Business Logic layer services
-        services.AddScoped<ITransactionService, TransactionService>();
-        services.AddScoped<IProjectService, ProjectService>();
-        services.AddScoped<ISectionService, SectionService>();
-        services.AddScoped<ITaskService, TaskService>();
-        services.AddScoped<ICommentService, CommentService>();
-        services.AddScoped<IAttachmentService, AttachmentService>();
-        services.AddScoped<IUserService, UserService>();
-        services.AddScoped<ITimesheetService, TimesheetService>();
-        services.AddScoped<IChangeTrackingService, ChangeTrackingService>();
+        // Register the profile section directly as a configuration section.
+        services.AddSingleton<IConfigurationSection>(profileSection);
 
-        // Add BusinessManager and ApiCommunicator
-        services.AddScoped<BusinessManager>();
-        services.AddScoped<ISynchronizationApiClient, SynchronizationApiClient>();
-        
+        // Dynamically discover and call all installers.
+        CallAllInstallers(services);
 
-        // Add the DataReloadService
-        services.AddSingleton<DataReloadService>();
-
-        // Register Views and ViewModels dynamically
+        // Register Views and ViewModels dynamically.
         Registrar.RegisterRoutes();
         Registrar.RegisterViewModels(services);
 
-        // Add JSON serialization options (optional)
+        // Add JSON serialization options.
         services.AddControllers()
             .AddNewtonsoftJson(options =>
             {
                 options.SerializerSettings.Converters.Add(new ChangesToDefClassConverter());
                 options.SerializerSettings.Converters.Add(new DateTimeConverter());
             });
-        
-        
+    }
+
+    private static void CallAllInstallers(IServiceCollection services)
+    {
+        var assemblies = AppDomain.CurrentDomain.GetAssemblies().ToList();
+
+        // Load referenced assemblies
+        var referencedAssemblies = assemblies
+            .SelectMany(a => a.GetReferencedAssemblies())
+            .Where(a => !assemblies.Any(loaded => loaded.FullName == a.FullName))
+            .Distinct()
+            .Select(Assembly.Load)
+            .ToList();
+
+        assemblies.AddRange(referencedAssemblies);
+
+        var installerTypes = assemblies
+            .SelectMany(assembly => assembly.GetTypes())
+            .Where(type => typeof(IInstaller).IsAssignableFrom(type) && !type.IsInterface && !type.IsAbstract)
+            .ToList();
+
+        foreach (var installerType in installerTypes)
+        {
+            Console.WriteLine($"Executing installer: {installerType.FullName}"); // Debug output
+            var installer = Activator.CreateInstance(installerType) as IInstaller;
+            installer?.Install(services);
+        }
     }
 }

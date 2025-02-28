@@ -1,6 +1,7 @@
 ﻿using System.Windows.Input;
-using AOSync.BL.Services;
-using AOSync.DAL.DB;
+using AOSync.BL.Services.Synchronization.Interfaces;
+using AOSync.DAL.Entities;
+using AOSync.DAL.Repositories.Interfaces;
 using CommunityToolkit.Mvvm.ComponentModel;
 using Microsoft.AspNetCore.Components;
 
@@ -8,7 +9,7 @@ namespace AOSync.MAUI.ViewModels;
 
 public class ProjectListViewModel : BaseViewModel
 {
-    private IProjectService _iProjectService  { get; set; }
+    private IProjectService _projectService  { get; set; }
     public IEnumerable<ProjectEntity> Projects { get; private set; }
 
     public ProjectEntity SelectedProject { get; private set; }
@@ -21,11 +22,10 @@ public class ProjectListViewModel : BaseViewModel
 
     public ICommand ProjectSelectedCommand { get; }
 
-    public void Initialize(IServiceProvider serviceProvider, DataReloadService dataReloadService)
+    public void Initialize(IServiceProvider serviceProvider)
     {
         ServiceProvider = serviceProvider;
-        _iProjectService = ServiceProvider.GetRequiredService<IProjectService>();
-        dataReloadService.RegisterReloadAction(LoadProjects);
+        _projectService = ServiceProvider.GetRequiredService<IProjectService>();
     }
 
     public async void OnAppearing()
@@ -35,10 +35,7 @@ public class ProjectListViewModel : BaseViewModel
 
     private async Task LoadProjects()
     {
-        if (_iProjectService == null)
-            throw new InvalidOperationException("_iProjectService not initialized.");
-
-        Projects = await _iProjectService.GetAllAsync();
+        Projects = await _projectService.GetAllAsync();
     }
 
     private async void OnProjectSelected(ProjectEntity selectedProject)

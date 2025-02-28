@@ -2427,23 +2427,6 @@
         "runtime": {
           "lib/net8.0/ZstdSharp.dll": {}
         }
-      },
-      "AOSync.DAL/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore": "9.0.1",
-          "Microsoft.EntityFrameworkCore.Relational": "9.0.1",
-          "Microsoft.Extensions.Configuration.FileExtensions": "9.0.0",
-          "Microsoft.Extensions.Configuration.Json": "9.0.0",
-          "Pomelo.EntityFrameworkCore.MySql": "9.0.0-preview.2.efcore.9.0.0"
-        },
-        "compile": {
-          "bin/placeholder/AOSync.DAL.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/AOSync.DAL.dll": {}
-        }
       }
     }
   },
@@ -7000,16 +6983,10 @@
         "zstdsharp.port.0.8.0.nupkg.sha512",
         "zstdsharp.port.nuspec"
       ]
-    },
-    "AOSync.DAL/1.0.0": {
-      "type": "project",
-      "path": "../AOSync.DAL/AOSync.DAL.csproj",
-      "msbuildProject": "../AOSync.DAL/AOSync.DAL.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net9.0": [
-      "AOSync.DAL >= 1.0.0",
       "Microsoft.AspNetCore.Mvc.Core >= 2.2.5",
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 8.0.8",
       "Microsoft.EntityFrameworkCore >= 9.0.1",
@@ -7064,11 +7041,7 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "projectReferences": {
-            "C:\\Users\\skrec\\Documents\\work\\aliteosyncapp\\AOSync\\AOSync.DAL\\AOSync.DAL.csproj": {
-              "projectPath": "C:\\Users\\skrec\\Documents\\work\\aliteosyncapp\\AOSync\\AOSync.DAL\\AOSync.DAL.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

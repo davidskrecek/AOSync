@@ -2,15 +2,12 @@ C:\Users\skrec\Documents\work\aliteosyncapp\AOSync\AOSync.COMMON\bin\Debug\net9.
 C:\Users\skrec\Documents\work\aliteosyncapp\AOSync\AOSync.COMMON\bin\Debug\net9.0\AOSync.COMMON.runtimeconfig.json
 C:\Users\skrec\Documents\work\aliteosyncapp\AOSync\AOSync.COMMON\bin\Debug\net9.0\AOSync.COMMON.dll
 C:\Users\skrec\Documents\work\aliteosyncapp\AOSync\AOSync.COMMON\bin\Debug\net9.0\AOSync.COMMON.pdb
-C:\Users\skrec\Documents\work\aliteosyncapp\AOSync\AOSync.COMMON\bin\Debug\net9.0\AOSync.DAL.dll
-C:\Users\skrec\Documents\work\aliteosyncapp\AOSync\AOSync.COMMON\bin\Debug\net9.0\AOSync.DAL.pdb
 C:\Users\skrec\Documents\work\aliteosyncapp\AOSync\AOSync.COMMON\obj\Debug\net9.0\AOSync.COMMON.csproj.AssemblyReference.cache
 C:\Users\skrec\Documents\work\aliteosyncapp\AOSync\AOSync.COMMON\obj\Debug\net9.0\AOSync.COMMON.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\skrec\Documents\work\aliteosyncapp\AOSync\AOSync.COMMON\obj\Debug\net9.0\AOSync.COMMON.AssemblyInfoInputs.cache
 C:\Users\skrec\Documents\work\aliteosyncapp\AOSync\AOSync.COMMON\obj\Debug\net9.0\AOSync.COMMON.AssemblyInfo.cs
 C:\Users\skrec\Documents\work\aliteosyncapp\AOSync\AOSync.COMMON\obj\Debug\net9.0\AOSync.COMMON.csproj.CoreCompileInputs.cache
 C:\Users\skrec\Documents\work\aliteosyncapp\AOSync\AOSync.COMMON\obj\Debug\net9.0\AOSync.COMMON.sourcelink.json
-C:\Users\skrec\Documents\work\aliteosyncapp\AOSync\AOSync.COMMON\obj\Debug\net9.0\AOSync.C.DECB8C50.Up2Date
 C:\Users\skrec\Documents\work\aliteosyncapp\AOSync\AOSync.COMMON\obj\Debug\net9.0\AOSync.COMMON.dll
 C:\Users\skrec\Documents\work\aliteosyncapp\AOSync\AOSync.COMMON\obj\Debug\net9.0\refint\AOSync.COMMON.dll
 C:\Users\skrec\Documents\work\aliteosyncapp\AOSync\AOSync.COMMON\obj\Debug\net9.0\AOSync.COMMON.pdb

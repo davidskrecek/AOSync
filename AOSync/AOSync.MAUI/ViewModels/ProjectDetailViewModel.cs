@@ -1,6 +1,8 @@
 ﻿using System.Windows.Input;
-using AOSync.BL.Services;
-using AOSync.DAL.DB;
+using AOSync.BL.Services.Synchronization.Interfaces;
+using AOSync.DAL.Entities;
+using AOSync.DAL.Repositories;
+using AOSync.DAL.Repositories.Interfaces;
 using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace AOSync.MAUI.ViewModels;
@@ -24,11 +26,9 @@ public class ProjectDetailViewModel : BaseViewModel
     public ICommand SectionSelectedCommand { get; }
     public ICommand SubmitChangesCommand { get; }
 
-    public void Initialize(IServiceProvider serviceProvider, DataReloadService dataReloadService)
+    public void Initialize(IServiceProvider serviceProvider)
     {
         _serviceProvider = serviceProvider;
-        dataReloadService.RegisterReloadAction(LoadProjectDetail);
-        dataReloadService.RegisterReloadAction(LoadSections);
     }
 
     public async void OnAppearing()
@@ -75,7 +75,7 @@ public class ProjectDetailViewModel : BaseViewModel
             IsChanged = true
         };
         using var scope = _serviceProvider.CreateScope();
-        var projectService = scope.ServiceProvider.GetRequiredService<IProjectService>();
+        var projectService = scope.ServiceProvider.GetRequiredService<IProjectRepository>();
         await projectService.AddOrUpdateAsync(newProjectEntity);
     }
 }

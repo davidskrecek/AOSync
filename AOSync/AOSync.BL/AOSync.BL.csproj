@@ -19,4 +19,17 @@
         <ProjectReference Include="..\AOSync.DAL\AOSync.DAL.csproj"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <Content Include="..\AOSync.COMMON\appsettings.json">
+        <Link>appsettings.json</Link>
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Services\Base\Interfaces\" />
+      <Folder Include="Services\Data\Interfaces\" />
+      <Folder Include="Services\Modify\Interfaces\" />
+    </ItemGroup>
+
 </Project>

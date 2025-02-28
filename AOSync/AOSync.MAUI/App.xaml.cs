@@ -17,39 +17,13 @@ public partial class App : Application
 
         _serviceProvider = serviceProvider;
         _logger = logger;
-
-        StartBackgroundTask();
     }
 
     protected override Window CreateWindow(IActivationState? activationState)
     {
         return new Window(new AppShell());
     }
-
-
-    // Start the background task
-    private async void StartBackgroundTask()
-    {
-        using var scope = _serviceProvider.CreateScope();
-        var businessManager = scope.ServiceProvider.GetRequiredService<BusinessManager>();
-        await businessManager.GetInitialChanges();
-
-        // Initialize the background task using a Timer
-        _timer = new Timer(async state =>
-        {
-            try
-            {
-                await businessManager.GetChanges();
-                await businessManager.SetChanges();
-                _logger.LogInformation("Background task is running.");
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "An error occurred while executing the background task.");
-            }
-        }, null, TimeSpan.Zero, TimeSpan.FromSeconds(5));
-    }
-
+    
     // MAUI uses OnStart and OnStop instead of OnSleep and OnResume
     protected override void OnStart()
     {
