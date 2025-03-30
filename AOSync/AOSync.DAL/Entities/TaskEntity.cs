@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AOSync.DAL.Entities;
 
-public class TaskEntity : EntityBase
+public record TaskEntity : EntityBase
 {
     [Key]
     public Guid Id { get; set; }

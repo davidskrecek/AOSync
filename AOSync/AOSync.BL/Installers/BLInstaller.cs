@@ -2,12 +2,15 @@
 using AOSync.BL.Services;
 using AOSync.BL.Services.Synchronization;
 using AOSync.BL.Services.Synchronization.Interfaces;
+using AOSync.BL.Facades;
+using AOSync.BL.Facades.Interfaces;
 using AOSync.COMMON.Installers;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Linq;
 using System.Reflection;
+using AOSync.APICLIENT;
 
 namespace AOSync.BL.Installers
 {
@@ -23,7 +26,10 @@ namespace AOSync.BL.Installers
             serviceCollection.AddScoped<SyncGetChangesResultProcessor>();
             serviceCollection.AddScoped<SyncGetInitialChangesResultProcessor>();
 
+            serviceCollection.AddScoped<ISynchronizationApiClient, SynchronizationApiClient>();
+
             RegisterServices(serviceCollection);
+            RegisterFacades(serviceCollection);
         }
 
         private void RegisterServices(IServiceCollection services)
@@ -46,6 +52,11 @@ namespace AOSync.BL.Installers
                     services.AddScoped(interfaceType, serviceType);
                 }
             }
+        }
+
+        private void RegisterFacades(IServiceCollection services)
+        {
+            services.AddScoped<IProjectFacade, ProjectFacade>();
         }
     }
 }

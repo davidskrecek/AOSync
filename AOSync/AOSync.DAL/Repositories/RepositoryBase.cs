@@ -8,31 +8,35 @@ namespace AOSync.DAL.Repositories;
 
 public class RepositoryBase<T> : IRepositoryBase<T> where T : class
 {
-    protected readonly AOSyncDbContext _context;
+    protected readonly IDbContextFactory<AOSyncDbContext> _contextFactory;
 
-    public RepositoryBase(AOSyncDbContext context)
+    public RepositoryBase(IDbContextFactory<AOSyncDbContext> contextFactory)
     {
-        _context = context;
+        _contextFactory = contextFactory;
     }
 
     public async Task<ICollection<T>> GetAllAsync()
     {
-        return await _context.Set<T>().ToListAsync();
+        using var context = _contextFactory.CreateDbContext();
+        return await context.Set<T>().ToListAsync();
     }
 
     public async Task<T?> GetByIdAsync(Guid id)
     {
-        return await _context.Set<T>().FindAsync(id);
+        using var context = _contextFactory.CreateDbContext();
+        return await context.Set<T>().FindAsync(id);
     }
 
     public async Task<T?> GetByEIdAsync(string eid)
     {
-        return await _context.Set<T>().FirstOrDefaultAsync(e => EF.Property<string>(e, "ExternalId") == eid);
+        using var context = _contextFactory.CreateDbContext();
+        return await context.Set<T>().FirstOrDefaultAsync(e => EF.Property<string>(e, "ExternalId") == eid);
     }
 
     public async Task<Guid> GetIdByEIdAsync(string eid)
     {
-        var entityId = await _context.Set<T>()
+        using var context = _contextFactory.CreateDbContext();
+        var entityId = await context.Set<T>()
             .Where(e => EF.Property<string>(e, "ExternalId") == eid)
             .Select(e => EF.Property<Guid>(e, "Id"))
             .FirstOrDefaultAsync();
@@ -43,29 +47,31 @@ public class RepositoryBase<T> : IRepositoryBase<T> where T : class
 
     public async Task<T> AddAsync(T entity)
     {
-        _context.Set<T>().Add(entity);
-        await _context.SaveChangesAsync();
+        using var context = _contextFactory.CreateDbContext();
+        context.Set<T>().Add(entity);
+        await context.SaveChangesAsync();
         return entity;
     }
 
     public async Task<T> AddOrUpdateAsync(T entity)
     {
+        using var context = _contextFactory.CreateDbContext();
         // Extract the Id and ExternalId from the entity
         var id = (Guid)entity.GetType().GetProperty("Id")!.GetValue(entity)!;
         var externalId = (string)entity.GetType().GetProperty("ExternalId")!.GetValue(entity)!;
 
         // Check for an existing entity using the Id or ExternalId
-        var existingEntity = await _context.Set<T>().FirstOrDefaultAsync(e =>
+        var existingEntity = await context.Set<T>().FirstOrDefaultAsync(e =>
             EF.Property<Guid>(e, "Id") == id || EF.Property<string>(e, "ExternalId") == externalId);
 
         if (existingEntity == null)
         {
-            _context.Set<T>().Add(entity);
+            context.Set<T>().Add(entity);
         }
         else
         {
-            var entityEntry = _context.Entry(existingEntity);
-            var entityType = _context.Model.FindEntityType(typeof(T));
+            var entityEntry = context.Entry(existingEntity);
+            var entityType = context.Model.FindEntityType(typeof(T));
             var keyProperties = entityType!.FindPrimaryKey()!.Properties;
 
             foreach (var property in entityType.GetProperties())
@@ -76,23 +82,25 @@ public class RepositoryBase<T> : IRepositoryBase<T> where T : class
                 }
         }
 
-        await _context.SaveChangesAsync();
+        await context.SaveChangesAsync();
         return entity;
     }
 
     public async Task<T> UpdateAsync(T entity)
     {
-        _context.Entry(entity).State = EntityState.Modified;
-        await _context.SaveChangesAsync();
+        using var context = _contextFactory.CreateDbContext();
+        context.Entry(entity).State = EntityState.Modified;
+        await context.SaveChangesAsync();
         return entity;
     }
 
     public async Task<bool> AddEId(Guid id, string eid)
     {
-        var entity = await _context.Set<T>().FindAsync(id);
+        using var context = _contextFactory.CreateDbContext();
+        var entity = await context.Set<T>().FindAsync(id);
         if (entity == null) return false;
 
-        var entityType = _context.Model.FindEntityType(typeof(T));
+        var entityType = context.Model.FindEntityType(typeof(T));
         if (entityType == null)
             throw new InvalidOperationException($"The entity type '{typeof(T).Name}' is not mapped in the DbContext.");
 
@@ -101,36 +109,40 @@ public class RepositoryBase<T> : IRepositoryBase<T> where T : class
             throw new InvalidOperationException(
                 $"The property 'ExternalId' does not exist on entity type '{typeof(T).Name}'.");
 
-        _context.Entry(entity).Property("ExternalId").CurrentValue = eid;
-        await _context.SaveChangesAsync();
+        context.Entry(entity).Property("ExternalId").CurrentValue = eid;
+        await context.SaveChangesAsync();
         return true;
     }
 
 
     public async Task<bool> DeleteAsync(Guid id)
     {
-        var entity = await _context.Set<T>().FindAsync(id);
+        using var context = _contextFactory.CreateDbContext();
+        var entity = await context.Set<T>().FindAsync(id);
         if (entity == null) return false;
 
-        _context.Set<T>().Remove(entity);
-        await _context.SaveChangesAsync();
+        context.Set<T>().Remove(entity);
+        await context.SaveChangesAsync();
         return true;
     }
 
     public async Task<bool> ExistsAsync(Guid id)
     {
-        return await _context.Set<T>().FindAsync(id) != null;
+        using var context = _contextFactory.CreateDbContext();
+        return await context.Set<T>().FindAsync(id) != null;
     }
 
     public async Task<bool> ExistsByEIdAsync(string eid)
     {
-        return await _context.Set<T>().AnyAsync(e => EF.Property<string>(e, "ExternalId") == eid);
+        using var context = _contextFactory.CreateDbContext();
+        return await context.Set<T>().AnyAsync(e => EF.Property<string>(e, "ExternalId") == eid);
     }
     
     public async Task AddEIdByIdAsync(Guid id, string eid)
     {
+        using var context = _contextFactory.CreateDbContext();
         // Get all entity types in the DbContext
-        var entityTypes = _context.Model.GetEntityTypes();
+        var entityTypes = context.Model.GetEntityTypes();
 
         foreach (var entityType in entityTypes)
         {
@@ -147,7 +159,7 @@ public class RepositoryBase<T> : IRepositoryBase<T> where T : class
                 // Use reflection to get the DbSet for the current entity type
                 var method = typeof(AOSyncDbContext).GetMethod("Set", BindingFlags.Public | BindingFlags.Instance);
                 var genericMethod = method!.MakeGenericMethod(clrType);
-                var dbSet = genericMethod.Invoke(_context, null); // Equivalent to _context.Set(clrType)
+                var dbSet = genericMethod.Invoke(context, null); // Equivalent to context.Set(clrType)
 
                 // Create an expression to query by Id
                 var parameter = Expression.Parameter(clrType, "e");
@@ -179,10 +191,10 @@ public class RepositoryBase<T> : IRepositoryBase<T> where T : class
                 if (entity != null)
                 {
                     // Update the ExternalId
-                    _context.Entry(entity).Property("ExternalId").CurrentValue = eid;
+                    context.Entry(entity).Property("ExternalId").CurrentValue = eid;
 
                     // Save changes
-                    await _context.SaveChangesAsync();
+                    await context.SaveChangesAsync();
                 }
             }
         }

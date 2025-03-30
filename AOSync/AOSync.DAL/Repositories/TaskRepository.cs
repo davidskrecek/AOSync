@@ -6,15 +6,16 @@ using Microsoft.EntityFrameworkCore;
 namespace AOSync.DAL.Repositories;
 
 
-public class TaskRepository : RepositoryBase<TaskEntity>, ITaskService
+public class TaskRepository : RepositoryBase<TaskEntity>, ITaskRepository
 {
-    public TaskRepository(AOSyncDbContext context) : base(context)
+    public TaskRepository(IDbContextFactory<AOSyncDbContext> factory) : base(factory)
     {
     }
 
     public async Task<ICollection<TaskEntity>> GetTasksBySectionId(Guid sectionId)
     {
-        return await _context.Tasks
+        using var context = await _contextFactory.CreateDbContextAsync();
+        return await context.Tasks
             .Where(t => t.SectionId == sectionId)
             .ToListAsync();
     }

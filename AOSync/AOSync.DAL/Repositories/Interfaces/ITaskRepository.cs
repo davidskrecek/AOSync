@@ -3,7 +3,7 @@
 namespace AOSync.DAL.Repositories.Interfaces;
 
 
-public interface ITaskService : IRepositoryBase<TaskEntity>
+public interface ITaskRepository : IRepositoryBase<TaskEntity>
 {
     Task<ICollection<TaskEntity>> GetTasksBySectionId(Guid sectionId);
 }

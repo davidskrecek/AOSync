@@ -2,7 +2,7 @@
 
 namespace AOSync.DAL.Entities;
 
-public class TeamEntity : EntityBase
+public record TeamEntity : EntityBase
 {
     [Key]
     public Guid Id { get; set; }

@@ -17,7 +17,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AOSync.MAUI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9c1f817446d2fda33615e06bf6aa8755a309b3f2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bd48db4862d5e94fb4fe98af67a66a9a69d107f7")]
 [assembly: System.Reflection.AssemblyProductAttribute("AOSync.MAUI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AOSync.MAUI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

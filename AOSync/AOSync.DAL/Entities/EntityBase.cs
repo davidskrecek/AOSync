@@ -1,6 +1,6 @@
 ﻿namespace AOSync.DAL.Entities;
 
-public class EntityBase
+public record EntityBase
 {
     public bool IsChanged { get; set; } = false;
     public bool IsCreated { get; set; } = false;

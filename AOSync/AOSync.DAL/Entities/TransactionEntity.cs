@@ -2,10 +2,11 @@
 
 namespace AOSync.DAL.Entities;
 
-public class TransactionEntity
+public record TransactionEntity
 {
     [Key] 
-    public string Id { get; set; } = string.Empty;
+    [Required]
+    public string Id { get; set; }
 
     [Required]
     public DateTime DateAdded { get; set; }

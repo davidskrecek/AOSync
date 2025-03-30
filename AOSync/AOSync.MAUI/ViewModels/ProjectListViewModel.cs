@@ -1,4 +1,5 @@
 ﻿using System.Windows.Input;
+using AOSync.BL.Facades.Interfaces;
 using AOSync.BL.Services.Synchronization.Interfaces;
 using AOSync.DAL.Entities;
 using AOSync.DAL.Repositories.Interfaces;
@@ -9,7 +10,7 @@ namespace AOSync.MAUI.ViewModels;
 
 public class ProjectListViewModel : BaseViewModel
 {
-    private IProjectService _projectService  { get; set; }
+    private IProjectFacade _projectFacade  { get; set; }
     public IEnumerable<ProjectEntity> Projects { get; private set; }
 
     public ProjectEntity SelectedProject { get; private set; }
@@ -25,7 +26,7 @@ public class ProjectListViewModel : BaseViewModel
     public void Initialize(IServiceProvider serviceProvider)
     {
         ServiceProvider = serviceProvider;
-        _projectService = ServiceProvider.GetRequiredService<IProjectService>();
+        _projectFacade = ServiceProvider.GetRequiredService<IProjectFacade>();
     }
 
     public async void OnAppearing()
@@ -35,7 +36,7 @@ public class ProjectListViewModel : BaseViewModel
 
     private async Task LoadProjects()
     {
-        Projects = await _projectService.GetAllAsync();
+        Projects = await _projectFacade.GetAllAsync();
     }
 
     private async void OnProjectSelected(ProjectEntity selectedProject)

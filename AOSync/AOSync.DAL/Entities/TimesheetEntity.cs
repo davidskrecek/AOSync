@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AOSync.DAL.Entities;
 
-public class TimesheetEntity : EntityBase
+public record TimesheetEntity : EntityBase
 {
     [Key]
     public Guid Id { get; set; }

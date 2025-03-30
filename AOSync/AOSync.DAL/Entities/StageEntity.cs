@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AOSync.DAL.Entities;
 
-public class StageEntity : EntityBase
+public record StageEntity : EntityBase
 {
     [Key]
     public Guid Id { get; set; }

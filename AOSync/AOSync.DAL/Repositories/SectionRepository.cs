@@ -5,15 +5,16 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AOSync.DAL.Repositories;
 
-public class SectionRepository : RepositoryBase<SectionEntity>, ISectionService
+public class SectionRepository : RepositoryBase<SectionEntity>, ISectionRepository
 {
-    public SectionRepository(AOSyncDbContext context) : base(context)
+    public SectionRepository(IDbContextFactory<AOSyncDbContext> factory) : base(factory)
     {
     }
 
     public async Task<ICollection<SectionEntity>> GetSectionsByProjectId(Guid projectId)
     {
-        return await _context.Sections
+        using var context = await _contextFactory.CreateDbContextAsync();
+        return await context.Sections
             .Where(s => s.ProjectId == projectId)
             .ToListAsync();
     }

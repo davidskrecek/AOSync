@@ -5,30 +5,39 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AOSync.DAL.Repositories;
 
-public class TransactionRepository : RepositoryBase<TransactionEntity>, ITransactionService
+public class TransactionRepository : RepositoryBase<TransactionEntity>, ITransactionRepository
 {
-    public TransactionRepository(AOSyncDbContext context) : base(context)
+    public TransactionRepository(IDbContextFactory<AOSyncDbContext> factory) : base(factory)
     {
     }
 
-    public async Task<string> GetLatestTransactionId()
+    public new async Task<TransactionEntity> AddOrUpdateAsync(TransactionEntity transactionEntity)
     {
-        var latestTransaction = await _context.Transactions
+        using var context = await _contextFactory.CreateDbContextAsync();
+        var transaction = await context.Set<TransactionEntity>().AddAsync(transactionEntity);
+        return transaction.Entity;
+    }
+
+    public async Task<string?> GetLatestTransactionId()
+    {
+        using var context = await _contextFactory.CreateDbContextAsync();
+        var latestTransaction = await context.Transactions
             .OrderByDescending(t => t.DateAdded)
             .FirstOrDefaultAsync();
 
-        return latestTransaction?.Id ?? string.Empty;
+        return latestTransaction?.Id;
     }
 
     public async Task<TransactionEntity> AddAsyncIfNotExists(TransactionEntity entity)
     {
-        var existingTransaction = await _context.Transactions
+        using var context = await _contextFactory.CreateDbContextAsync();
+        var existingTransaction = await context.Transactions
             .FirstOrDefaultAsync(t => t.Id == entity.Id);
 
         if (existingTransaction == null)
         {
-            _context.Set<TransactionEntity>().Add(entity);
-            await _context.SaveChangesAsync();
+            context.Set<TransactionEntity>().Add(entity);
+            await context.SaveChangesAsync();
             return entity;
         }
 

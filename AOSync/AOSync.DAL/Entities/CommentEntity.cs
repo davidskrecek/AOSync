@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AOSync.DAL.Entities;
 
-public class CommentEntity : EntityBase
+public record CommentEntity : EntityBase
 {
     [Key]
     public Guid Id { get; set; }

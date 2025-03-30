@@ -8,13 +8,14 @@ namespace AOSync.DAL.Repositories;
 
 public class CommentRepository : RepositoryBase<CommentEntity>, ICommentRepository
 {
-    public CommentRepository(AOSyncDbContext context) : base(context)
+    public CommentRepository(IDbContextFactory<AOSyncDbContext> factory) : base(factory)
     {
     }
 
     public async Task<ICollection<CommentEntity>> GetCommentsByTaskId(Guid taskId)
     {
-        return await _context.Comments
+        using var context = await _contextFactory.CreateDbContextAsync();
+        return await context.Comments
             .Where(c => c.TaskId == taskId)
             .ToListAsync();
     }

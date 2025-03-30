@@ -2,7 +2,7 @@
 
 namespace AOSync.DAL.Entities;
 
-public class WorkspaceEntity : EntityBase
+public record WorkspaceEntity : EntityBase
 {
     [Key]
     public Guid Id { get; set; }

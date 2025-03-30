@@ -1,6 +1,5 @@
 ﻿using AOSync.BL;
 using AOSync.COMMON;
-using AOSync.BL.ApiClient;
 using AOSync.COMMON.Converters;
 using AOSync.DAL.DatabaseContext;
 using AOSync.DAL.Repositories;
@@ -15,7 +14,9 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
 using System.Reflection;
+using AOSync.BL.Installers;
 using AOSync.COMMON.Installers;
+using AOSync.DAL.Installers;
 
 namespace AOSync.MAUI;
 
@@ -46,41 +47,49 @@ public static class MauiProgram
 
         // Determine which profile to use; default to "Alfa" if not set.
         var profile = configuration["ConfigurationProfile"] ?? "Alfa";
-    
-        // Get the configuration section for the selected profile.
         var profileSection = configuration.GetSection(profile);
 
         var services = builder.Services;
 
-        // Register the global configuration.
+        // Register the global configuration
         services.AddSingleton<IConfiguration>(configuration);
-        services.AddLogging();
 
-        // Register HttpClient with configuration values.
-        services.AddHttpClient<HttpClient>(client =>
+        // Manually configure and register HttpClient as a singleton
+        services.AddSingleton<HttpClient>(provider =>
         {
-            client.BaseAddress = new Uri(profileSection["BaseUrl"]!);
+            var client = new HttpClient
+            {
+                BaseAddress = new Uri(profileSection["BaseUrl"]!),
+            };
             client.DefaultRequestHeaders.Add("apikey", profileSection["APIKey"]);
+            return client;
         });
 
-        // Add ApplicationDbContext with MySQL connection.
-        services.AddDbContext<AOSyncDbContext>(options =>
+        // Add ApplicationDbContext with MySQL connection
+        services.AddDbContextFactory<AOSyncDbContext>(options =>
             options.UseMySql(profileSection["ConnectionString"],
                 new MySqlServerVersion(new Version(8, 0, 21))
-            )
+            ), ServiceLifetime.Scoped
         );
 
-        // Register the profile section directly as a configuration section.
+        // Register the profile section directly as a configuration section
         services.AddSingleton<IConfigurationSection>(profileSection);
 
-        // Dynamically discover and call all installers.
+        // Dynamically discover and call all installers (DAL, BL)
         CallAllInstallers(services);
 
-        // Register Views and ViewModels dynamically.
+        // Register SyncBackgroundService as a hosted service
+        services.AddSingleton<SyncBackgroundService>(); // Optional: If you need direct access
+        services.AddHostedService<SyncBackgroundService>();  // Register as a hosted service
+
+        // Add logging
+        services.AddLogging();
+
+        // Register Views and ViewModels dynamically
         Registrar.RegisterRoutes();
         Registrar.RegisterViewModels(services);
 
-        // Add JSON serialization options.
+        // Add JSON serialization options
         services.AddControllers()
             .AddNewtonsoftJson(options =>
             {
@@ -91,28 +100,15 @@ public static class MauiProgram
 
     private static void CallAllInstallers(IServiceCollection services)
     {
-        var assemblies = AppDomain.CurrentDomain.GetAssemblies().ToList();
-
-        // Load referenced assemblies
-        var referencedAssemblies = assemblies
-            .SelectMany(a => a.GetReferencedAssemblies())
-            .Where(a => !assemblies.Any(loaded => loaded.FullName == a.FullName))
-            .Distinct()
-            .Select(Assembly.Load)
-            .ToList();
-
-        assemblies.AddRange(referencedAssemblies);
-
-        var installerTypes = assemblies
-            .SelectMany(assembly => assembly.GetTypes())
-            .Where(type => typeof(IInstaller).IsAssignableFrom(type) && !type.IsInterface && !type.IsAbstract)
-            .ToList();
-
-        foreach (var installerType in installerTypes)
+        List<IInstaller> installers = new()
         {
-            Console.WriteLine($"Executing installer: {installerType.FullName}"); // Debug output
-            var installer = Activator.CreateInstance(installerType) as IInstaller;
-            installer?.Install(services);
+            new DALInstaller(),
+            new BLInstaller()
+        };
+
+        foreach (var installer in installers)
+        {
+            installer.Install(services);
         }
     }
 }

@@ -3,8 +3,8 @@
 namespace AOSync.DAL.Repositories.Interfaces;
 
 
-public interface ITransactionService : IRepositoryBase<TransactionEntity>
+public interface ITransactionRepository : IRepositoryBase<TransactionEntity>
 {
-    Task<string> GetLatestTransactionId();
+    Task<string?> GetLatestTransactionId();
     Task<TransactionEntity> AddAsyncIfNotExists(TransactionEntity entity);
 }

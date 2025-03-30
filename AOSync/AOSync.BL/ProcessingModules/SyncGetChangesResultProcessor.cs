@@ -1,4 +1,4 @@
-﻿using AOSync.COMMON.Models;
+﻿using AOSync.APICLIENT;
 using AOSync.DAL.Repositories.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -15,7 +15,7 @@ public class SyncGetChangesResultProcessor
         _externals = externals;
     }
 
-    public static async Task HandleComponents(ICollection<Changes> components)
+    public async Task HandleComponents(ICollection<Changes> components)
     {
         using var scope = _serviceProvider.CreateScope();
         var services = scope.ServiceProvider;
@@ -40,19 +40,19 @@ public class SyncGetChangesResultProcessor
     private static object GetServiceForComponent(IServiceProvider services, ChangesDef? def) => def switch
     {
         ChangesDef.Project => services.GetRequiredService<IProjectRepository>(),
-        ChangesDef.Section => services.GetRequiredService<ISectionService>(),
-        ChangesDef.Task => services.GetRequiredService<ITaskService>(),
+        ChangesDef.Section => services.GetRequiredService<ISectionRepository>(),
+        ChangesDef.Task => services.GetRequiredService<ITaskRepository>(),
         ChangesDef.Attachment => services.GetRequiredService<IAttachmentRepository>(),
-        ChangesDef.UserCompany => services.GetRequiredService<IUserService>(),
+        ChangesDef.UserCompany => services.GetRequiredService<IUserRepository>(),
         ChangesDef.Comment => services.GetRequiredService<ICommentRepository>(),
-        ChangesDef.TimeSheet => services.GetRequiredService<ITimesheetService>(),
-        _ => null
+        ChangesDef.TimeSheet => services.GetRequiredService<ITimesheetRepository>(),
+        _ => null!
     };
 
     private static object? GetParentServiceForComponent(IServiceProvider services, ChangesDef? def) => def switch
     {
         ChangesDef.Section or ChangesDef.Task => services.GetRequiredService<IProjectRepository>(),
-        ChangesDef.Attachment or ChangesDef.Comment => services.GetRequiredService<ITaskService>(),
+        ChangesDef.Attachment or ChangesDef.Comment => services.GetRequiredService<ITaskRepository>(),
         _ => null
     };
 

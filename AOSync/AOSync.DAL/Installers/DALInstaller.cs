@@ -5,38 +5,24 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Linq;
 using System.Reflection;
+using AOSync.DAL.Entities;
 
-namespace AOSync.DAL.Installers;
-
-public class DALInstaller : IInstaller
+namespace AOSync.DAL.Installers
 {
-    public void Install(IServiceCollection serviceCollection)
+    public class DALInstaller : IInstaller
     {
-        // Get the assembly where the repositories are located
-        var repositoryAssembly = typeof(RepositoryBase<>).Assembly;
-
-        // Find all types that inherit from RepositoryBase<>
-        var repositoryTypes = repositoryAssembly.GetTypes()
-            .Where(t => t.IsClass && !t.IsAbstract && t.BaseType != null && t.BaseType.IsGenericType &&
-                        t.BaseType.GetGenericTypeDefinition() == typeof(RepositoryBase<>))
-            .ToList();
-
-        foreach (var repositoryType in repositoryTypes)
-        {// Find the corresponding repository interface (direct or indirect)
-            var repositoryInterface = repositoryType.GetInterfaces()
-                .FirstOrDefault(i => i != typeof(IRepositoryBase<>) && 
-                                     i.GetInterfaces().Any(baseInterface => baseInterface.IsGenericType &&
-                                                                            baseInterface.GetGenericTypeDefinition() == typeof(IRepositoryBase<>)));
-
-            if (repositoryInterface != null)
-            {
-                serviceCollection.AddScoped(repositoryInterface, repositoryType);
-            }
-            else
-            {
-                Console.WriteLine($"No matching interface found for {repositoryType.FullName}");
-            }
+        public void Install(IServiceCollection serviceCollection)
+        {
+            // Register repositories with their concrete implementations
+            RegisterRepositories(serviceCollection);
         }
 
+        private void RegisterRepositories(IServiceCollection services)
+        {
+            // Register IRepositoryBase with its concrete implementation
+            services.AddScoped(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
+            services.AddScoped<ITransactionRepository, TransactionRepository>();
+            services.AddScoped<IProjectRepository, ProjectRepository>();
+        }
     }
 }

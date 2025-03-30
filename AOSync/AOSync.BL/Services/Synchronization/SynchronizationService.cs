@@ -1,21 +1,28 @@
-﻿using AOSync.BL.ApiClient;
+﻿using System.Runtime.InteropServices.JavaScript;
+using AOSync.APICLIENT;
 using AOSync.BL.ProcessingModules;
 using AOSync.BL.Services.Synchronization.Interfaces;
-using AOSync.COMMON.Models;
 using AOSync.DAL.Entities;
 using AOSync.DAL.Repositories.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Pomelo.EntityFrameworkCore.MySql.Query.ExpressionTranslators.Internal;
+// using SyncGetChanges = AOSync.COMMON.Models.SyncGetChanges;
+// using SyncGetChangesResult = AOSync.COMMON.Models.SyncGetChangesResult;
+// using SyncGetCurrentTranid = AOSync.COMMON.Models.SyncGetCurrentTranid;
+// using SyncGetInitialChanges = AOSync.COMMON.Models.SyncGetInitialChanges;
+// using SyncGetTransaction = AOSync.COMMON.Models.SyncGetTransaction;
+// using SyncSetExternals = AOSync.COMMON.Models.SyncSetExternals;
 
 namespace AOSync.BL.Services.Synchronization;
 
 public class SynchronizationService : ISynchronizationService
 {
-    private readonly IConfiguration _configuration;
+    private readonly IConfigurationSection _configuration;
     private readonly IServiceProvider _serviceProvider;
     private readonly ISynchronizationApiClient _apiClient;
-    private readonly ITransactionService _transactionService;
+    private readonly ITransactionRepository _transactionRepository;
     private readonly ILogger<SynchronizationService> _logger;
     private readonly SyncGetChangesResultProcessor _syncGetChangesResultProcessor;
     private readonly SyncGetInitialChangesResultProcessor _syncGetInitialChangesResultProcessor;
@@ -23,24 +30,23 @@ public class SynchronizationService : ISynchronizationService
     private readonly SyncSetExternals _externals = new();
 
     public SynchronizationService(
-        IConfiguration configuration,
+        IConfigurationSection configuration,
         IServiceProvider serviceProvider,
         ILogger<SynchronizationService> logger,
         ISynchronizationApiClient apiClient,
-        ITransactionService transactionService)
+        ITransactionRepository transactionRepository)
     {
-        var profile = configuration.GetValue<string>("ConfigurationProfile")!;
-        _configuration = configuration.GetSection(profile);
+        _configuration = configuration;
         _serviceProvider = serviceProvider;
         _apiClient = apiClient;
-        _transactionService = transactionService;
+        _transactionRepository = transactionRepository;
         _logger = logger;
         _syncGetChangesResultProcessor = _serviceProvider.GetRequiredService<SyncGetChangesResultProcessor>();
         _syncGetInitialChangesResultProcessor =
             _serviceProvider.GetRequiredService<SyncGetInitialChangesResultProcessor>();
 
         _syncGetChangesResultProcessor.Initialize(_serviceProvider, _externals);
-        _syncGetInitialChangesResultProcessor.Initialize(_serviceProvider, _externals);
+        _syncGetInitialChangesResultProcessor.Initialize(_serviceProvider, _configuration);
     }
 
     public async Task SetChanges()
@@ -70,9 +76,13 @@ public class SynchronizationService : ISynchronizationService
             {
                 result = await _apiClient.SyncGetChangesAsync(new SyncGetChanges
                 {
-                    Company = _configuration.GetValue<string>("CompanyID"),
+                    Company = _configuration.GetValue<string>("Company"),
                     SimpleResult = false,
-                    LasttranId = lastTranId
+                    LasttranId = lastTranId,
+                    AdditionalProperties =
+                        new Dictionary<string, object>(){
+                            { "withexternalids", _configuration.GetValue<bool>("WithExternalIds") }
+                        },
                 });
 
                 if (result.Iserror == true && result.Isrepeatable != true)
@@ -93,41 +103,60 @@ public class SynchronizationService : ISynchronizationService
         foreach (var transaction in transactions)
         {
             if (transaction.Changes?.Count > 0)
-                await SyncGetChangesResultProcessor.HandleComponents(transaction.Changes);
+                await _syncGetChangesResultProcessor.HandleComponents(transaction.Changes);
         }
     }
 
     public async Task<string> GetLastTransactionId()
     {
-        var lastTranId = await _transactionService.GetLatestTransactionId();
+        var lastTranId = await _transactionRepository.GetLatestTransactionId();
         if (!string.IsNullOrEmpty(lastTranId)) return lastTranId;
 
-        var result = await _apiClient.SyncGetCurrentTranidAsync(new SyncGetCurrentTranid
+        var request = new SyncGetCurrentTranid
         {
-            Company = _configuration.GetValue<string>("CompanyID")
-        });
+            Company = _configuration.GetValue<string>("Company")
+        };
+
+        var result = await _apiClient.SyncGetCurrentTranidAsync(request);
 
         return result.Tranid;
     }
 
     public async Task GetInitialChanges(string lastTranId)
     {
-        var initialChangesResult = await _apiClient.SyncGetInitialChangesAsync(new SyncGetInitialChanges
+        SyncGetInitialChanges request = new()
         {
-            Company = _configuration.GetValue<string>("CompanyID"),
+            Company = _configuration.GetValue<string>("Company"),
             Maxtranid = lastTranId,
             Withexternalid = _configuration.GetValue<bool>("Withexternalid")
-        });
+        };
 
-        await SyncGetInitialChangesResultProcessor.HandleComponents(initialChangesResult.Components);
+        do
+        {
+            var initialChangesResult = await _apiClient.SyncGetInitialChangesAsync(request);
+            
+            SyncSetExternals syncSetExternals = await _syncGetInitialChangesResultProcessor.HandleComponents(initialChangesResult.Components);
+            // TODO nic se neulozi do databaze musim zjistit proc
+            break;
+            // var syncSetExternalsResult = await _apiClient.SyncSetExternalsAsync(syncSetExternals);
+            //
+            // if (syncSetExternalsResult.Iserror == false)
+            // {
+            //     if (syncSetExternalsResult.Isrepeatable != false)
+            //     {
+            //         Console.WriteLine($"The SynSetExternals finished with a message of \"{syncSetExternalsResult.Error}\"");
+            //         break;
+            //     }
+            // }
+        } while (true);
     }
 
     public async Task<bool> StoreTransactionIdAsync(string tranId)
     {
-        return await _transactionService.AddOrUpdateAsync(new TransactionEntity
+        return await _transactionRepository.AddOrUpdateAsync(new TransactionEntity
         {
             Id = tranId,
             DateAdded = DateTime.Now
-        }) != null;
+        }) != null!;
     }
 }

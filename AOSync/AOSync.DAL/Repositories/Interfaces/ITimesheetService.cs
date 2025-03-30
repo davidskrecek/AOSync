@@ -3,6 +3,6 @@
 namespace AOSync.DAL.Repositories.Interfaces;
 
 
-public interface ITimesheetService : IRepositoryBase<TimesheetEntity>
+public interface ITimesheetRepository : IRepositoryBase<TimesheetEntity>
 {
 }

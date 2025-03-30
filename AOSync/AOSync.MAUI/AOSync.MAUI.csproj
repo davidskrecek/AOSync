@@ -62,6 +62,7 @@
     <ItemGroup>
       <Content Include="..\AOSync.COMMON\appsettings.json">
         <Link>appsettings.json</Link>
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
     </ItemGroup>
 </Project>

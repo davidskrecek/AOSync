@@ -2,7 +2,7 @@
 
 namespace AOSync.DAL.Entities;
 
-public class SolverGroupEntity : EntityBase
+public record SolverGroupEntity : EntityBase
 {
     [Key]
     public Guid Id { get; set; }

@@ -1,78 +1,133 @@
-﻿using AOSync.BL.ApiClient;
-using AOSync.BL.Services;
+﻿using AOSync.BL.Services;
 using AOSync.BL.Services.Synchronization;
-using AOSync.COMMON.Models;
-using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Threading;
+using System.Threading.Tasks;
+using AOSync.APICLIENT;
+using AOSync.BL.Services.Synchronization.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
+//using SyncGetCurrentTranid = AOSync.COMMON.Models.SyncGetCurrentTranid;
 
 namespace AOSync.BL
 {
     public class SyncBackgroundService : BackgroundService
     {
-        private readonly IConfiguration _configuration;
-        private readonly SynchronizationService _synchronizationService;
+        private readonly IServiceProvider _serviceProvider;
+        private readonly IConfigurationSection _configuration;
+        private readonly ISynchronizationService _synchronizationService;
         private readonly ILogger<SyncBackgroundService> _logger;
         private readonly ISynchronizationApiClient _synchronizationApiClient;
 
         private string _lastTranId { get; set; } = string.Empty;
 
-        public SyncBackgroundService(IConfiguration configuration, SynchronizationService synchronizationService, ILogger<SyncBackgroundService> logger, ISynchronizationApiClient synchronizationApiClient)
+        public SyncBackgroundService(IConfigurationSection configuration, ILogger<SyncBackgroundService> logger, IServiceProvider serviceProvider)
         {
+            _serviceProvider = serviceProvider;
             _configuration = configuration;
-            _synchronizationService = synchronizationService;
+            _synchronizationService = _serviceProvider.GetRequiredService<ISynchronizationService>();
             _logger = logger;
-            _synchronizationApiClient = synchronizationApiClient;
+            _synchronizationApiClient = _serviceProvider.GetRequiredService<ISynchronizationApiClient>();
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            // Perform initial sync
-            try
-            {
-                if (_configuration.GetValue<bool>("SystemInitialization"))
-                {
-                    var request = new SyncGetCurrentTranid()
-                    {
-                        Company = _configuration.GetValue<string>("CompanyId")
-                    };
-                    request:
-                    var response = await _synchronizationApiClient.SyncGetCurrentTranidAsync(request);
-                    if (response.Iserror == true)
-                    {
-                        if (response.Isrepeatable == true)
-                        {
-                            goto request;
-                        }
-
-                        throw new InvalidOperationException("Failed to fetch transaction ID.");
-                    }
-                    _lastTranId = response.Tranid;
-                    await _synchronizationService.GetInitialChanges(_lastTranId);
-                    await _synchronizationService.StoreTransactionIdAsync(_lastTranId);
-                }
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error during initial sync");
-            }
-            // Start periodic sync every 5 seconds
+            // Run a background task that periodically performs sync operations
             while (!stoppingToken.IsCancellationRequested)
             {
                 try
                 {
-                    _lastTranId = await _synchronizationService.GetLastTransactionId();
-                    await _synchronizationService.GetChanges(_lastTranId);
+                    bool initialize = _configuration.GetValue<bool>("SystemInitialization");
+                    // Initial sync setup
+                    if (_configuration.GetValue<bool>("SystemInitialization"))
+                    {
+                        // Initialize synchronization
+                        await InitializeSync();
+                    }
 
-                    await _synchronizationService.SetChanges();
+                    await InitializeSync();
+
+                    // Perform periodic sync every 5 minutes
+                    var timer = new Timer(async _ =>
+                    {
+                        try
+                        {
+                            await PerformPeriodicSync();
+                        }
+                        catch (Exception ex)
+                        {
+                            _logger.LogError(ex, "Error during periodic sync.");
+                        }
+                    }, null, TimeSpan.Zero, TimeSpan.FromSeconds(5)); // Timer runs immediately and repeats every 5 minutes
+
+                    // Block to keep the background service alive until cancellation
+                    await Task.Delay(Timeout.Infinite, stoppingToken);
                 }
                 catch (Exception ex)
                 {
-                    _logger.LogError(ex, "Error during periodic sync");
+                    _logger.LogError(ex, "Error in background service.");
+                }
+            }
+        }
+
+        private async Task InitializeSync()
+        {
+            try
+            {
+                var request = new SyncGetCurrentTranid()
+                {
+                    Company = _configuration.GetValue<string>("Company"),
+                };
+
+                // Retry logic for getting the transaction ID
+                var response = await _synchronizationApiClient.SyncGetCurrentTranidAsync(request);
+                // TODO RESOLVE THIS ERROR
+                // fail: AOSync.BL.SyncBackgroundService[0]
+                // Error during initial sync setup.
+                //     Newtonsoft.Json.JsonSerializationException: Cannot write a null value for property 'company'. Property requires a value. Path ''.
+                if (response.Iserror == true)
+                {
+                    if (response.Isrepeatable == true)
+                    {
+                        // Retry the request if it's repeatable
+                        _logger.LogWarning("Transaction ID fetch failed, retrying...");
+                        return;
+                    }
+
+                    throw new InvalidOperationException(response.Error); // Component Company not found
                 }
 
-                await Task.Delay(TimeSpan.FromSeconds(5), stoppingToken);
+                _lastTranId = response.Tranid;
+                Console.WriteLine(_lastTranId);
+
+                // Get initial changes and store the transaction ID
+                await _synchronizationService.GetInitialChanges(_lastTranId);
+                await _synchronizationService.StoreTransactionIdAsync(_lastTranId);
+
+                _logger.LogInformation("Initial sync setup completed successfully.");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error during initial sync setup.");
+            }
+        }
+
+        private async Task PerformPeriodicSync()
+        {
+            try
+            {
+                // Fetch the last transaction ID and sync changes
+                _lastTranId = await _synchronizationService.GetLastTransactionId();
+                await _synchronizationService.GetChanges(_lastTranId);
+                //await _synchronizationService.SetChanges();
+
+                _logger.LogInformation("Periodic sync completed successfully.");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error during periodic sync.");
             }
         }
     }

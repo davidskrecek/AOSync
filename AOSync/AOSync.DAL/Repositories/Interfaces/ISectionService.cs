@@ -2,7 +2,7 @@
 
 namespace AOSync.DAL.Repositories.Interfaces;
 
-public interface ISectionService : IRepositoryBase<SectionEntity>
+public interface ISectionRepository : IRepositoryBase<SectionEntity>
 {
     Task<ICollection<SectionEntity>> GetSectionsByProjectId(Guid projectId);
 }

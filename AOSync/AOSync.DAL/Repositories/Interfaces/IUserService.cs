@@ -3,7 +3,7 @@
 namespace AOSync.DAL.Repositories.Interfaces;
 
 
-public interface IUserService : IRepositoryBase<UserEntity>
+public interface IUserRepository : IRepositoryBase<UserEntity>
 {
     public Task<UserEntity?> GetById(Guid id);
     public Task<UserEntity?> GetByEId(string eid);

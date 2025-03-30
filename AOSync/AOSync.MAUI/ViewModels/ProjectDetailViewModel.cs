@@ -1,4 +1,5 @@
 ﻿using System.Windows.Input;
+using AOSync.BL.Facades.Interfaces;
 using AOSync.BL.Services.Synchronization.Interfaces;
 using AOSync.DAL.Entities;
 using AOSync.DAL.Repositories;
@@ -43,7 +44,7 @@ public class ProjectDetailViewModel : BaseViewModel
             throw new InvalidOperationException("ServiceProvider not initialized.");
 
         using var scope = _serviceProvider.CreateScope();
-        var projectService = scope.ServiceProvider.GetRequiredService<IProjectService>();
+        var projectService = scope.ServiceProvider.GetRequiredService<IProjectFacade>();
         Project = (await projectService.GetByIdAsync(new Guid(ProjectId)))!;
     }
 
@@ -53,8 +54,8 @@ public class ProjectDetailViewModel : BaseViewModel
             throw new InvalidOperationException("ServiceProvider not initialized.");
 
         using var scope = _serviceProvider.CreateScope();
-        var sectionService = scope.ServiceProvider.GetRequiredService<ISectionService>();
-        Sections = await sectionService.GetSectionsByProjectId(new Guid(ProjectId));
+        // var sectionService = scope.ServiceProvider.GetRequiredService<ISectionService>();
+        // Sections = await sectionService.GetSectionsByProjectId(new Guid(ProjectId));
     }
 
     private async void OnSectionSelected(SectionEntity selectedSection)

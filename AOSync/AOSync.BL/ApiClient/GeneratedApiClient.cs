@@ -4,8 +4,6 @@
 // </auto-generated>
 //----------------------
 
-using AOSync.COMMON.Models;
-
 #pragma warning disable 108 // Disable "CS0108 '{derivedDto}.ToJson()' hides inherited member '{dtoBase}.ToJson()'. Use the new keyword if hiding was intended."
 #pragma warning disable 114 // Disable "CS0114 '{derivedDto}.RaisePropertyChanged(String)' hides inherited member 'dtoBase.RaisePropertyChanged(String)'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword."
 #pragma warning disable 472 // Disable "CS0472 The result of the expression is always 'false' since a value of type 'Int32' is never equal to 'null' of type 'Int32?'
@@ -20,7 +18,7 @@ using AOSync.COMMON.Models;
 #pragma warning disable 8625 // Disable "CS8625 Cannot convert null literal to non-nullable reference type"
 #pragma warning disable 8765 // Disable "CS8765 Nullability of type of parameter doesn't match overridden member (possibly because of nullability attributes)."
 
-namespace AOSync.BL.ApiClient
+namespace AOSync.APICLIENT
 {
     using System = global::System;
 
@@ -134,7 +132,7 @@ namespace AOSync.BL.ApiClient
         public BaseApiClient(System.Net.Http.HttpClient httpClient)
     #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         {
-            BaseUrl = "https://aliteoalfaapi.azurewebsites.net";
+            BaseUrl = "https://aliteobetaapi.azurewebsites.net";
             _httpClient = httpClient;
             Initialize();
         }
@@ -831,17 +829,17 @@ namespace AOSync.BL.ApiClient
         /// <remarks>
         /// Returns a list of users for the given company
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<ApiResultIds> ListUserCompanyAsync(ApiListUserCompany body);
+        System.Threading.Tasks.Task<ApiResultList> ListUserCompanyAsync(ApiListUserCompany body);
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <remarks>
         /// Returns a list of users for the given company
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<ApiResultIds> ListUserCompanyAsync(ApiListUserCompany body, System.Threading.CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ApiResultList> ListUserCompanyAsync(ApiListUserCompany body, System.Threading.CancellationToken cancellationToken);
 
         /// <remarks>
         /// Returns detailed information about company users
@@ -861,17 +859,17 @@ namespace AOSync.BL.ApiClient
         /// <remarks>
         /// Returns a list of user grouos for the given company
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<ApiResultIds> ListUserGroupAsync(ApiListUserGroup body);
+        System.Threading.Tasks.Task<ApiResultList> ListUserGroupAsync(ApiListUserGroup body);
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <remarks>
         /// Returns a list of user grouos for the given company
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<ApiResultIds> ListUserGroupAsync(ApiListUserGroup body, System.Threading.CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ApiResultList> ListUserGroupAsync(ApiListUserGroup body, System.Threading.CancellationToken cancellationToken);
 
         /// <remarks>
         /// Returns detailed information about user groups
@@ -891,17 +889,17 @@ namespace AOSync.BL.ApiClient
         /// <remarks>
         /// Returns a list of solver groups for the given company
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<ApiResultIds> ListSolverGroupAsync(ApiListSolverGroup body);
+        System.Threading.Tasks.Task<ApiResultList> ListSolverGroupAsync(ApiListSolverGroup body);
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <remarks>
         /// Returns a list of solver groups for the given company
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<ApiResultIds> ListSolverGroupAsync(ApiListSolverGroup body, System.Threading.CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ApiResultList> ListSolverGroupAsync(ApiListSolverGroup body, System.Threading.CancellationToken cancellationToken);
 
         /// <remarks>
         /// Returns detailed information about solver groups
@@ -921,17 +919,17 @@ namespace AOSync.BL.ApiClient
         /// <remarks>
         /// Returns a list of shared attributes for the given company
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<ApiResultIds> ListSharedAttrbuteAsync(ApiListSharedAttribute body);
+        System.Threading.Tasks.Task<ApiResultList> ListSharedAttrbuteAsync(ApiListSharedAttribute body);
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <remarks>
         /// Returns a list of shared attributes for the given company
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<ApiResultIds> ListSharedAttrbuteAsync(ApiListSharedAttribute body, System.Threading.CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ApiResultList> ListSharedAttrbuteAsync(ApiListSharedAttribute body, System.Threading.CancellationToken cancellationToken);
 
         /// <remarks>
         /// Returns detailed information about shared attributes
@@ -951,17 +949,17 @@ namespace AOSync.BL.ApiClient
         /// <remarks>
         /// Returns a list of workspaces for the given company
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<ApiResultIds> ListWorkspaceAsync(ApiListWorkspace body);
+        System.Threading.Tasks.Task<ApiResultList> ListWorkspaceAsync(ApiListWorkspace body);
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <remarks>
         /// Returns a list of workspaces for the given company
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<ApiResultIds> ListWorkspaceAsync(ApiListWorkspace body, System.Threading.CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ApiResultList> ListWorkspaceAsync(ApiListWorkspace body, System.Threading.CancellationToken cancellationToken);
 
         /// <remarks>
         /// Returns detailed information about workspaces
@@ -981,17 +979,17 @@ namespace AOSync.BL.ApiClient
         /// <remarks>
         /// Returns a list of projects for the given workspace
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<ApiResultIds> ListProjectAsync(ApiListProject body);
+        System.Threading.Tasks.Task<ApiResultList> ListProjectAsync(ApiListProject body);
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <remarks>
         /// Returns a list of projects for the given workspace
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<ApiResultIds> ListProjectAsync(ApiListProject body, System.Threading.CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ApiResultList> ListProjectAsync(ApiListProject body, System.Threading.CancellationToken cancellationToken);
 
         /// <remarks>
         /// Returns detailed information about projects
@@ -1011,17 +1009,17 @@ namespace AOSync.BL.ApiClient
         /// <remarks>
         /// Returns a list of tasks for the given section
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<ApiResultIds> ListTaskAsync(ApiListTask body);
+        System.Threading.Tasks.Task<ApiResultList> ListTaskAsync(ApiListTask body);
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <remarks>
         /// Returns a list of tasks for the given section
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<ApiResultIds> ListTaskAsync(ApiListTask body, System.Threading.CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ApiResultList> ListTaskAsync(ApiListTask body, System.Threading.CancellationToken cancellationToken);
 
         /// <remarks>
         /// Returns detailed information about tasks
@@ -1041,17 +1039,17 @@ namespace AOSync.BL.ApiClient
         /// <remarks>
         /// Returns a list of timesheet for the given usercompany
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<ApiResultIds> ListTimesheetAsync(ApiListTimesheet body);
+        System.Threading.Tasks.Task<ApiResultList> ListTimesheetAsync(ApiListTimesheet body);
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <remarks>
         /// Returns a list of timesheet for the given usercompany
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<ApiResultIds> ListTimesheetAsync(ApiListTimesheet body, System.Threading.CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ApiResultList> ListTimesheetAsync(ApiListTimesheet body, System.Threading.CancellationToken cancellationToken);
 
         /// <remarks>
         /// Returns detailed information about timesheets
@@ -1071,17 +1069,17 @@ namespace AOSync.BL.ApiClient
         /// <remarks>
         /// Returns a list of teams for the given company
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<ApiResultIds> ListTeamAsync(ApiListTeam body);
+        System.Threading.Tasks.Task<ApiResultList> ListTeamAsync(ApiListTeam body);
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <remarks>
         /// Returns a list of teams for the given company
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<ApiResultIds> ListTeamAsync(ApiListTeam body, System.Threading.CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ApiResultList> ListTeamAsync(ApiListTeam body, System.Threading.CancellationToken cancellationToken);
 
         /// <remarks>
         /// Returns detailed information about teams
@@ -1101,17 +1099,17 @@ namespace AOSync.BL.ApiClient
         /// <remarks>
         /// Returns a list of portfolio types for the given company
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<ApiResultIds> ListPfTypeAsync(ApiListPfType body);
+        System.Threading.Tasks.Task<ApiResultList> ListPfTypeAsync(ApiListPfType body);
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <remarks>
         /// Returns a list of portfolio types for the given company
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<ApiResultIds> ListPfTypeAsync(ApiListPfType body, System.Threading.CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ApiResultList> ListPfTypeAsync(ApiListPfType body, System.Threading.CancellationToken cancellationToken);
 
         /// <remarks>
         /// Returns detailed information about portfolio type
@@ -1131,17 +1129,17 @@ namespace AOSync.BL.ApiClient
         /// <remarks>
         /// Returns a list of portfolios for the given company
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<ApiResultIds> ListPfAsync(ApiListPf body);
+        System.Threading.Tasks.Task<ApiResultList> ListPfAsync(ApiListPf body);
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <remarks>
         /// Returns a list of portfolios for the given company
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<ApiResultIds> ListPfAsync(ApiListPf body, System.Threading.CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ApiResultList> ListPfAsync(ApiListPf body, System.Threading.CancellationToken cancellationToken);
 
         /// <remarks>
         /// Returns detailed information about portfolio
@@ -1175,7 +1173,7 @@ namespace AOSync.BL.ApiClient
         public DataApiClient(System.Net.Http.HttpClient httpClient)
     #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         {
-            BaseUrl = "https://aliteoalfaapi.azurewebsites.net";
+            BaseUrl = "https://aliteobetaapi.azurewebsites.net";
             _httpClient = httpClient;
             Initialize();
         }
@@ -1211,9 +1209,9 @@ namespace AOSync.BL.ApiClient
         /// <remarks>
         /// Returns a list of users for the given company
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<ApiResultIds> ListUserCompanyAsync(ApiListUserCompany body)
+        public virtual System.Threading.Tasks.Task<ApiResultList> ListUserCompanyAsync(ApiListUserCompany body)
         {
             return ListUserCompanyAsync(body, System.Threading.CancellationToken.None);
         }
@@ -1222,9 +1220,9 @@ namespace AOSync.BL.ApiClient
         /// <remarks>
         /// Returns a list of users for the given company
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<ApiResultIds> ListUserCompanyAsync(ApiListUserCompany body, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<ApiResultList> ListUserCompanyAsync(ApiListUserCompany body, System.Threading.CancellationToken cancellationToken)
         {
             if (body == null)
                 throw new System.ArgumentNullException("body");
@@ -1272,7 +1270,7 @@ namespace AOSync.BL.ApiClient
                         var status_ = (int)response_.StatusCode;
                         if (status_ == 200)
                         {
-                            var objectResponse_ = await ReadObjectResponseAsync<ApiResultIds>(response_, headers_, cancellationToken).ConfigureAwait(false);
+                            var objectResponse_ = await ReadObjectResponseAsync<ApiResultList>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
                                 throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
@@ -1393,9 +1391,9 @@ namespace AOSync.BL.ApiClient
         /// <remarks>
         /// Returns a list of user grouos for the given company
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<ApiResultIds> ListUserGroupAsync(ApiListUserGroup body)
+        public virtual System.Threading.Tasks.Task<ApiResultList> ListUserGroupAsync(ApiListUserGroup body)
         {
             return ListUserGroupAsync(body, System.Threading.CancellationToken.None);
         }
@@ -1404,9 +1402,9 @@ namespace AOSync.BL.ApiClient
         /// <remarks>
         /// Returns a list of user grouos for the given company
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<ApiResultIds> ListUserGroupAsync(ApiListUserGroup body, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<ApiResultList> ListUserGroupAsync(ApiListUserGroup body, System.Threading.CancellationToken cancellationToken)
         {
             if (body == null)
                 throw new System.ArgumentNullException("body");
@@ -1454,7 +1452,7 @@ namespace AOSync.BL.ApiClient
                         var status_ = (int)response_.StatusCode;
                         if (status_ == 200)
                         {
-                            var objectResponse_ = await ReadObjectResponseAsync<ApiResultIds>(response_, headers_, cancellationToken).ConfigureAwait(false);
+                            var objectResponse_ = await ReadObjectResponseAsync<ApiResultList>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
                                 throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
@@ -1575,9 +1573,9 @@ namespace AOSync.BL.ApiClient
         /// <remarks>
         /// Returns a list of solver groups for the given company
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<ApiResultIds> ListSolverGroupAsync(ApiListSolverGroup body)
+        public virtual System.Threading.Tasks.Task<ApiResultList> ListSolverGroupAsync(ApiListSolverGroup body)
         {
             return ListSolverGroupAsync(body, System.Threading.CancellationToken.None);
         }
@@ -1586,9 +1584,9 @@ namespace AOSync.BL.ApiClient
         /// <remarks>
         /// Returns a list of solver groups for the given company
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<ApiResultIds> ListSolverGroupAsync(ApiListSolverGroup body, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<ApiResultList> ListSolverGroupAsync(ApiListSolverGroup body, System.Threading.CancellationToken cancellationToken)
         {
             if (body == null)
                 throw new System.ArgumentNullException("body");
@@ -1636,7 +1634,7 @@ namespace AOSync.BL.ApiClient
                         var status_ = (int)response_.StatusCode;
                         if (status_ == 200)
                         {
-                            var objectResponse_ = await ReadObjectResponseAsync<ApiResultIds>(response_, headers_, cancellationToken).ConfigureAwait(false);
+                            var objectResponse_ = await ReadObjectResponseAsync<ApiResultList>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
                                 throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
@@ -1757,9 +1755,9 @@ namespace AOSync.BL.ApiClient
         /// <remarks>
         /// Returns a list of shared attributes for the given company
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<ApiResultIds> ListSharedAttrbuteAsync(ApiListSharedAttribute body)
+        public virtual System.Threading.Tasks.Task<ApiResultList> ListSharedAttrbuteAsync(ApiListSharedAttribute body)
         {
             return ListSharedAttrbuteAsync(body, System.Threading.CancellationToken.None);
         }
@@ -1768,9 +1766,9 @@ namespace AOSync.BL.ApiClient
         /// <remarks>
         /// Returns a list of shared attributes for the given company
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<ApiResultIds> ListSharedAttrbuteAsync(ApiListSharedAttribute body, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<ApiResultList> ListSharedAttrbuteAsync(ApiListSharedAttribute body, System.Threading.CancellationToken cancellationToken)
         {
             if (body == null)
                 throw new System.ArgumentNullException("body");
@@ -1818,7 +1816,7 @@ namespace AOSync.BL.ApiClient
                         var status_ = (int)response_.StatusCode;
                         if (status_ == 200)
                         {
-                            var objectResponse_ = await ReadObjectResponseAsync<ApiResultIds>(response_, headers_, cancellationToken).ConfigureAwait(false);
+                            var objectResponse_ = await ReadObjectResponseAsync<ApiResultList>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
                                 throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
@@ -1939,9 +1937,9 @@ namespace AOSync.BL.ApiClient
         /// <remarks>
         /// Returns a list of workspaces for the given company
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<ApiResultIds> ListWorkspaceAsync(ApiListWorkspace body)
+        public virtual System.Threading.Tasks.Task<ApiResultList> ListWorkspaceAsync(ApiListWorkspace body)
         {
             return ListWorkspaceAsync(body, System.Threading.CancellationToken.None);
         }
@@ -1950,9 +1948,9 @@ namespace AOSync.BL.ApiClient
         /// <remarks>
         /// Returns a list of workspaces for the given company
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<ApiResultIds> ListWorkspaceAsync(ApiListWorkspace body, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<ApiResultList> ListWorkspaceAsync(ApiListWorkspace body, System.Threading.CancellationToken cancellationToken)
         {
             if (body == null)
                 throw new System.ArgumentNullException("body");
@@ -2000,7 +1998,7 @@ namespace AOSync.BL.ApiClient
                         var status_ = (int)response_.StatusCode;
                         if (status_ == 200)
                         {
-                            var objectResponse_ = await ReadObjectResponseAsync<ApiResultIds>(response_, headers_, cancellationToken).ConfigureAwait(false);
+                            var objectResponse_ = await ReadObjectResponseAsync<ApiResultList>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
                                 throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
@@ -2121,9 +2119,9 @@ namespace AOSync.BL.ApiClient
         /// <remarks>
         /// Returns a list of projects for the given workspace
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<ApiResultIds> ListProjectAsync(ApiListProject body)
+        public virtual System.Threading.Tasks.Task<ApiResultList> ListProjectAsync(ApiListProject body)
         {
             return ListProjectAsync(body, System.Threading.CancellationToken.None);
         }
@@ -2132,9 +2130,9 @@ namespace AOSync.BL.ApiClient
         /// <remarks>
         /// Returns a list of projects for the given workspace
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<ApiResultIds> ListProjectAsync(ApiListProject body, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<ApiResultList> ListProjectAsync(ApiListProject body, System.Threading.CancellationToken cancellationToken)
         {
             if (body == null)
                 throw new System.ArgumentNullException("body");
@@ -2182,7 +2180,7 @@ namespace AOSync.BL.ApiClient
                         var status_ = (int)response_.StatusCode;
                         if (status_ == 200)
                         {
-                            var objectResponse_ = await ReadObjectResponseAsync<ApiResultIds>(response_, headers_, cancellationToken).ConfigureAwait(false);
+                            var objectResponse_ = await ReadObjectResponseAsync<ApiResultList>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
                                 throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
@@ -2303,9 +2301,9 @@ namespace AOSync.BL.ApiClient
         /// <remarks>
         /// Returns a list of tasks for the given section
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<ApiResultIds> ListTaskAsync(ApiListTask body)
+        public virtual System.Threading.Tasks.Task<ApiResultList> ListTaskAsync(ApiListTask body)
         {
             return ListTaskAsync(body, System.Threading.CancellationToken.None);
         }
@@ -2314,9 +2312,9 @@ namespace AOSync.BL.ApiClient
         /// <remarks>
         /// Returns a list of tasks for the given section
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<ApiResultIds> ListTaskAsync(ApiListTask body, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<ApiResultList> ListTaskAsync(ApiListTask body, System.Threading.CancellationToken cancellationToken)
         {
             if (body == null)
                 throw new System.ArgumentNullException("body");
@@ -2364,7 +2362,7 @@ namespace AOSync.BL.ApiClient
                         var status_ = (int)response_.StatusCode;
                         if (status_ == 200)
                         {
-                            var objectResponse_ = await ReadObjectResponseAsync<ApiResultIds>(response_, headers_, cancellationToken).ConfigureAwait(false);
+                            var objectResponse_ = await ReadObjectResponseAsync<ApiResultList>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
                                 throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
@@ -2485,9 +2483,9 @@ namespace AOSync.BL.ApiClient
         /// <remarks>
         /// Returns a list of timesheet for the given usercompany
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<ApiResultIds> ListTimesheetAsync(ApiListTimesheet body)
+        public virtual System.Threading.Tasks.Task<ApiResultList> ListTimesheetAsync(ApiListTimesheet body)
         {
             return ListTimesheetAsync(body, System.Threading.CancellationToken.None);
         }
@@ -2496,9 +2494,9 @@ namespace AOSync.BL.ApiClient
         /// <remarks>
         /// Returns a list of timesheet for the given usercompany
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<ApiResultIds> ListTimesheetAsync(ApiListTimesheet body, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<ApiResultList> ListTimesheetAsync(ApiListTimesheet body, System.Threading.CancellationToken cancellationToken)
         {
             if (body == null)
                 throw new System.ArgumentNullException("body");
@@ -2546,7 +2544,7 @@ namespace AOSync.BL.ApiClient
                         var status_ = (int)response_.StatusCode;
                         if (status_ == 200)
                         {
-                            var objectResponse_ = await ReadObjectResponseAsync<ApiResultIds>(response_, headers_, cancellationToken).ConfigureAwait(false);
+                            var objectResponse_ = await ReadObjectResponseAsync<ApiResultList>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
                                 throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
@@ -2667,9 +2665,9 @@ namespace AOSync.BL.ApiClient
         /// <remarks>
         /// Returns a list of teams for the given company
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<ApiResultIds> ListTeamAsync(ApiListTeam body)
+        public virtual System.Threading.Tasks.Task<ApiResultList> ListTeamAsync(ApiListTeam body)
         {
             return ListTeamAsync(body, System.Threading.CancellationToken.None);
         }
@@ -2678,9 +2676,9 @@ namespace AOSync.BL.ApiClient
         /// <remarks>
         /// Returns a list of teams for the given company
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<ApiResultIds> ListTeamAsync(ApiListTeam body, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<ApiResultList> ListTeamAsync(ApiListTeam body, System.Threading.CancellationToken cancellationToken)
         {
             if (body == null)
                 throw new System.ArgumentNullException("body");
@@ -2728,7 +2726,7 @@ namespace AOSync.BL.ApiClient
                         var status_ = (int)response_.StatusCode;
                         if (status_ == 200)
                         {
-                            var objectResponse_ = await ReadObjectResponseAsync<ApiResultIds>(response_, headers_, cancellationToken).ConfigureAwait(false);
+                            var objectResponse_ = await ReadObjectResponseAsync<ApiResultList>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
                                 throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
@@ -2849,9 +2847,9 @@ namespace AOSync.BL.ApiClient
         /// <remarks>
         /// Returns a list of portfolio types for the given company
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<ApiResultIds> ListPfTypeAsync(ApiListPfType body)
+        public virtual System.Threading.Tasks.Task<ApiResultList> ListPfTypeAsync(ApiListPfType body)
         {
             return ListPfTypeAsync(body, System.Threading.CancellationToken.None);
         }
@@ -2860,9 +2858,9 @@ namespace AOSync.BL.ApiClient
         /// <remarks>
         /// Returns a list of portfolio types for the given company
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<ApiResultIds> ListPfTypeAsync(ApiListPfType body, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<ApiResultList> ListPfTypeAsync(ApiListPfType body, System.Threading.CancellationToken cancellationToken)
         {
             if (body == null)
                 throw new System.ArgumentNullException("body");
@@ -2910,7 +2908,7 @@ namespace AOSync.BL.ApiClient
                         var status_ = (int)response_.StatusCode;
                         if (status_ == 200)
                         {
-                            var objectResponse_ = await ReadObjectResponseAsync<ApiResultIds>(response_, headers_, cancellationToken).ConfigureAwait(false);
+                            var objectResponse_ = await ReadObjectResponseAsync<ApiResultList>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
                                 throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
@@ -3031,9 +3029,9 @@ namespace AOSync.BL.ApiClient
         /// <remarks>
         /// Returns a list of portfolios for the given company
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<ApiResultIds> ListPfAsync(ApiListPf body)
+        public virtual System.Threading.Tasks.Task<ApiResultList> ListPfAsync(ApiListPf body)
         {
             return ListPfAsync(body, System.Threading.CancellationToken.None);
         }
@@ -3042,9 +3040,9 @@ namespace AOSync.BL.ApiClient
         /// <remarks>
         /// Returns a list of portfolios for the given company
         /// </remarks>
-        /// <returns>Payload of ApiResultIds</returns>
+        /// <returns>Payload of ApiResultList</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<ApiResultIds> ListPfAsync(ApiListPf body, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<ApiResultList> ListPfAsync(ApiListPf body, System.Threading.CancellationToken cancellationToken)
         {
             if (body == null)
                 throw new System.ArgumentNullException("body");
@@ -3092,7 +3090,7 @@ namespace AOSync.BL.ApiClient
                         var status_ = (int)response_.StatusCode;
                         if (status_ == 200)
                         {
-                            var objectResponse_ = await ReadObjectResponseAsync<ApiResultIds>(response_, headers_, cancellationToken).ConfigureAwait(false);
+                            var objectResponse_ = await ReadObjectResponseAsync<ApiResultList>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
                                 throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
@@ -3447,7 +3445,7 @@ namespace AOSync.BL.ApiClient
         public ModifyApiClient(System.Net.Http.HttpClient httpClient)
     #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         {
-            BaseUrl = "https://aliteoalfaapi.azurewebsites.net";
+            BaseUrl = "https://aliteobetaapi.azurewebsites.net";
             _httpClient = httpClient;
             Initialize();
         }
@@ -4384,7 +4382,7 @@ namespace AOSync.BL.ApiClient
         public SynchronizationApiClient(System.Net.Http.HttpClient httpClient)
     #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         {
-            BaseUrl = "https://aliteoalfaapi.azurewebsites.net";
+            BaseUrl = "https://aliteobetaapi.azurewebsites.net";
             _httpClient = httpClient;
             Initialize();
         }
@@ -5398,7 +5396,7 @@ namespace AOSync.BL.ApiClient
         public OtherApiClient(System.Net.Http.HttpClient httpClient)
     #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         {
-            BaseUrl = "https://aliteoalfaapi.azurewebsites.net";
+            BaseUrl = "https://aliteobetaapi.azurewebsites.net";
             _httpClient = httpClient;
             Initialize();
         }
@@ -5755,7 +5753,7 @@ namespace AOSync.BL.ApiClient
         public AuthApiClient(System.Net.Http.HttpClient httpClient)
     #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         {
-            BaseUrl = "https://aliteoalfaapi.azurewebsites.net";
+            BaseUrl = "https://aliteobetaapi.azurewebsites.net";
             _httpClient = httpClient;
             Initialize();
         }
@@ -5995,7 +5993,13726 @@ namespace AOSync.BL.ApiClient
         }
     }
 
-    
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiAddAttachments
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Connected user - user company id (required when email missing). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("usercompany", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Usercompany { get; set; }
+
+        /// <summary>
+        /// Connected user - email address to find user company id in the specified company via email (required when usercompany missing). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string Email { get; set; }
+
+        /// <summary>
+        /// Task id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("task", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Task { get; set; }
+
+        /// <summary>
+        /// Attachments to add. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attachments", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttachment> Attachments { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiAddComments
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Connected user - user company id (required when email missing). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("usercompany", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Usercompany { get; set; }
+
+        /// <summary>
+        /// Connected user - email address to find user company id in the specified company via email (required when usercompany missing). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string Email { get; set; }
+
+        /// <summary>
+        /// Task id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("task", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Task { get; set; }
+
+        /// <summary>
+        /// Comments to add. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("comments", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiComment> Comments { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiAddTask
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Connected user - user company id (required when email missing). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("usercompany", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Usercompany { get; set; }
+
+        /// <summary>
+        /// Connected user - email address to find user company id in the specified company via email (required when usercompany missing). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string Email { get; set; }
+
+        /// <summary>
+        /// Project id as parent project for a new task. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("project", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Project { get; set; }
+
+        /// <summary>
+        /// Task name. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Section id as parent section for a new task - if not filled, will be filled automatically. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("section", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Section { get; set; }
+
+        /// <summary>
+        /// Task priority - null for default (Normal). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("priority", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiAddTaskPriority? Priority { get; set; }
+
+        /// <summary>
+        /// Task internal type - null for default. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("internaltype", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiAddTaskInternaltype? Internaltype { get; set; }
+
+        /// <summary>
+        /// Task description. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Task comments. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("comments", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiComment> Comments { get; set; }
+
+        /// <summary>
+        /// Task attachments. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attachments", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttachment> Attachments { get; set; }
+
+        /// <summary>
+        /// Array of simple attributes, which will be filled to new task. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attributes", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttribute> Attributes { get; set; }
+
+        /// <summary>
+        /// Task start date - null for default. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("startdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Startdate { get; set; }
+
+        /// <summary>
+        /// Task due date - null for default. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("duedate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Duedate { get; set; }
+
+        /// <summary>
+        /// Array of task solvers. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("solvers", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiUser> Solvers { get; set; }
+
+        /// <summary>
+        /// Datetime when task was created (use only form import old tasks). ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        /// True/false value, (use only form import old tasks). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; } = false;
+
+        /// <summary>
+        /// Done status of new task - null for default. Use only form import old tasks. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("done", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiAddTaskDone? Done { get; set; }
+
+        /// <summary>
+        /// Phase id of new task (use only form import old tasks). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("phase", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Phase { get; set; }
+
+        /// <summary>
+        /// Contains a master task id. If not null, the task just added will become a subtask of the master task listed here. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("master", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Master { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiAddUserCompany
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Connected user - user company id (required when email missing). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("usercompany", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Usercompany { get; set; }
+
+        /// <summary>
+        /// Connected user - email address to find user company id in the specified company via email (required when usercompany missing). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string Email { get; set; }
+
+        /// <summary>
+        /// Email addres where invitation will be sent. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("emailtoinvite", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        public string Emailtoinvite { get; set; }
+
+        /// <summary>
+        /// When true, invitation will be sent immediately. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("sendinvitation", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Sendinvitation { get; set; } = false;
+
+        /// <summary>
+        /// Member type - null for default. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("membertype", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiAddUserCompanyMembertype? Membertype { get; set; }
+
+        /// <summary>
+        /// Usercompany licensed internal - External user can be licensed as internal user (then he can be an internal member of the project or team), null for no change. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("licensedinternal", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Licensedinternal { get; set; }
+
+        /// <summary>
+        /// Preferred name within the company. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("prefname", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Prefname { get; set; }
+
+        /// <summary>
+        /// Preferred email within the company. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("prefemail", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Prefemail { get; set; }
+
+        /// <summary>
+        /// Preferred company name within the company. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("prefcompany", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Prefcompany { get; set; }
+
+        /// <summary>
+        /// Preferred position within the company. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("prefposition", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Prefposition { get; set; }
+
+        /// <summary>
+        /// Preferred mobile number within the company. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("prefmobile", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Prefmobile { get; set; }
+
+        /// <summary>
+        /// Company supervisor of project tasks can view all company's projects and tasks. Null for default (false). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("supervisor", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiAddUserCompanySupervisor? Supervisor { get; set; }
+
+        /// <summary>
+        /// Company supervisor of management tools can view all company's management tasks, meetings... . Null for default (false). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("supervisorm", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiAddUserCompanySupervisorm? Supervisorm { get; set; }
+
+        /// <summary>
+        /// User company can add projects to company's workspaces. Null for default (false). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("addprojects", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Addprojects { get; set; }
+
+        /// <summary>
+        /// User company can add teams to company. Null for default (false). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("addteams", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Addteams { get; set; }
+
+        /// <summary>
+        /// User company can add teams to company. Null for default (false). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("addpfs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Addpfs { get; set; }
+
+        /// <summary>
+        /// User company can create timesheets. Null for default (true for internal, false for external user). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("timesheets", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Timesheets { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiAttachment
+    {
+        /// <summary>
+        /// Attachment filename. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("filename", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        public string Filename { get; set; }
+
+        /// <summary>
+        /// Attachment content type. Enum string means string in UTF8 encoding. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("contenttype", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiAttachmentContenttype? Contenttype { get; set; } = AOSync.APICLIENT.ApiAttachmentContenttype.Empty;
+
+        /// <summary>
+        /// Attachment base64 content. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("content", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string Content { get; set; }
+
+        /// <summary>
+        /// Datetime when attachment was created (use only form import old comments). ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        /// User company as attachment creator. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Email as creator to find attachment creator in the specified company via email. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("emailcreator", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string Emailcreator { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiAttribute
+    {
+        /// <summary>
+        /// Attribute id (required when idapicode missing). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Attribute api code (required when id missing). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("idapicode", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Idapicode { get; set; }
+
+        /// <summary>
+        /// Attribute value (required when valueapicode missing). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("value", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Value { get; set; }
+
+        /// <summary>
+        /// Attribute value api code (required when value missing). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("valueapicode", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Valueapicode { get; set; }
+
+        /// <summary>
+        /// If true then no error will be raised when id or valueid not found. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("ignorenotfound", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Ignorenotfound { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiAttributeValue
+    {
+        /// <summary>
+        /// Attribute id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Attribute data type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiAttributeValueType? Type { get; set; } = AOSync.APICLIENT.ApiAttributeValueType.Logical;
+
+        /// <summary>
+        /// Attribute value. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("value", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Value { get; set; }
+
+        /// <summary>
+        /// Attribute api code. Ignored for SyncSetChanges query. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("idapicode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Idapicode { get; set; }
+
+        /// <summary>
+        /// Value api code for enum values. Ignored for SyncSetChanges query. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("valueapicode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Valueapicode { get; set; }
+
+        /// <summary>
+        /// For SyncSetChanges query only. Attribute external id. If the attribute component was previously inserted in the same transaction, it will be searched using this data. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        /// <summary>
+        /// For SyncSetChanges query only. Attribute value external id. If the attribute value is component and was previously inserted in the same transaction, it will be searched using this data. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("value_eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Value_eid { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiCheckuser
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Connected user - user company id (required when email missing). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("usercompany", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Usercompany { get; set; }
+
+        /// <summary>
+        /// Connected user - email address to find user company id in the specified company via email (required when usercompany missing). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string Email { get; set; }
+
+        /// <summary>
+        /// Project id - if specified, a check will be made to see if the user is a member of the project. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("project", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Project { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiComment
+    {
+        /// <summary>
+        /// Text comment. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("comment", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string Comment { get; set; }
+
+        /// <summary>
+        /// Datetime when comment was created (use only form import old comments). ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        /// User company as comment creator. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Email as creator to find comment creator in the specified company via email. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("emailcreator", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string Emailcreator { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiComponentExists
+    {
+        /// <summary>
+        /// True when component exists. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("exists", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Exists { get; set; } = false;
+
+        /// <summary>
+        /// Component id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiComponentIdentification
+    {
+        /// <summary>
+        /// Component id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiComponentInfo
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Component id to check. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("componentid", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Componentid { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiDataAttribute
+    {
+        /// <summary>
+        /// Component id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// True when component is archived. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; } = false;
+
+        /// <summary>
+        /// Attribute api code. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("idapicode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Idapicode { get; set; }
+
+        /// <summary>
+        /// Shared attribute id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("sharedid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Sharedid { get; set; }
+
+        /// <summary>
+        /// Attribute label. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("label", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Label { get; set; }
+
+        /// <summary>
+        /// Attribute data type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiDataAttributeType? Type { get; set; } = AOSync.APICLIENT.ApiDataAttributeType.Logical;
+
+        /// <summary>
+        /// Attribute values. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("values", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiDataAttributeValue> Values { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiDataAttributeValue
+    {
+        /// <summary>
+        /// Component id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// True when component is archived. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; } = false;
+
+        /// <summary>
+        /// Attribute value api code. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("idapicode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Idapicode { get; set; }
+
+        /// <summary>
+        /// Shared attribute id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("sharedid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Sharedid { get; set; }
+
+        /// <summary>
+        /// Attribute value label. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("label", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Label { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiDataMemberProject
+    {
+        /// <summary>
+        /// Component id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// User company id or user group id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("usercompany", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Usercompany { get; set; }
+
+        /// <summary>
+        /// Project administrator. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("admin", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Admin { get; set; } = false;
+
+        /// <summary>
+        /// Supervisor of project tasks. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("supervisor", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiDataMemberProjectSupervisor? Supervisor { get; set; } = AOSync.APICLIENT.ApiDataMemberProjectSupervisor.False;
+
+        /// <summary>
+        /// Supervisor of managed tasks. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("supervisorm", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiDataMemberProjectSupervisorm? Supervisorm { get; set; } = AOSync.APICLIENT.ApiDataMemberProjectSupervisorm.False;
+
+        /// <summary>
+        /// Member of team management team. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("management", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Management { get; set; } = false;
+
+        /// <summary>
+        /// Can add working groups. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("canaddgroups", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Canaddgroups { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiDataMemberTeam
+    {
+        /// <summary>
+        /// Component id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// User company id or user group id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("usercompany", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Usercompany { get; set; }
+
+        /// <summary>
+        /// Team administrator. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("admin", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Admin { get; set; } = false;
+
+        /// <summary>
+        /// Supervisor of managed tasks. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("supervisorm", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiDataMemberTeamSupervisorm? Supervisorm { get; set; } = AOSync.APICLIENT.ApiDataMemberTeamSupervisorm.False;
+
+        /// <summary>
+        /// Member of team management team. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("management", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Management { get; set; } = false;
+
+        /// <summary>
+        /// Can add working groups. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("canaddgroups", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Canaddgroups { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiDataPf
+    {
+        /// <summary>
+        /// Component id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// True when component is archived. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; } = false;
+
+        /// <summary>
+        /// User group name. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Portfolio manager - user company id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("owner", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Owner { get; set; }
+
+        /// <summary>
+        /// Portfolio type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("pftype", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Pftype { get; set; }
+
+        /// <summary>
+        /// Is portfolio active values are Active, InActive. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("active", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Active { get; set; }
+
+        /// <summary>
+        /// Portfolio start date. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("startdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Startdate { get; set; }
+
+        /// <summary>
+        /// Portfolio end date. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("enddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Enddate { get; set; }
+
+        /// <summary>
+        /// Portfolio visibility. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("visibility", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiDataPfVisibility? Visibility { get; set; } = AOSync.APICLIENT.ApiDataPfVisibility.PfMembers;
+
+        /// <summary>
+        /// Portfolio members. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("members", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiDataPfMember> Members { get; set; }
+
+        /// <summary>
+        /// Portfolio contacts. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("contacts", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiDataPfContact> Contacts { get; set; }
+
+        /// <summary>
+        /// Projects connected to portfolio. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("projects", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<string> Projects { get; set; }
+
+        /// <summary>
+        /// Portfolio http links. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("links", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiPfLink> Links { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiDataPfContact
+    {
+        /// <summary>
+        /// Component id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Contact name. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Contact position. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("position", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Position { get; set; }
+
+        /// <summary>
+        /// Contact email. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Email { get; set; }
+
+        /// <summary>
+        /// Contact phone number. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("phone", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Phone { get; set; }
+
+        /// <summary>
+        /// Contact note. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("note", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Note { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiDataPfMember
+    {
+        /// <summary>
+        /// Component id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// User company id or user group id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("usercompany", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Usercompany { get; set; }
+
+        /// <summary>
+        /// Portfolio administrator. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("admin", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Admin { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiDataPfType
+    {
+        /// <summary>
+        /// Component id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// True when component is archived. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; } = false;
+
+        /// <summary>
+        /// User group name. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiDataPhase
+    {
+        /// <summary>
+        /// Component id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// True when component is archived. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; } = false;
+
+        /// <summary>
+        /// User name. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiDataProject
+    {
+        /// <summary>
+        /// Component id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// True when component is archived. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; } = false;
+
+        /// <summary>
+        /// Project name. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Project number identifier, unique inside company. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("numberid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public int? Numberid { get; set; } = 0;
+
+        /// <summary>
+        /// Project description. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Project manager - user company id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("owner", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Owner { get; set; }
+
+        /// <summary>
+        /// Project visibility. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("visibility", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiDataProjectVisibility? Visibility { get; set; } = AOSync.APICLIENT.ApiDataProjectVisibility.ProjectMembers;
+
+        /// <summary>
+        /// Project start date. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("startdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Startdate { get; set; }
+
+        /// <summary>
+        /// Project due date. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("duedate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Duedate { get; set; }
+
+        /// <summary>
+        /// Project status. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("done", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiDataProjectDone? Done { get; set; } = AOSync.APICLIENT.ApiDataProjectDone.Plan;
+
+        /// <summary>
+        /// Project risk term. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("riskterm", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Riskterm { get; set; } = false;
+
+        /// <summary>
+        /// Project risk quality. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("riskquality", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Riskquality { get; set; } = false;
+
+        /// <summary>
+        /// Adding tasks restriction. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("canaddtask", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Canaddtask { get; set; } = false;
+
+        /// <summary>
+        /// Project memners. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("members", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiDataMemberProject> Members { get; set; }
+
+        /// <summary>
+        /// Recursive sections array. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("sections", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiDataSection> Sections { get; set; }
+
+        /// <summary>
+        /// Project attributes array. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attributes", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attributes { get; set; }
+
+        /// <summary>
+        /// Project http links. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("links", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiProjectLink> Links { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiDataSection
+    {
+        /// <summary>
+        /// Component id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// True when component is archived. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; } = false;
+
+        /// <summary>
+        /// Parent id - for sections exactly in project null. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Parent { get; set; }
+
+        /// <summary>
+        /// Section name. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// True if section is default. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("isdefault", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Isdefault { get; set; } = false;
+
+        /// <summary>
+        /// Project start date. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("startdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Startdate { get; set; }
+
+        /// <summary>
+        /// Project due date. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("duedate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Duedate { get; set; }
+
+        /// <summary>
+        /// Adding tasks restriction. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("canaddtask", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Canaddtask { get; set; } = false;
+
+        /// <summary>
+        /// Adding tasks restriction for external user. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("canaddtaskexternal", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Canaddtaskexternal { get; set; } = false;
+
+        /// <summary>
+        /// Placing tasks restriction. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("canplacetask", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Canplacetask { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiDataSharedAttribute
+    {
+        /// <summary>
+        /// Component id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// True when component is archived. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; } = false;
+
+        /// <summary>
+        /// Attribute api code. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("idapicode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Idapicode { get; set; }
+
+        /// <summary>
+        /// Attribute label. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("label", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Label { get; set; }
+
+        /// <summary>
+        /// Attribute data type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiDataSharedAttributeType? Type { get; set; } = AOSync.APICLIENT.ApiDataSharedAttributeType.Logical;
+
+        /// <summary>
+        /// Attribute values. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("values", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiDataSharedAttributeValue> Values { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiDataSharedAttributeValue
+    {
+        /// <summary>
+        /// Component id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// True when component is archived. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; } = false;
+
+        /// <summary>
+        /// Attribute value api code. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("idapicode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Idapicode { get; set; }
+
+        /// <summary>
+        /// Attribute value label. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("label", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Label { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiDataSolverGroup
+    {
+        /// <summary>
+        /// Component id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// True when component is archived. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; } = false;
+
+        /// <summary>
+        /// User group name. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// User group items - array of usercompany id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("items", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<string> Items { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiDataTask
+    {
+        /// <summary>
+        /// Component id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// True when component is archived. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; } = false;
+
+        /// <summary>
+        /// Task done status. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("done", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiDataTaskDone? Done { get; set; } = AOSync.APICLIENT.ApiDataTaskDone.Solving;
+
+        /// <summary>
+        /// Phase id of the task. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("phase", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Phase { get; set; }
+
+        /// <summary>
+        /// Parent section id of the task. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("section", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Section { get; set; }
+
+        /// <summary>
+        /// Parent project id of the task. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("project", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Project { get; set; }
+
+        /// <summary>
+        /// Creator - usercompany id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Created date. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        /// Task name. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Task number identifier, unique inside company. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("numberid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public int? Numberid { get; set; } = 0;
+
+        /// <summary>
+        /// Task description. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Task start datec. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("startdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Startdate { get; set; }
+
+        /// <summary>
+        /// Task due date. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("duedate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Duedate { get; set; }
+
+        /// <summary>
+        /// Task owner - user company id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("owner", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Owner { get; set; }
+
+        /// <summary>
+        /// Task priority. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("priority", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiDataTaskPriority? Priority { get; set; } = AOSync.APICLIENT.ApiDataTaskPriority.Normal;
+
+        /// <summary>
+        /// Task internal type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("internaltype", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiDataTaskInternaltype? Internaltype { get; set; } = AOSync.APICLIENT.ApiDataTaskInternaltype.Public;
+
+        /// <summary>
+        /// Task comments array. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("comments", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiDataTaskComment> Comments { get; set; }
+
+        /// <summary>
+        /// Task attachments array. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attachments", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiDataTaskAttachment> Attachments { get; set; }
+
+        /// <summary>
+        /// Task attributes array. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attributes", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attributes { get; set; }
+
+        /// <summary>
+        /// Task solvers array - can contain user company id or solver group id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("solvers", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<string> Solvers { get; set; }
+
+        /// <summary>
+        /// Master task for subtask. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("mastertask", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Mastertask { get; set; }
+
+        /// <summary>
+        /// Subtasks array. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("subtasks", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<string> Subtasks { get; set; }
+
+        /// <summary>
+        /// Links array. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("links", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<string> Links { get; set; }
+
+        /// <summary>
+        /// Task plan time in minutes. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("minutesplan", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public int? Minutesplan { get; set; } = 0;
+
+        /// <summary>
+        /// Task taken time (via timesheets) in minutes. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("minutestaken", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public int? Minutestaken { get; set; } = 0;
+
+        /// <summary>
+        /// Task quality survey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("surveyquality", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiDataTaskSurveyquality? Surveyquality { get; set; } = AOSync.APICLIENT.ApiDataTaskSurveyquality.Unknown;
+
+        /// <summary>
+        /// Task term survey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("surveyterm", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiDataTaskSurveyterm? Surveyterm { get; set; } = AOSync.APICLIENT.ApiDataTaskSurveyterm.Unknown;
+
+        /// <summary>
+        /// Task survey text. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("surveytext", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Surveytext { get; set; }
+
+        /// <summary>
+        /// Task repair status. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("repairstatus", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiDataTaskRepairstatus? Repairstatus { get; set; } = AOSync.APICLIENT.ApiDataTaskRepairstatus.NoSla;
+
+        /// <summary>
+        /// Task repair time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("repairtime", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Repairtime { get; set; }
+
+        /// <summary>
+        /// Task repair finished time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("repairfinished", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Repairfinished { get; set; }
+
+        /// <summary>
+        /// Task response status. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("responsestatus", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiDataTaskResponsestatus? Responsestatus { get; set; } = AOSync.APICLIENT.ApiDataTaskResponsestatus.NoSla;
+
+        /// <summary>
+        /// Task response time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("responsetime", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Responsetime { get; set; }
+
+        /// <summary>
+        /// Task response finished time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("responsefinished", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Responsefinished { get; set; }
+
+        /// <summary>
+        /// Task close request time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("closerequestdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Closerequestdate { get; set; }
+
+        /// <summary>
+        /// Task close time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("closedate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Closedate { get; set; }
+
+        /// <summary>
+        /// Task cancel request time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("cancelrequestdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Cancelrequestdate { get; set; }
+
+        /// <summary>
+        /// Task cancel time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("canceldate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Canceldate { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiDataTaskAttachment
+    {
+        /// <summary>
+        /// Component id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// True when component is archived. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; } = false;
+
+        /// <summary>
+        /// Creator - usercompany id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Created date. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        /// Attachment filename. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("filename", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Filename { get; set; }
+
+        /// <summary>
+        /// Attachment internal type - values Internal, Private, Public. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("internaltype", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Internaltype { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiDataTaskComment
+    {
+        /// <summary>
+        /// Component id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// True when component is archived. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; } = false;
+
+        /// <summary>
+        /// Creator - usercompany id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Created date. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        /// Comment content. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("comment", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Comment { get; set; }
+
+        /// <summary>
+        /// Comment internal type - values Internal, Private, Public. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("internaltype", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Internaltype { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiDataTeam
+    {
+        /// <summary>
+        /// Component id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// True when component is archived. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; } = false;
+
+        /// <summary>
+        /// Team name. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Team manager - user company id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("owner", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Owner { get; set; }
+
+        /// <summary>
+        /// Team description. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Project memners. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("members", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiDataMemberTeam> Members { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiDataTimesheet
+    {
+        /// <summary>
+        /// Component id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// True when component is archived. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; } = false;
+
+        /// <summary>
+        /// Timesheet creator (usercompany id). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Timesheet created. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        /// Timesheet name. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Timesheet date. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("date", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Date { get; set; }
+
+        /// <summary>
+        /// Timesheet minutes taken. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("minutes", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public int? Minutes { get; set; } = 0;
+
+        /// <summary>
+        /// Timesheet description. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Timesheet sourcetype. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("sourcetype", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiDataTimesheetSourcetype? Sourcetype { get; set; } = AOSync.APICLIENT.ApiDataTimesheetSourcetype.ProjectTask;
+
+        /// <summary>
+        /// Timesheet source component id (id of task or project or team or company). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("sourcecomponentid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Sourcecomponentid { get; set; }
+
+        /// <summary>
+        /// Timesheet attributes array. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attributes", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attributes { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiDataUserCompany
+    {
+        /// <summary>
+        /// Component id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// User name. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("username", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Username { get; set; }
+
+        /// <summary>
+        /// User email. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("useremail", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Useremail { get; set; }
+
+        /// <summary>
+        /// User mobile phone number. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("usermobile", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Usermobile { get; set; }
+
+        /// <summary>
+        /// User company. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("usercompany", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Usercompany { get; set; }
+
+        /// <summary>
+        /// User position. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("userposition", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Userposition { get; set; }
+
+        /// <summary>
+        /// Usercompany preferred name. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("preferredname", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Preferredname { get; set; }
+
+        /// <summary>
+        /// Usercompany preferred email. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("preferredemail", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Preferredemail { get; set; }
+
+        /// <summary>
+        /// Usercompany invitation email. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("invitationemail", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Invitationemail { get; set; }
+
+        /// <summary>
+        /// Usercompany preferred mobile phone number. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("preferredmobile", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Preferredmobile { get; set; }
+
+        /// <summary>
+        /// Usercompany preferred company. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("preferrecompany", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Preferrecompany { get; set; }
+
+        /// <summary>
+        /// Usercompany preferred position. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("preferreposition", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Preferreposition { get; set; }
+
+        /// <summary>
+        /// Usercompany active status. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("active", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiDataUserCompanyActive? Active { get; set; } = AOSync.APICLIENT.ApiDataUserCompanyActive.Inactive;
+
+        /// <summary>
+        /// Usercompany accepted status. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("accepted", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiDataUserCompanyAccepted? Accepted { get; set; } = AOSync.APICLIENT.ApiDataUserCompanyAccepted.Invitation;
+
+        /// <summary>
+        /// Usercompany membertype. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("membertype", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiDataUserCompanyMembertype? Membertype { get; set; } = AOSync.APICLIENT.ApiDataUserCompanyMembertype.Internal;
+
+        /// <summary>
+        /// Usercompany licensed internal - External user can be licensed as internal user (then he can be an internal member of the project or team). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("licensedinternal", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Licensedinternal { get; set; } = false;
+
+        /// <summary>
+        /// Usercompany supervisor of project tasks. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("supervisor", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiDataUserCompanySupervisor? Supervisor { get; set; } = AOSync.APICLIENT.ApiDataUserCompanySupervisor.False;
+
+        /// <summary>
+        /// Usercompany supervisor of management tasks. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("supervisorm", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiDataUserCompanySupervisorm? Supervisorm { get; set; } = AOSync.APICLIENT.ApiDataUserCompanySupervisorm.False;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiDataUserGroup
+    {
+        /// <summary>
+        /// Component id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// True when component is archived. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; } = false;
+
+        /// <summary>
+        /// User group name. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// User group items - array of usercompany id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("items", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<string> Items { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiDataWorkspace
+    {
+        /// <summary>
+        /// Component id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// True when component is archived. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; } = false;
+
+        /// <summary>
+        /// Workspace name. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Workspace description. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Adding projects restriction. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("canaddproject", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Canaddproject { get; set; } = false;
+
+        /// <summary>
+        /// Adding tasks restriction. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("canaddtask", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Canaddtask { get; set; } = false;
+
+        /// <summary>
+        /// Workspace phases. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("phases", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiDataPhase> Phases { get; set; }
+
+        /// <summary>
+        /// Workspace task atributes. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("taskattributes", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiDataAttribute> Taskattributes { get; set; }
+
+        /// <summary>
+        /// Workspace project atributes. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("projectattributes", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiDataAttribute> Projectattributes { get; set; }
+
+        /// <summary>
+        /// Timesheet task atributes. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("timesheetattributes", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiDataAttribute> Timesheetattributes { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiDetailPf
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Array of component ids for getting detailed data. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("ids", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        public System.Collections.Generic.ICollection<string> Ids { get; set; } = new System.Collections.ObjectModel.Collection<string>();
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiDetailPfType
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Array of component ids for getting detailed data. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("ids", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        public System.Collections.Generic.ICollection<string> Ids { get; set; } = new System.Collections.ObjectModel.Collection<string>();
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiDetailProject
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Array of component ids for getting detailed data. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("ids", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        public System.Collections.Generic.ICollection<string> Ids { get; set; } = new System.Collections.ObjectModel.Collection<string>();
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiDetailSharedAttribute
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Array of component ids for getting detailed data. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("ids", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        public System.Collections.Generic.ICollection<string> Ids { get; set; } = new System.Collections.ObjectModel.Collection<string>();
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiDetailSolverGroup
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Array of component ids for getting detailed data. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("ids", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        public System.Collections.Generic.ICollection<string> Ids { get; set; } = new System.Collections.ObjectModel.Collection<string>();
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiDetailTask
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Array of component ids for getting detailed data. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("ids", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        public System.Collections.Generic.ICollection<string> Ids { get; set; } = new System.Collections.ObjectModel.Collection<string>();
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiDetailTeam
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Array of component ids for getting detailed data. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("ids", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        public System.Collections.Generic.ICollection<string> Ids { get; set; } = new System.Collections.ObjectModel.Collection<string>();
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiDetailTimesheet
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Array of component ids for getting detailed data. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("ids", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        public System.Collections.Generic.ICollection<string> Ids { get; set; } = new System.Collections.ObjectModel.Collection<string>();
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiDetailUserCompany
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Array of component ids for getting detailed data. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("ids", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        public System.Collections.Generic.ICollection<string> Ids { get; set; } = new System.Collections.ObjectModel.Collection<string>();
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiDetailUserGroup
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Array of component ids for getting detailed data. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("ids", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        public System.Collections.Generic.ICollection<string> Ids { get; set; } = new System.Collections.ObjectModel.Collection<string>();
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiDetailWorkspace
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Array of component ids for getting detailed data. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("ids", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        public System.Collections.Generic.ICollection<string> Ids { get; set; } = new System.Collections.ObjectModel.Collection<string>();
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiFilteredTasks
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Connected user - user company id (required when email missing). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("usercompany", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Usercompany { get; set; }
+
+        /// <summary>
+        /// Connected user - email address to find user company id in the specified company via email (required when usercompany missing). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string Email { get; set; }
+
+        /// <summary>
+        /// Filter id which will be applied - must be filter saved for defined company or for defined user. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("filterid", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Filterid { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiFilteredTimesheets
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Connected user - user company id (required when email missing). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("usercompany", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Usercompany { get; set; }
+
+        /// <summary>
+        /// Connected user - email address to find user company id in the specified company via email (required when usercompany missing). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string Email { get; set; }
+
+        /// <summary>
+        /// Filter id which will be applied - must be filter saved for defined company or for defined user. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("filterid", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Filterid { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiListPf
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Type of result - simple array of ids or array of objects with id and name. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("listType", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiListPfListType? ListType { get; set; } = AOSync.APICLIENT.ApiListPfListType.ArrayWithIds;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiListPfType
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Type of result - simple array of ids or array of objects with id and name. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("listType", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiListPfTypeListType? ListType { get; set; } = AOSync.APICLIENT.ApiListPfTypeListType.ArrayWithIds;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiListProject
+    {
+        /// <summary>
+        /// Workspace id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("workspace", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Workspace { get; set; }
+
+        /// <summary>
+        /// Only active projects will be returned (archived will be ignored). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("onlyActive", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? OnlyActive { get; set; } = false;
+
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Type of result - simple array of ids or array of objects with id and name. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("listType", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiListProjectListType? ListType { get; set; } = AOSync.APICLIENT.ApiListProjectListType.ArrayWithIds;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiListSharedAttribute
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Type of result - simple array of ids or array of objects with id and name. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("listType", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiListSharedAttributeListType? ListType { get; set; } = AOSync.APICLIENT.ApiListSharedAttributeListType.ArrayWithIds;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiListSolverGroup
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Type of result - simple array of ids or array of objects with id and name. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("listType", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiListSolverGroupListType? ListType { get; set; } = AOSync.APICLIENT.ApiListSolverGroupListType.ArrayWithIds;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiListTask
+    {
+        /// <summary>
+        /// Section id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("section", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Section { get; set; }
+
+        /// <summary>
+        /// Only active tasks will be returned (archived will be ignored). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("onlyActive", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? OnlyActive { get; set; } = false;
+
+        /// <summary>
+        /// Only uncompleted tasks will be returned (canceled a closed will be ignored). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("onlyUncompleted", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? OnlyUncompleted { get; set; } = false;
+
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Type of result - simple array of ids or array of objects with id and name. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("listType", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiListTaskListType? ListType { get; set; } = AOSync.APICLIENT.ApiListTaskListType.ArrayWithIds;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiListTeam
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Type of result - simple array of ids or array of objects with id and name. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("listType", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiListTeamListType? ListType { get; set; } = AOSync.APICLIENT.ApiListTeamListType.ArrayWithIds;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiListTimesheet
+    {
+        /// <summary>
+        /// Usercompany id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("usercompany", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Usercompany { get; set; }
+
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Type of result - simple array of ids or array of objects with id and name. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("listType", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiListTimesheetListType? ListType { get; set; } = AOSync.APICLIENT.ApiListTimesheetListType.ArrayWithIds;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiListUserCompany
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Type of result - simple array of ids or array of objects with id and name. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("listType", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiListUserCompanyListType? ListType { get; set; } = AOSync.APICLIENT.ApiListUserCompanyListType.ArrayWithIds;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiListUserGroup
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Type of result - simple array of ids or array of objects with id and name. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("listType", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiListUserGroupListType? ListType { get; set; } = AOSync.APICLIENT.ApiListUserGroupListType.ArrayWithIds;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiListWorkspace
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Type of result - simple array of ids or array of objects with id and name. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("listType", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiListWorkspaceListType? ListType { get; set; } = AOSync.APICLIENT.ApiListWorkspaceListType.ArrayWithIds;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiModifyTask
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Connected user - user company id (required when email missing). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("usercompany", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Usercompany { get; set; }
+
+        /// <summary>
+        /// Connected user - email address to find user company id in the specified company via email (required when usercompany missing). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string Email { get; set; }
+
+        /// <summary>
+        /// Task id to modify. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("task", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Task { get; set; }
+
+        /// <summary>
+        /// Task name - null for no change. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Task priority - null for no change. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("priority", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiModifyTaskPriority? Priority { get; set; }
+
+        /// <summary>
+        /// Task description - null for no change. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Task start date - null for no change. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("startdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Startdate { get; set; }
+
+        /// <summary>
+        /// Task due date - null for no change. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("duedate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Duedate { get; set; }
+
+        /// <summary>
+        /// Array of simple attributes, which will be added or replaced in task. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attributes", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttribute> Attributes { get; set; }
+
+        /// <summary>
+        /// Array of task solvers - if filled, it will replace all existíng task solvers. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("solvers", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiUser> Solvers { get; set; }
+
+        /// <summary>
+        /// Done status of new task - null for no change. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("done", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiModifyTaskDone? Done { get; set; }
+
+        /// <summary>
+        /// Phase id of new task - null for no change. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("phase", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Phase { get; set; }
+
+        /// <summary>
+        /// Contains a master task id. If not null, the task will become a subtask of the master task listed here. if task was subtask before, master will be changed. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("master", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Master { get; set; }
+
+        /// <summary>
+        /// If true and modified task is subtask of master task, modified task will change to standalone task. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("clearmaster", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Clearmaster { get; set; } = false;
+
+        /// <summary>
+        /// The modify time for all changes made - use only for data import. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("modified", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Modified { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiModifyTimesheet
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Connected user - user company id (required when email missing). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("usercompany", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Usercompany { get; set; }
+
+        /// <summary>
+        /// Connected user - email address to find user company id in the specified company via email (required when usercompany missing). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string Email { get; set; }
+
+        /// <summary>
+        /// Timesheet id to modify. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("timesheet", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Timesheet { get; set; }
+
+        /// <summary>
+        /// Array of simple attributes, which will be added or replaced in timesheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attributes", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttribute> Attributes { get; set; }
+
+        /// <summary>
+        /// The modify time for all changes made - use only for data import. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("modified", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Modified { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiModifyUserCompany
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Connected user - user company id (required when email missing). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("usercompany", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Usercompany { get; set; }
+
+        /// <summary>
+        /// Connected user - email address to find user company id in the specified company via email (required when usercompany missing). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string Email { get; set; }
+
+        /// <summary>
+        /// User company id to modify (required when emailtomodify missing). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("usercompanytomodify", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Usercompanytomodify { get; set; }
+
+        /// <summary>
+        /// Email to modify to find user company id in the specified company via email (required when usercompanytomodify missing). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("emailtomodify", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string Emailtomodify { get; set; }
+
+        /// <summary>
+        /// When true and invitation was not accepted yet, invitation will be sent immediately. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("sendinvitation", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Sendinvitation { get; set; } = false;
+
+        /// <summary>
+        /// When true, user will be deactivated for the company (no data access). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("deactivate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Deactivate { get; set; } = false;
+
+        /// <summary>
+        /// Member type - null for no change. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("membertype", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiModifyUserCompanyMembertype? Membertype { get; set; }
+
+        /// <summary>
+        /// Usercompany licensed internal - External user can be licensed as internal user (then he can be an internal member of the project or team), null for no change. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("licensedinternal", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Licensedinternal { get; set; }
+
+        /// <summary>
+        /// Preferred name within the company - null for no change. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("prefname", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Prefname { get; set; }
+
+        /// <summary>
+        /// Preferred email within the company - null for no change. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("prefemail", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Prefemail { get; set; }
+
+        /// <summary>
+        /// Preferred company name within the company - null for no change. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("prefcompany", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Prefcompany { get; set; }
+
+        /// <summary>
+        /// Preferred position within the company - null for no change. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("prefposition", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Prefposition { get; set; }
+
+        /// <summary>
+        /// Preferred mobile number within the company - null for no change. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("prefmobile", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Prefmobile { get; set; }
+
+        /// <summary>
+        /// Company supervisor of project tasks can view all company's projects and tasks. Null for no change. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("supervisor", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiModifyUserCompanySupervisor? Supervisor { get; set; }
+
+        /// <summary>
+        /// Company supervisor of management tools can view all company's management tasks, meetings... . Null for no change. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("supervisorm", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiModifyUserCompanySupervisorm? Supervisorm { get; set; }
+
+        /// <summary>
+        /// User company can add projects to company's workspaces. Null for no change. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("addprojects", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Addprojects { get; set; }
+
+        /// <summary>
+        /// User company can add portfolios to company. Null for no change. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("addpfs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Addpfs { get; set; }
+
+        /// <summary>
+        /// User company can add teams to company. Null for no change. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("addteams", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Addteams { get; set; }
+
+        /// <summary>
+        /// User company can create timesheets. Null for no change. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("timesheets", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Timesheets { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiPfLink
+    {
+        /// <summary>
+        /// Link id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Portfolio link name. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Portfolio link url address. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("http", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Http { get; set; }
+
+        /// <summary>
+        /// When true, open as iframe, when false, open as new tab. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("inapplication", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Inapplication { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiProjectIsWWorkingTime
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Project id - the project whose working hours will be determined. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("project", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Project { get; set; }
+
+        /// <summary>
+        /// The time at which the information will be detected. if not specified, the current time will be used. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("time", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Time { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiProjectLink
+    {
+        /// <summary>
+        /// Link id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Project link name. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Project link url address. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("http", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Http { get; set; }
+
+        /// <summary>
+        /// When true, open as iframe, when false, open as new tab. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("inapplication", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Inapplication { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiReactTasks
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Connected user - user company id (required when email missing). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("usercompany", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Usercompany { get; set; }
+
+        /// <summary>
+        /// Connected user - email address to find user company id in the specified company via email (required when usercompany missing). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string Email { get; set; }
+
+        /// <summary>
+        /// True for request only tasks in Solving state. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("onlysolving", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Onlysolving { get; set; } = false;
+
+        /// <summary>
+        /// True for add tasks where solver is solver group in which user is member. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("solvergroups", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Solvergroups { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiResult
+    {
+        /// <summary>
+        /// True when query resulted to error. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("iserror", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Iserror { get; set; } = false;
+
+        /// <summary>
+        /// Error message. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("error", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Error { get; set; }
+
+        /// <summary>
+        /// If true, it is recommended to retry the query after a delay, because it ended with an error that is temporary and will probably not happen again. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("isrepeatable", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Isrepeatable { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiResultAddTask
+    {
+        /// <summary>
+        /// Just created task id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("addedid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Addedid { get; set; }
+
+        /// <summary>
+        /// Just created task link url. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("addedlink", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Addedlink { get; set; }
+
+        /// <summary>
+        /// Just created task number. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("addedNumber", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public int? AddedNumber { get; set; } = 0;
+
+        /// <summary>
+        /// True when query resulted to error. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("iserror", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Iserror { get; set; } = false;
+
+        /// <summary>
+        /// Error message. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("error", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Error { get; set; }
+
+        /// <summary>
+        /// If true, it is recommended to retry the query after a delay, because it ended with an error that is temporary and will probably not happen again. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("isrepeatable", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Isrepeatable { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiResultAddUserCompany
+    {
+        /// <summary>
+        /// Just created user company id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("addedid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Addedid { get; set; }
+
+        /// <summary>
+        /// True when query resulted to error. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("iserror", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Iserror { get; set; } = false;
+
+        /// <summary>
+        /// Error message. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("error", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Error { get; set; }
+
+        /// <summary>
+        /// If true, it is recommended to retry the query after a delay, because it ended with an error that is temporary and will probably not happen again. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("isrepeatable", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Isrepeatable { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiResultCheckuser
+    {
+        /// <summary>
+        /// True if specified user is found as a member of specified company. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("iscompanymember", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Iscompanymember { get; set; } = false;
+
+        /// <summary>
+        /// True if specified user is found as a member of specified project, if filled. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("isprojectmember", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Isprojectmember { get; set; } = false;
+
+        /// <summary>
+        /// Usercompany id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("usercompany", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Usercompany { get; set; }
+
+        /// <summary>
+        /// True when query resulted to error. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("iserror", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Iserror { get; set; } = false;
+
+        /// <summary>
+        /// Error message. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("error", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Error { get; set; }
+
+        /// <summary>
+        /// If true, it is recommended to retry the query after a delay, because it ended with an error that is temporary and will probably not happen again. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("isrepeatable", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Isrepeatable { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiResultComponentInfo
+    {
+        /// <summary>
+        /// Component type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Type { get; set; }
+
+        /// <summary>
+        /// Component name (if possible). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// True when component is archived. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; } = false;
+
+        /// <summary>
+        /// Parent component id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Parent { get; set; }
+
+        /// <summary>
+        /// True when query resulted to error. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("iserror", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Iserror { get; set; } = false;
+
+        /// <summary>
+        /// Error message. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("error", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Error { get; set; }
+
+        /// <summary>
+        /// If true, it is recommended to retry the query after a delay, because it ended with an error that is temporary and will probably not happen again. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("isrepeatable", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Isrepeatable { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiResultFilteredTasks
+    {
+        /// <summary>
+        /// Array of simple tasks. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("tasks", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiSimpleTask> Tasks { get; set; }
+
+        /// <summary>
+        /// Max 10000 rows, else limit overflow. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("overflow", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Overflow { get; set; } = false;
+
+        /// <summary>
+        /// Count of rows freturned. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("count", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public int? Count { get; set; } = 0;
+
+        /// <summary>
+        /// True when query resulted to error. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("iserror", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Iserror { get; set; } = false;
+
+        /// <summary>
+        /// Error message. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("error", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Error { get; set; }
+
+        /// <summary>
+        /// If true, it is recommended to retry the query after a delay, because it ended with an error that is temporary and will probably not happen again. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("isrepeatable", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Isrepeatable { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiResultFilteredTimesheets
+    {
+        /// <summary>
+        /// Array of simple timesheets. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("timesheets", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiSimpleTimesheet> Timesheets { get; set; }
+
+        /// <summary>
+        /// Max 10000 rows, else limit overflow. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("overflow", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Overflow { get; set; } = false;
+
+        /// <summary>
+        /// Count of rows freturned. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("count", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public int? Count { get; set; } = 0;
+
+        /// <summary>
+        /// True when query resulted to error. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("iserror", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Iserror { get; set; } = false;
+
+        /// <summary>
+        /// Error message. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("error", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Error { get; set; }
+
+        /// <summary>
+        /// If true, it is recommended to retry the query after a delay, because it ended with an error that is temporary and will probably not happen again. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("isrepeatable", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Isrepeatable { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiResultList
+    {
+        /// <summary>
+        /// Array of unique id representing the result components. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("ids", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<string> Ids { get; set; }
+
+        /// <summary>
+        /// Array of items with unique id and name representing the result components. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("items", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiResultListItem> Items { get; set; }
+
+        /// <summary>
+        /// True when query resulted to error. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("iserror", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Iserror { get; set; } = false;
+
+        /// <summary>
+        /// Error message. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("error", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Error { get; set; }
+
+        /// <summary>
+        /// If true, it is recommended to retry the query after a delay, because it ended with an error that is temporary and will probably not happen again. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("isrepeatable", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Isrepeatable { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiResultListItem
+    {
+        /// <summary>
+        /// Unique id representing the result component. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Result component name (if possible). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiResultPf
+    {
+        /// <summary>
+        /// Array of portfolio data. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("data", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiDataPf> Data { get; set; }
+
+        /// <summary>
+        /// True when query resulted to error. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("iserror", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Iserror { get; set; } = false;
+
+        /// <summary>
+        /// Error message. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("error", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Error { get; set; }
+
+        /// <summary>
+        /// If true, it is recommended to retry the query after a delay, because it ended with an error that is temporary and will probably not happen again. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("isrepeatable", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Isrepeatable { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiResultPfType
+    {
+        /// <summary>
+        /// Array of portfolio type data. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("data", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiDataPfType> Data { get; set; }
+
+        /// <summary>
+        /// True when query resulted to error. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("iserror", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Iserror { get; set; } = false;
+
+        /// <summary>
+        /// Error message. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("error", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Error { get; set; }
+
+        /// <summary>
+        /// If true, it is recommended to retry the query after a delay, because it ended with an error that is temporary and will probably not happen again. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("isrepeatable", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Isrepeatable { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiResultProject
+    {
+        /// <summary>
+        /// Array of project detailed data. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("data", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiDataProject> Data { get; set; }
+
+        /// <summary>
+        /// True when query resulted to error. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("iserror", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Iserror { get; set; } = false;
+
+        /// <summary>
+        /// Error message. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("error", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Error { get; set; }
+
+        /// <summary>
+        /// If true, it is recommended to retry the query after a delay, because it ended with an error that is temporary and will probably not happen again. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("isrepeatable", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Isrepeatable { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiResultProjectIsWorkingTime
+    {
+        /// <summary>
+        /// True if working hours are tracked on the project. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("scheduled", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Scheduled { get; set; } = false;
+
+        /// <summary>
+        /// True if specified time si scheduled as working time. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("isworkingtime", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Isworkingtime { get; set; } = false;
+
+        /// <summary>
+        /// True when query resulted to error. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("iserror", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Iserror { get; set; } = false;
+
+        /// <summary>
+        /// Error message. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("error", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Error { get; set; }
+
+        /// <summary>
+        /// If true, it is recommended to retry the query after a delay, because it ended with an error that is temporary and will probably not happen again. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("isrepeatable", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Isrepeatable { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiResultReactTasks
+    {
+        /// <summary>
+        /// Array of simple tasks. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("tasks", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiSimpleTask> Tasks { get; set; }
+
+        /// <summary>
+        /// Max 10000 rows, else limit overflow. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("overflow", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Overflow { get; set; } = false;
+
+        /// <summary>
+        /// Count of rows freturned. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("count", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public int? Count { get; set; } = 0;
+
+        /// <summary>
+        /// True when query resulted to error. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("iserror", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Iserror { get; set; } = false;
+
+        /// <summary>
+        /// Error message. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("error", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Error { get; set; }
+
+        /// <summary>
+        /// If true, it is recommended to retry the query after a delay, because it ended with an error that is temporary and will probably not happen again. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("isrepeatable", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Isrepeatable { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiResultSharedAttribute
+    {
+        /// <summary>
+        /// Array of shared attributes detailed data. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("data", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiDataSharedAttribute> Data { get; set; }
+
+        /// <summary>
+        /// True when query resulted to error. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("iserror", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Iserror { get; set; } = false;
+
+        /// <summary>
+        /// Error message. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("error", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Error { get; set; }
+
+        /// <summary>
+        /// If true, it is recommended to retry the query after a delay, because it ended with an error that is temporary and will probably not happen again. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("isrepeatable", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Isrepeatable { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiResultSolverGroup
+    {
+        /// <summary>
+        /// Array of solvergroup detailed data. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("data", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiDataSolverGroup> Data { get; set; }
+
+        /// <summary>
+        /// True when query resulted to error. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("iserror", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Iserror { get; set; } = false;
+
+        /// <summary>
+        /// Error message. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("error", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Error { get; set; }
+
+        /// <summary>
+        /// If true, it is recommended to retry the query after a delay, because it ended with an error that is temporary and will probably not happen again. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("isrepeatable", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Isrepeatable { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiResultTask
+    {
+        /// <summary>
+        /// Array of task detailed data. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("data", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiDataTask> Data { get; set; }
+
+        /// <summary>
+        /// True when query resulted to error. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("iserror", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Iserror { get; set; } = false;
+
+        /// <summary>
+        /// Error message. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("error", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Error { get; set; }
+
+        /// <summary>
+        /// If true, it is recommended to retry the query after a delay, because it ended with an error that is temporary and will probably not happen again. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("isrepeatable", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Isrepeatable { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiResultTeam
+    {
+        /// <summary>
+        /// Array of teams detailed data. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("data", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiDataTeam> Data { get; set; }
+
+        /// <summary>
+        /// True when query resulted to error. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("iserror", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Iserror { get; set; } = false;
+
+        /// <summary>
+        /// Error message. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("error", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Error { get; set; }
+
+        /// <summary>
+        /// If true, it is recommended to retry the query after a delay, because it ended with an error that is temporary and will probably not happen again. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("isrepeatable", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Isrepeatable { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiResultTimesheet
+    {
+        /// <summary>
+        /// Array of timesheets detailed data. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("data", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiDataTimesheet> Data { get; set; }
+
+        /// <summary>
+        /// True when query resulted to error. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("iserror", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Iserror { get; set; } = false;
+
+        /// <summary>
+        /// Error message. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("error", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Error { get; set; }
+
+        /// <summary>
+        /// If true, it is recommended to retry the query after a delay, because it ended with an error that is temporary and will probably not happen again. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("isrepeatable", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Isrepeatable { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiResultUserCompany
+    {
+        /// <summary>
+        /// Array of usercompany detailed data. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("data", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiDataUserCompany> Data { get; set; }
+
+        /// <summary>
+        /// True when query resulted to error. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("iserror", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Iserror { get; set; } = false;
+
+        /// <summary>
+        /// Error message. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("error", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Error { get; set; }
+
+        /// <summary>
+        /// If true, it is recommended to retry the query after a delay, because it ended with an error that is temporary and will probably not happen again. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("isrepeatable", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Isrepeatable { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiResultUserGroup
+    {
+        /// <summary>
+        /// Array of usergroup detailed data. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("data", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiDataUserGroup> Data { get; set; }
+
+        /// <summary>
+        /// True when query resulted to error. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("iserror", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Iserror { get; set; } = false;
+
+        /// <summary>
+        /// Error message. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("error", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Error { get; set; }
+
+        /// <summary>
+        /// If true, it is recommended to retry the query after a delay, because it ended with an error that is temporary and will probably not happen again. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("isrepeatable", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Isrepeatable { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiResultUserTimesheets
+    {
+        /// <summary>
+        /// Array of simple timesheets. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("timesheets", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiSimpleTimesheet> Timesheets { get; set; }
+
+        /// <summary>
+        /// Max 10000 rows, else limit overflow. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("overflow", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Overflow { get; set; } = false;
+
+        /// <summary>
+        /// Count of rows freturned. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("count", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public int? Count { get; set; } = 0;
+
+        /// <summary>
+        /// True when query resulted to error. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("iserror", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Iserror { get; set; } = false;
+
+        /// <summary>
+        /// Error message. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("error", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Error { get; set; }
+
+        /// <summary>
+        /// If true, it is recommended to retry the query after a delay, because it ended with an error that is temporary and will probably not happen again. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("isrepeatable", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Isrepeatable { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiResultWorkspace
+    {
+        /// <summary>
+        /// Array of workspace detailed data. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("data", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiDataWorkspace> Data { get; set; }
+
+        /// <summary>
+        /// True when query resulted to error. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("iserror", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Iserror { get; set; } = false;
+
+        /// <summary>
+        /// Error message. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("error", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Error { get; set; }
+
+        /// <summary>
+        /// If true, it is recommended to retry the query after a delay, because it ended with an error that is temporary and will probably not happen again. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("isrepeatable", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Isrepeatable { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiSimpleTask
+    {
+        /// <summary>
+        /// Task id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Task name. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Task link for registered user. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("link", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Link { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiSimpleTimesheet
+    {
+        /// <summary>
+        /// Timesheet id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Timesheet date. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("date", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Date { get; set; }
+
+        /// <summary>
+        /// Timesheet name. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Timesheet minutes. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("minutes", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public int? Minutes { get; set; } = 0;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiUser
+    {
+        /// <summary>
+        /// Connected user - user company id (required when email missing). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("usercompany", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Usercompany { get; set; }
+
+        /// <summary>
+        /// Email to find user company id in the specified company. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Email { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiUserTimesheets
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Connected user - user company id (required when email missing). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("usercompany", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Usercompany { get; set; }
+
+        /// <summary>
+        /// Connected user - email address to find user company id in the specified company via email (required when usercompany missing). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string Email { get; set; }
+
+        /// <summary>
+        /// Date from. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("from", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? From { get; set; }
+
+        /// <summary>
+        /// Date to. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("to", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? To { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncChange
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncChangeType Type { get; set; } = AOSync.APICLIENT.SyncChangeType.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Component definition. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncChangeDef Def { get; set; } = AOSync.APICLIENT.SyncChangeDef.Attachment;
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncExistsSimpleComponents
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Component identification - id and external id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("ids", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiComponentIdentification> Ids { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncExistsSimpleComponentsResult
+    {
+        /// <summary>
+        /// Array withe results correspondings with query ids array. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("data", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiComponentExists> Data { get; set; }
+
+        /// <summary>
+        /// True when query resulted to error. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("iserror", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Iserror { get; set; } = false;
+
+        /// <summary>
+        /// Error message. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("error", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Error { get; set; }
+
+        /// <summary>
+        /// If true, it is recommended to retry the query after a delay, because it ended with an error that is temporary and will probably not happen again. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("isrepeatable", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Isrepeatable { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncExternal
+    {
+        /// <summary>
+        /// Component id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// External id to set. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncGetChanges
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Transaction id returned with last synchronization request. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("lasttranId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string LasttranId { get; set; }
+
+        /// <summary>
+        /// Limit of returned transactions - max limit is 100. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("limit", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public int? Limit { get; set; } = 0;
+
+        /// <summary>
+        /// If true, the changes will be implemented by a single apiSyncChangeSimple class and the data will be in the apiValue array. If false, separate classes will be returned according to the component definition. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simpleResult", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? SimpleResult { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncGetChangesResult
+    {
+        /// <summary>
+        /// Last transaction id for use in next query, null when no rows available. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("lasttranid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Lasttranid { get; set; }
+
+        /// <summary>
+        /// True when more rows are available. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("moredata", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Moredata { get; set; } = false;
+
+        /// <summary>
+        /// Array of transactions with changes in timeline. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("trans", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<SyncGetTransaction> Trans { get; set; }
+
+        /// <summary>
+        /// True when query resulted to error. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("iserror", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Iserror { get; set; } = false;
+
+        /// <summary>
+        /// Error message. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("error", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Error { get; set; }
+
+        /// <summary>
+        /// If true, it is recommended to retry the query after a delay, because it ended with an error that is temporary and will probably not happen again. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("isrepeatable", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Isrepeatable { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncGetCurrentTranid
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncGetCurrentTranidResult
+    {
+        /// <summary>
+        /// Transaction id corresponding with actual state. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("tranid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Tranid { get; set; }
+
+        /// <summary>
+        /// True when query resulted to error. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("iserror", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Iserror { get; set; } = false;
+
+        /// <summary>
+        /// Error message. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("error", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Error { get; set; }
+
+        /// <summary>
+        /// If true, it is recommended to retry the query after a delay, because it ended with an error that is temporary and will probably not happen again. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("isrepeatable", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Isrepeatable { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncGetInitialChanges
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Last component id returned with last synchronization request - null for start synchronization. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("lastcomponentid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Lastcomponentid { get; set; }
+
+        /// <summary>
+        /// Max component id returned via SyncGetCurrentTranid query. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("maxtranid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Maxtranid { get; set; }
+
+        /// <summary>
+        /// Limit of returned components - min 1 max 100. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("limit", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public int? Limit { get; set; } = 0;
+
+        /// <summary>
+        /// When false, only components with null external id will return. When true, all synchronized components will return. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("withexternalid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Withexternalid { get; set; } = false;
+
+        /// <summary>
+        /// If true, the existence of relationally bound components with ExternalId will be checked and, if not found, they will be explicitly returned before the given component. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("addrelations", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Addrelations { get; set; } = false;
+
+        /// <summary>
+        /// If true, only the following components are included: Company users, User and Solver Groups, Workspaces, Shared Attributes and Attributes, Portfolio types. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("companySettingsOnly", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? CompanySettingsOnly { get; set; } = false;
+
+        /// <summary>
+        /// If true, the component changes will be implemented by a single apiSyncChangeSimple class and the data will be in the apiValue array. If false, separate classes will be returned according to the component definition. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simpleResult", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? SimpleResult { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncGetInitialChangesResult
+    {
+        /// <summary>
+        /// Last component id for use in next query, null when no rows available. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("lastcomponentid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Lastcomponentid { get; set; }
+
+        /// <summary>
+        /// True when more rows are available. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("moredata", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Moredata { get; set; } = false;
+
+        /// <summary>
+        /// Array of components as changes of create type representing the current state of the component. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("components", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<Components> Components { get; set; }
+
+        /// <summary>
+        /// True when query resulted to error. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("iserror", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Iserror { get; set; } = false;
+
+        /// <summary>
+        /// Error message. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("error", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Error { get; set; }
+
+        /// <summary>
+        /// If true, it is recommended to retry the query after a delay, because it ended with an error that is temporary and will probably not happen again. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("isrepeatable", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Isrepeatable { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncGetSimpleComponents
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Array of component identifications. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("ids", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        public System.Collections.Generic.ICollection<ApiComponentIdentification> Ids { get; set; } = new System.Collections.ObjectModel.Collection<ApiComponentIdentification>();
+
+        /// <summary>
+        /// If true, the changes will be implemented by a single apiSyncChangeSimple class and the data will be in the apiValue array. If false, separate classes will be returned according to the component definition. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simpleResult", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? SimpleResult { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncGetSimpleComponentsResult
+    {
+        /// <summary>
+        /// Components as change of create type representing the current state of the component. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("components", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<components> Components { get; set; }
+
+        /// <summary>
+        /// True when query resulted to error. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("iserror", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Iserror { get; set; } = false;
+
+        /// <summary>
+        /// Error message. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("error", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Error { get; set; }
+
+        /// <summary>
+        /// If true, it is recommended to retry the query after a delay, because it ended with an error that is temporary and will probably not happen again. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("isrepeatable", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Isrepeatable { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncGetTaskInfo
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Task id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Id { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncGetTaskInfoResult
+    {
+        /// <summary>
+        /// Task type - project or management task. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("taskType", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncGetTaskInfoResultTaskType? TaskType { get; set; } = AOSync.APICLIENT.SyncGetTaskInfoResultTaskType.ProjectTask;
+
+        /// <summary>
+        /// Project id - will be populated for all tasks belonging to a project or workgroup in a project, for project and management tasks. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("project", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Project { get; set; }
+
+        /// <summary>
+        /// Project external id - external id corresponding with project id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("project_eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Project_eid { get; set; }
+
+        /// <summary>
+        /// Team id - will be populated for all tasks belonging to a team or workgroup in a team. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("team", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Team { get; set; }
+
+        /// <summary>
+        /// Team external id - external id corresponding with team id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("team_eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Team_eid { get; set; }
+
+        /// <summary>
+        /// Working group id - will be populated for all tasks belonging to a workgroup in a project or team. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("group", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Group { get; set; }
+
+        /// <summary>
+        /// Group external id - external id corresponding with group id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("group_eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Group_eid { get; set; }
+
+        /// <summary>
+        /// Workspace id - will be populated for all tasks belonging to a project, a workgroup in a project, for project and management tasks. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("workspace", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Workspace { get; set; }
+
+        /// <summary>
+        /// Workspace external id - external id corresponding with workspace id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("workspace_eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Workspace_eid { get; set; }
+
+        /// <summary>
+        /// True when query resulted to error. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("iserror", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Iserror { get; set; } = false;
+
+        /// <summary>
+        /// Error message. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("error", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Error { get; set; }
+
+        /// <summary>
+        /// If true, it is recommended to retry the query after a delay, because it ended with an error that is temporary and will probably not happen again. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("isrepeatable", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Isrepeatable { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncGetTimesheetInfo
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Timesheet id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Id { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncGetTimesheetInfoResult
+    {
+        /// <summary>
+        /// Itmesheet type - where task belongs to. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("timesheetType", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncGetTimesheetInfoResultTimesheetType? TimesheetType { get; set; } = AOSync.APICLIENT.SyncGetTimesheetInfoResultTimesheetType.TaskInProject;
+
+        /// <summary>
+        /// Task id - will be populated for all timesheets belonging to a task. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("task", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Task { get; set; }
+
+        /// <summary>
+        /// TAsk external id - external id corresponding with task id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("task_eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Task_eid { get; set; }
+
+        /// <summary>
+        /// Project id - will be populated for all timesheets belonging to a project or workgroup in a project, or a task in a project or workgroup in a project. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("project", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Project { get; set; }
+
+        /// <summary>
+        /// Project external id - external id corresponding with project id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("project_eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Project_eid { get; set; }
+
+        /// <summary>
+        /// Team id - will be populated for all timesheets belonging to a team or workgroup in a team, or a task in a team or workgroup in a team. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("team", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Team { get; set; }
+
+        /// <summary>
+        /// Team external id - external id corresponding with team id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("team_eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Team_eid { get; set; }
+
+        /// <summary>
+        /// Group id - will be populated for all timesheets belonging to a workgroup in a project or team, or a task in a workgroup in a project or team. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("group", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Group { get; set; }
+
+        /// <summary>
+        /// Group external id - external id corresponding with group id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("group_eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Group_eid { get; set; }
+
+        /// <summary>
+        /// Workspace id - will be populated for all timesheets belonging to a project, a workgroup in a project, or a task in a project or a workgroup in a project. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("workspace", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Workspace { get; set; }
+
+        /// <summary>
+        /// Workspace external id - external id corresponding with workspace id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("workspace_eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Workspace_eid { get; set; }
+
+        /// <summary>
+        /// True when query resulted to error. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("iserror", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Iserror { get; set; } = false;
+
+        /// <summary>
+        /// Error message. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("error", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Error { get; set; }
+
+        /// <summary>
+        /// If true, it is recommended to retry the query after a delay, because it ended with an error that is temporary and will probably not happen again. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("isrepeatable", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Isrepeatable { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncGetTransaction
+    {
+        /// <summary>
+        /// Transaction id. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("tranid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Tranid { get; set; }
+
+        /// <summary>
+        /// Transaction UTC timestamp. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("ts", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Ts { get; set; }
+
+        /// <summary>
+        /// The user of the company who performed the transaction. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("usercompany", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Usercompany { get; set; }
+
+        /// <summary>
+        /// Transaction changed components. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("changes", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<Changes> Changes { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    /// <summary>
+    /// Component parent definition - mandatory when created, null for not changed, filled for change component parent. 
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncParent
+    {
+        /// <summary>
+        /// The parent component id. Use the i:nnn format if the parent component was inserted by the same transaction before, nnn is the insertion change index of the parent component. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 3)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// The parent component field name. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("field", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        public string Field { get; set; }
+
+        /// <summary>
+        /// The parent component definition. Readonly. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncParentDef Def { get; set; } = AOSync.APICLIENT.SyncParentDef.Attachment;
+
+        /// <summary>
+        /// The parent component external id. If the parent component was previously inserted in the same transaction, it will be searched using this data. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncResultChange
+    {
+        /// <summary>
+        /// IdThe resulting status of the change processing. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncResultChangeType? Type { get; set; } = AOSync.APICLIENT.SyncResultChangeType.NotProcessed;
+
+        /// <summary>
+        /// External id transferred from the corresponding request. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        /// <summary>
+        /// Id of the component just added. It will only be populated for the change type Created. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("addedid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Addedid { get; set; }
+
+        /// <summary>
+        /// If a component is to be created that already exists from the point of view of content duplication (e.g. task follower, project/team member, etc.), a new component will not be created, but will be linked to an existing one. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("linkedid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Linkedid { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncSetChanges
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Connected user - user company id (required when email missing). 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("usercompany", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Usercompany { get; set; }
+
+        /// <summary>
+        /// Transaction time. If null, the current time will be used. UTC time that cannot be in the future. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("ts", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Ts { get; set; }
+
+        /// <summary>
+        /// When entering the character *, no notifications will be generated. When userCompany id is entered, notifications will not be generated for that user. Note: for creator id notifications are not generated automatically. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("nonotifications", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Nonotifications { get; set; }
+
+        /// <summary>
+        /// Transaction changed components. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("changes", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<changes> Changes { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncSetChangesResult
+    {
+        /// <summary>
+        /// Index of error change of error transaction. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("errorchangeindex", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public int? Errorchangeindex { get; set; } = 0;
+
+        /// <summary>
+        /// Detail error message. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("detailerror", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Detailerror { get; set; }
+
+        /// <summary>
+        /// Transaction id just processed. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("tranid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Tranid { get; set; }
+
+        /// <summary>
+        /// Changes result. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("results", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<SyncResultChange> Results { get; set; }
+
+        /// <summary>
+        /// True when query resulted to error. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("iserror", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Iserror { get; set; } = false;
+
+        /// <summary>
+        /// Error message. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("error", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Error { get; set; }
+
+        /// <summary>
+        /// If true, it is recommended to retry the query after a delay, because it ended with an error that is temporary and will probably not happen again. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("isrepeatable", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Isrepeatable { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncSetExternals
+    {
+        /// <summary>
+        /// Company id corresponding with ApiKey. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("company", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(14, MinimumLength = 14)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Array of external ids to set. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("externals", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<SyncExternal> Externals { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncSetExternalsResult
+    {
+        /// <summary>
+        /// True when query resulted to error. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("iserror", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Iserror { get; set; } = false;
+
+        /// <summary>
+        /// Error message. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("error", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Error { get; set; }
+
+        /// <summary>
+        /// If true, it is recommended to retry the query after a delay, because it ended with an error that is temporary and will probably not happen again. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("isrepeatable", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Isrepeatable { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApiValue
+    {
+        /// <summary>
+        /// Field name. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Data type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ApiValueType? Type { get; set; } = AOSync.APICLIENT.ApiValueType.Logical;
+
+        /// <summary>
+        /// Field value in string presentation. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("value", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Value { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncChangeSimple
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncChangeSimpleType? Type { get; set; } = AOSync.APICLIENT.SyncChangeSimpleType.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Component definition. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncChangeSimpleDef? Def { get; set; } = AOSync.APICLIENT.SyncChangeSimpleDef.Attachment;
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        /// Fields in array representation. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("fields", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<Fields> Fields { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    /// <summary>
+    /// The syncAttachment component.It is possible to Create, Delete, Archive, Activate component. It is not possible to Modify, Change parent component. Possible parents (definition.fieldname) are Task.Attachments.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncAttachment
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncAttachmentType? Type { get; set; } = AOSync.APICLIENT.SyncAttachmentType.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Allways AttachmentTask
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Def { get; set; } = "AttachmentTask";
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("InternalType", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncAttachmentInternalType? InternalType { get; set; } = AOSync.APICLIENT.SyncAttachmentInternalType.Public;
+
+        /// <summary>
+        ///  This property is readonly - it is not possible to fill it with SyncSetChanges request.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Renamed", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public double? Renamed { get; set; }
+
+        /// <summary>
+        ///  This property is readonly - it is not possible to fill it with SyncSetChanges request.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Uploaded", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public double? Uploaded { get; set; }
+
+        /// <summary>
+        /// Attachment file name.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("FileName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string FileName { get; set; }
+
+        /// <summary>
+        /// Attachment content type. Overflow when binery content size is greater then 1KB - content is empty in this case.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("ContentType", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncAttachmentContentType? ContentType { get; set; }
+
+        /// <summary>
+        /// Attachment content - UTF8 string or Base64 string or google drive url address via ContentType
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Content", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Content { get; set; } = "string";
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    /// <summary>
+    /// The syncComment component.It is possible to Create, Modify, Archive, Activate component. It is not possible to Delete, Change parent component. Possible parents (definition.fieldname) are Task.Comments.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncComment
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncCommentType? Type { get; set; } = AOSync.APICLIENT.SyncCommentType.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Allways Comment
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Def { get; set; } = "Comment";
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Comment", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Comment { get; set; }
+
+        /// <summary>
+        ///  This property is writable for Create only - it is not possible to fill it with SyncSetChanges request Modify type.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("EmailOwner", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string EmailOwner { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("InternalType", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncCommentInternalType? InternalType { get; set; } = AOSync.APICLIENT.SyncCommentInternalType.Public;
+
+        /// <summary>
+        ///  This property is readonly - it is not possible to fill it with SyncSetChanges request.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("OrderId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public double? OrderId { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    /// <summary>
+    /// The syncCommentPredefined component.It is possible to Create, Modify, Delete, Archive, Activate component. It is not possible to Change parent component. Possible parents (definition.fieldname) are Workspace.PredefinedComments.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncCommentPredefined
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncCommentPredefinedType? Type { get; set; } = AOSync.APICLIENT.SyncCommentPredefinedType.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Allways CommentPredefined
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Def { get; set; } = "CommentPredefined";
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Text", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Text { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    /// <summary>
+    /// The syncField component.It is possible to Create, Modify, Delete, Archive, Activate component. It is not possible to Change parent component. Possible parents (definition.fieldname) are Company.TaskFields, Company.TimeSheetFields, Workspace.TaskFields, Workspace.ProjectFields, Workspace.TimeSheetFields.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncField
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncFieldType? Type { get; set; } = AOSync.APICLIENT.SyncFieldType.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Allways Field
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Def { get; set; } = "Field";
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("ApiCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string ApiCode { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("EnumView", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncFieldEnumView? EnumView { get; set; } = AOSync.APICLIENT.SyncFieldEnumView.Combo;
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Label", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Label { get; set; }
+
+        /// <summary>
+        /// Component id for FieldShared component. Usually contains 14 characters. In the case of SyncSetChanges queries, if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:".
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("SharedField", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(38, MinimumLength = 5)]
+        public string SharedField { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("SharedType", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncFieldSharedType? SharedType { get; set; } = AOSync.APICLIENT.SyncFieldSharedType.Attribute;
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Tag", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Tag { get; set; }
+
+        /// <summary>
+        ///  Fill this property only for create, you cannot modify this.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Xtype", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncFieldXtype? Xtype { get; set; } = AOSync.APICLIENT.SyncFieldXtype.Logical;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    /// <summary>
+    /// The syncFieldShared component.It is possible to Create, Modify, Delete, Archive, Activate component. It is not possible to Change parent component. Possible parents (definition.fieldname) are Company.SharedFields.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncFieldShared
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncFieldSharedType2? Type { get; set; } = AOSync.APICLIENT.SyncFieldSharedType2.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Allways FieldShared
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Def { get; set; } = "FieldShared";
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("ApiCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string ApiCode { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Label", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Label { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Tag", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Tag { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Xtype", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncFieldSharedXtype? Xtype { get; set; } = AOSync.APICLIENT.SyncFieldSharedXtype.Logical;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    /// <summary>
+    /// The syncFieldVal component.It is possible to Create, Modify, Delete, Archive, Activate component. It is not possible to Change parent component. Possible parents (definition.fieldname) are Field.Values.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncFieldVal
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncFieldValType? Type { get; set; } = AOSync.APICLIENT.SyncFieldValType.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Allways FieldVal
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Def { get; set; } = "FieldVal";
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("ApiCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string ApiCode { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Label", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Label { get; set; }
+
+        /// <summary>
+        /// Component id for FieldValShared component. Usually contains 14 characters. In the case of SyncSetChanges queries, if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:".
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("SharedFieldVal", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(38, MinimumLength = 5)]
+        public string SharedFieldVal { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Tag", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Tag { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    /// <summary>
+    /// The syncFieldValShared component.It is possible to Create, Modify, Delete, Archive, Activate component. It is not possible to Change parent component. Possible parents (definition.fieldname) are FieldShared.Values.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncFieldValShared
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncFieldValSharedType? Type { get; set; } = AOSync.APICLIENT.SyncFieldValSharedType.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Allways FieldValShared
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Def { get; set; } = "FieldValShared";
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("ApiCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string ApiCode { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Label", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Label { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Tag", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Tag { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    /// <summary>
+    /// The syncPfLink component.It is possible to Create, Modify, Delete component. It is not possible to Archive, Activate, Change parent component. Possible parents (definition.fieldname) are Pf.HttpLinks.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncPfLink
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncPfLinkType? Type { get; set; } = AOSync.APICLIENT.SyncPfLinkType.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Allways HttpLinkPf
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Def { get; set; } = "HttpLinkPf";
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Http", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Http { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("InApplication", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? InApplication { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    /// <summary>
+    /// The syncProjectLink component.It is possible to Create, Modify, Delete component. It is not possible to Archive, Activate, Change parent component. Possible parents (definition.fieldname) are Project.HttpLinks.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncProjectLink
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncProjectLinkType? Type { get; set; } = AOSync.APICLIENT.SyncProjectLinkType.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Allways HttpLinkProject
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Def { get; set; } = "HttpLinkProject";
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("ExternalMember", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? ExternalMember { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Http", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Http { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("InApplication", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? InApplication { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("InternalMember", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? InternalMember { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("ViewInTask", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? ViewInTask { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    /// <summary>
+    /// The syncLink component.It is possible to Create, Delete component. It is not possible to Modify, Archive, Activate, Change parent component. Possible parents (definition.fieldname) are Task.Links.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncLink
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncLinkType? Type { get; set; } = AOSync.APICLIENT.SyncLinkType.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Allways Link
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Def { get; set; } = "Link";
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        /// Component id for Task component. Usually contains 14 characters. In the case of SyncSetChanges queries, if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:".
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Link", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(38, MinimumLength = 5)]
+        public string Link { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    /// <summary>
+    /// The syncMemberProject component.It is possible to Create, Modify, Delete component. It is not possible to Archive, Activate, Change parent component. Possible parents (definition.fieldname) are Project.Members.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncMemberProject
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncMemberProjectType? Type { get; set; } = AOSync.APICLIENT.SyncMemberProjectType.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Allways MemberProject
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Def { get; set; } = "MemberProject";
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Admin", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Admin { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("CanAddKoop", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? CanAddKoop { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("MemberType", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncMemberProjectMemberType? MemberType { get; set; } = AOSync.APICLIENT.SyncMemberProjectMemberType.Internal;
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Supervisor", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncMemberProjectSupervisor? Supervisor { get; set; } = AOSync.APICLIENT.SyncMemberProjectSupervisor.No;
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("SupervisorM", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncMemberProjectSupervisorM? SupervisorM { get; set; } = AOSync.APICLIENT.SyncMemberProjectSupervisorM.No;
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Tools", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Tools { get; set; }
+
+        /// <summary>
+        /// Component id for UserComany or UserGroup (user group) component. Usually contains 14 characters. In the case of SyncSetChanges queries, if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:".This property is writable for Create only - it is not possible to fill it with SyncSetChanges request Modify type.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("UserCompany", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(38, MinimumLength = 5)]
+        public string UserCompany { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    /// <summary>
+    /// The syncMemberTask component.It is possible to Create, Delete component. It is not possible to Modify, Archive, Activate, Change parent component. Possible parents (definition.fieldname) are Task.Members.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncMemberTask
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncMemberTaskType? Type { get; set; } = AOSync.APICLIENT.SyncMemberTaskType.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Allways MemberTask
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Def { get; set; } = "MemberTask";
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        /// Component id for UserComany component. Usually contains 14 characters. In the case of SyncSetChanges queries, if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:".This property is writable for Create only - it is not possible to fill it with SyncSetChanges request Modify type.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("UserCompany", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(38, MinimumLength = 5)]
+        public string UserCompany { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    /// <summary>
+    /// The syncMemberTeam component.It is possible to Create, Modify, Delete component. It is not possible to Archive, Activate, Change parent component. Possible parents (definition.fieldname) are Team.Members.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncMemberTeam
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncMemberTeamType? Type { get; set; } = AOSync.APICLIENT.SyncMemberTeamType.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Allways MemberTeam
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Def { get; set; } = "MemberTeam";
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Admin", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Admin { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("CanAddKoop", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? CanAddKoop { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("MemberType", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncMemberTeamMemberType? MemberType { get; set; } = AOSync.APICLIENT.SyncMemberTeamMemberType.Internal;
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("SupervisorM", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncMemberTeamSupervisorM? SupervisorM { get; set; } = AOSync.APICLIENT.SyncMemberTeamSupervisorM.No;
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Tools", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Tools { get; set; }
+
+        /// <summary>
+        /// Component id for UserComany or UserGroup (user group) component. Usually contains 14 characters. In the case of SyncSetChanges queries, if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:".This property is writable for Create only - it is not possible to fill it with SyncSetChanges request Modify type.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("UserCompany", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(38, MinimumLength = 5)]
+        public string UserCompany { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    /// <summary>
+    /// The syncPfMember component.It is possible to Create, Modify, Delete component. It is not possible to Archive, Activate, Change parent component. Possible parents (definition.fieldname) are Pf.Members.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncPfMember
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncPfMemberType? Type { get; set; } = AOSync.APICLIENT.SyncPfMemberType.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Allways PfMember
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Def { get; set; } = "PfMember";
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Admin", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Admin { get; set; }
+
+        /// <summary>
+        /// Component id for UserComany or UserGroup (user group) component. Usually contains 14 characters. In the case of SyncSetChanges queries, if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:".This property is writable for Create only - it is not possible to fill it with SyncSetChanges request Modify type.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("UserCompanyId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(38, MinimumLength = 5)]
+        public string UserCompanyId { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    /// <summary>
+    /// The syncMerged component.It is possible to Create, Modify, Delete component. It is not possible to Archive, Activate, Change parent component. Possible parents (definition.fieldname) are Task.Merged.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncMerged
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncMergedType? Type { get; set; } = AOSync.APICLIENT.SyncMergedType.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Allways Merged
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Def { get; set; } = "Merged";
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        /// Component id for Task component. Usually contains 14 characters. In the case of SyncSetChanges queries, if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:".
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("MergedTask", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(38, MinimumLength = 5)]
+        public string MergedTask { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    /// <summary>
+    /// The syncPfContact component.It is possible to Modify, Delete component. It is not possible to Create, Archive, Activate, Change parent component. Possible parents (definition.fieldname) are Pf.Contacts.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncPfContact
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncPfContactType? Type { get; set; } = AOSync.APICLIENT.SyncPfContactType.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Allways PfContact
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Def { get; set; } = "PfContact";
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Email", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Email { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Note", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Note { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Phone", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Phone { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Phone2", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Phone2 { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Position", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Position { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    /// <summary>
+    /// The syncPfRel component.It is possible to Create, Delete component. It is not possible to Modify, Archive, Activate, Change parent component. Possible parents (definition.fieldname) are Pf.Projects.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncPfRel
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncPfRelType? Type { get; set; } = AOSync.APICLIENT.SyncPfRelType.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Allways PfRel
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Def { get; set; } = "PfRel";
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        /// Component id for Project component. Usually contains 14 characters. In the case of SyncSetChanges queries, if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:".This property is writable for Create only - it is not possible to fill it with SyncSetChanges request Modify type.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Project", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(38, MinimumLength = 5)]
+        public string Project { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    /// <summary>
+    /// The syncPfType component.It is possible to Create, Modify, Delete, Archive, Activate component. It is not possible to Change parent component. Possible parents (definition.fieldname) are Company.PfTypes.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncPfType
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncPfTypeType? Type { get; set; } = AOSync.APICLIENT.SyncPfTypeType.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Allways PfType
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Def { get; set; } = "PfType";
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    /// <summary>
+    /// The syncPhase component.It is possible to Create, Modify, Delete, Archive, Activate component. It is not possible to Change parent component. Possible parents (definition.fieldname) are Workspace.Phases.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncPhase
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncPhaseType? Type { get; set; } = AOSync.APICLIENT.SyncPhaseType.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Allways Phase
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Def { get; set; } = "Phase";
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Name2", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name2 { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    /// <summary>
+    /// The syncSection component.It is possible to Create, Modify, Delete, Archive, Activate, Change parent component. It is not possible to  component. Possible parents (definition.fieldname) are Section.Sections, Project.Sections.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncSection
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncSectionType? Type { get; set; } = AOSync.APICLIENT.SyncSectionType.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Allways Section
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Def { get; set; } = "Section";
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Background", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Background { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("CanAddTask", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? CanAddTask { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("CanAddTaskExternal", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? CanAddTaskExternal { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("CanPlaceTask", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? CanPlaceTask { get; set; }
+
+        /// <summary>
+        /// ISO-8601 format 1901-01-01T00:00:00.000Z
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("DoneDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? DoneDate { get; set; }
+
+        /// <summary>
+        /// ISO-8601 format 1901-01-01T00:00:00.000Z
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("DueDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? DueDate { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("IsDefaultForAddingTask", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? IsDefaultForAddingTask { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// ISO-8601 format 1901-01-01T00:00:00.000Z
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("StartDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? StartDate { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    /// <summary>
+    /// The syncSolver component.It is possible to Create, Delete component. It is not possible to Modify, Archive, Activate, Change parent component. Possible parents (definition.fieldname) are Task.Solvers.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncSolver
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncSolverType? Type { get; set; } = AOSync.APICLIENT.SyncSolverType.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Allways Solver
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Def { get; set; } = "Solver";
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        /// Component id for UserComany or UserGroup (solver group) component. Usually contains 14 characters. In the case of SyncSetChanges queries, if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:".This property is writable for Create only - it is not possible to fill it with SyncSetChanges request Modify type.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("UserCompany", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(38, MinimumLength = 5)]
+        public string UserCompany { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    /// <summary>
+    /// The syncSubtask component.It is possible to Create, Delete component. It is not possible to Modify, Archive, Activate, Change parent component. Possible parents (definition.fieldname) are Task.Subtasks.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncSubtask
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncSubtaskType? Type { get; set; } = AOSync.APICLIENT.SyncSubtaskType.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Allways Subtask
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Def { get; set; } = "Subtask";
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        /// Component id for Task component. Usually contains 14 characters. In the case of SyncSetChanges queries, if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:".This property is writable for Create only - it is not possible to fill it with SyncSetChanges request Modify type.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Subtask", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(38, MinimumLength = 5)]
+        public string Subtask { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    /// <summary>
+    /// The syncMentoredUser component.It is possible to Create, Delete component. It is not possible to Modify, Archive, Activate, Change parent component. Possible parents (definition.fieldname) are UserCompany.SupervisedPersons.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncMentoredUser
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncMentoredUserType? Type { get; set; } = AOSync.APICLIENT.SyncMentoredUserType.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Allways SupervisedPerson
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Def { get; set; } = "SupervisedPerson";
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        /// Component id for UserComany component. Usually contains 14 characters. In the case of SyncSetChanges queries, if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:".This property is writable for Create only - it is not possible to fill it with SyncSetChanges request Modify type.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("UserCompany", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(38, MinimumLength = 5)]
+        public string UserCompany { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    /// <summary>
+    /// The syncWorkingGroupItem component.It is possible to Create, Delete component. It is not possible to Modify, Archive, Activate, Change parent component. Possible parents (definition.fieldname) are WorkingGroup.Items.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncWorkingGroupItem
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncWorkingGroupItemType? Type { get; set; } = AOSync.APICLIENT.SyncWorkingGroupItemType.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Allways TeamGroupItem
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Def { get; set; } = "TeamGroupItem";
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        /// Component id for UserComany component. Usually contains 14 characters. In the case of SyncSetChanges queries, if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:".This property is writable for Create only - it is not possible to fill it with SyncSetChanges request Modify type.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("UserCompany", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(38, MinimumLength = 5)]
+        public string UserCompany { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    /// <summary>
+    /// The syncToDo component.It is possible to Create, Modify, Delete component. It is not possible to Archive, Activate, Change parent component. Possible parents (definition.fieldname) are Task.ToDos.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncToDo
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncToDoType? Type { get; set; } = AOSync.APICLIENT.SyncToDoType.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Allways ToDo
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Def { get; set; } = "ToDo";
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Checked", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Checked { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("InternalType", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncToDoInternalType? InternalType { get; set; } = AOSync.APICLIENT.SyncToDoInternalType.Public;
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    /// <summary>
+    /// The syncUserCompany component.It is possible to Create, Modify component. It is not possible to Delete, Archive, Activate, Change parent component. Possible parents (definition.fieldname) are Company.Members.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncUserCompany
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncUserCompanyType? Type { get; set; } = AOSync.APICLIENT.SyncUserCompanyType.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Allways UserCompany
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Def { get; set; } = "UserCompany";
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        ///  This property is readonly - it is not possible to fill it with SyncSetChanges request.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Accepted", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncUserCompanyAccepted? Accepted { get; set; } = AOSync.APICLIENT.SyncUserCompanyAccepted.Invitation;
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Active", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncUserCompanyActive? Active { get; set; } = AOSync.APICLIENT.SyncUserCompanyActive.Inactive;
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("AddPfs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? AddPfs { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("AddProjects", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? AddProjects { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("AddTeams", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? AddTeams { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Admin", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Admin { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Background", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Background { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Company", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Company { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("CompanyHide", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? CompanyHide { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Email", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Email { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("EmailHide", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? EmailHide { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("EmailToInvite", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string EmailToInvite { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("FreeRegistration", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? FreeRegistration { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("InternalInfo", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string InternalInfo { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("InvitationsSent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public double? InvitationsSent { get; set; }
+
+        /// <summary>
+        ///  This property is readonly - it is not possible to fill it with SyncSetChanges request.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("IsMentor", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? IsMentor { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("LicencedInternal", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? LicencedInternal { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("MakeTimeSheet", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? MakeTimeSheet { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("MemberType", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncUserCompanyMemberType? MemberType { get; set; } = AOSync.APICLIENT.SyncUserCompanyMemberType.Internal;
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Mobile", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Mobile { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("MobileHide", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? MobileHide { get; set; }
+
+        /// <summary>
+        ///  This property is readonly - it is not possible to fill it with SyncSetChanges request.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("MyStatus", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncUserCompanyMyStatus? MyStatus { get; set; } = AOSync.APICLIENT.SyncUserCompanyMyStatus.ByUser;
+
+        /// <summary>
+        ///  This property is readonly - it is not possible to fill it with SyncSetChanges request.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("MyStatusText", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string MyStatusText { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Position", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Position { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("PositionHide", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? PositionHide { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Shortcut", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Shortcut { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Supervisor", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncUserCompanySupervisor? Supervisor { get; set; } = AOSync.APICLIENT.SyncUserCompanySupervisor.No;
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("SupervisorM", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncUserCompanySupervisorM? SupervisorM { get; set; } = AOSync.APICLIENT.SyncUserCompanySupervisorM.No;
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("ViewPriority", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? ViewPriority { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    /// <summary>
+    /// The syncUserGroup component.It is possible to Create, Modify, Delete, Archive, Activate component. It is not possible to Change parent component. Possible parents (definition.fieldname) are Company.UserGroups, Company.SolverGroups.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncUserGroup
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncUserGroupType? Type { get; set; } = AOSync.APICLIENT.SyncUserGroupType.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Allways UserGroup
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Def { get; set; } = "UserGroup";
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    /// <summary>
+    /// The syncUserGroupItem component.It is possible to Create, Delete component. It is not possible to Modify, Archive, Activate, Change parent component. Possible parents (definition.fieldname) are UserGroup.Items.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncUserGroupItem
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncUserGroupItemType? Type { get; set; } = AOSync.APICLIENT.SyncUserGroupItemType.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Allways UserGroupItem
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Def { get; set; } = "UserGroupItem";
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        /// Component id for UserComany component. Usually contains 14 characters. In the case of SyncSetChanges queries, if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:".This property is writable for Create only - it is not possible to fill it with SyncSetChanges request Modify type.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("UserCompany", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(38, MinimumLength = 5)]
+        public string UserCompany { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    /// <summary>
+    /// The syncCompany component.It is possible to Modify component. It is not possible to Create, Delete, Archive, Activate, Change parent component.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncCompany
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncCompanyType? Type { get; set; } = AOSync.APICLIENT.SyncCompanyType.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Allways Company
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Def { get; set; } = "Company";
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    /// <summary>
+    /// The syncPf component.It is possible to Create, Modify, Delete component. It is not possible to Archive, Activate, Change parent component. Possible parents (definition.fieldname) are Company.Pfs.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncPf
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncPfType2? Type { get; set; } = AOSync.APICLIENT.SyncPfType2.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Allways Pf
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Def { get; set; } = "Pf";
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Active", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncPfActive? Active { get; set; } = AOSync.APICLIENT.SyncPfActive.Active;
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Addr1", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Addr1 { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Addr2", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Addr2 { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("City", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string City { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Country", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Country { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Description { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Email", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Email { get; set; }
+
+        /// <summary>
+        /// ISO-8601 format 1901-01-01T00:00:00.000Z
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("End", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? End { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("FaId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string FaId { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("FaName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string FaName { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("FaVat", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string FaVat { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Component id for UserComany component. Usually contains 14 characters. In the case of SyncSetChanges queries, if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:".
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Owner", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(38, MinimumLength = 5)]
+        public string Owner { get; set; }
+
+        /// <summary>
+        /// Component id for PfType component. Usually contains 14 characters. In the case of SyncSetChanges queries, if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:".
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("PfType", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(38, MinimumLength = 5)]
+        public string PfType { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Phone", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Phone { get; set; }
+
+        /// <summary>
+        /// ISO-8601 format 1901-01-01T00:00:00.000Z
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Start", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Start { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Visibility", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncPfVisibility? Visibility { get; set; } = AOSync.APICLIENT.SyncPfVisibility.PfMembers;
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Www", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Www { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Zip", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Zip { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    /// <summary>
+    /// The syncProject component.It is possible to Create, Modify, Archive, Activate component. It is not possible to Delete, Change parent component. Possible parents (definition.fieldname) are Workspace.Projects.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncProject
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncProjectType? Type { get; set; } = AOSync.APICLIENT.SyncProjectType.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Allways Project
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Def { get; set; } = "Project";
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        /// Component id for UserComany component. Usually contains 14 characters. In the case of SyncSetChanges queries, if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:".
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Anonymous", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(38, MinimumLength = 5)]
+        public string Anonymous { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("CanAddTasks", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? CanAddTasks { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("CommentViaEmail", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? CommentViaEmail { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Description { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Done", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncProjectDone? Done { get; set; } = AOSync.APICLIENT.SyncProjectDone.Plan;
+
+        /// <summary>
+        /// ISO-8601 format 1901-01-01T00:00:00.000Z
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("DueDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? DueDate { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("FreeRegistration", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? FreeRegistration { get; set; }
+
+        /// <summary>
+        ///  This property is readonly - it is not possible to fill it with SyncSetChanges request.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("FreeRegistrationGuid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string FreeRegistrationGuid { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("MembersCanAddKoop", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? MembersCanAddKoop { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("MembersTools", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? MembersTools { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        ///  This property is readonly - it is not possible to fill it with SyncSetChanges request.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("NumberId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public double? NumberId { get; set; }
+
+        /// <summary>
+        /// Component id for UserComany component. Usually contains 14 characters. In the case of SyncSetChanges queries, if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:".
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Owner", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(38, MinimumLength = 5)]
+        public string Owner { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("PfContactMust", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? PfContactMust { get; set; }
+
+        /// <summary>
+        /// Component id for PfType component. Usually contains 14 characters. In the case of SyncSetChanges queries, if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:".
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("PfTypeContact", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(38, MinimumLength = 5)]
+        public string PfTypeContact { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("RiskQuality", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? RiskQuality { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("RiskTerm", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? RiskTerm { get; set; }
+
+        /// <summary>
+        /// ISO-8601 format 1901-01-01T00:00:00.000Z
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("StartDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? StartDate { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("TaskViaEmail", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? TaskViaEmail { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("UseSections", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? UseSections { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("ViaEmailRestrictions", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncProjectViaEmailRestrictions? ViaEmailRestrictions { get; set; } = AOSync.APICLIENT.SyncProjectViaEmailRestrictions.ProjectMembers;
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("View", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncProjectView? View { get; set; } = AOSync.APICLIENT.SyncProjectView.ProjectTasksList;
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Visibility", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncProjectVisibility? Visibility { get; set; } = AOSync.APICLIENT.SyncProjectVisibility.ProjectMembers;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    /// <summary>
+    /// The syncTask component.It is possible to Create, Modify, Archive, Activate, Change parent component. It is not possible to Delete component. Possible parents (definition.fieldname) are Section.Tasks, Project.TasksM, Team.TasksM, WorkingGroup.TasksM.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncTask
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncTaskType? Type { get; set; } = AOSync.APICLIENT.SyncTaskType.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Allways Task
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Def { get; set; } = "Task";
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        /// ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.This property is writable for Create only - it is not possible to fill it with SyncSetChanges request Modify type.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("CancelDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? CancelDate { get; set; }
+
+        /// <summary>
+        /// ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.This property is writable for Create only - it is not possible to fill it with SyncSetChanges request Modify type.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("CancelRequestDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? CancelRequestDate { get; set; }
+
+        /// <summary>
+        ///  This property is writable for Create only - it is not possible to fill it with SyncSetChanges request Modify type.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("CancelRequestTrigger", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? CancelRequestTrigger { get; set; }
+
+        /// <summary>
+        /// Component id for UserComany component. Usually contains 14 characters. In the case of SyncSetChanges queries, if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:".This property is writable for Create only - it is not possible to fill it with SyncSetChanges request Modify type.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("CancelRequestUser", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(38, MinimumLength = 5)]
+        public string CancelRequestUser { get; set; }
+
+        /// <summary>
+        ///  This property is writable for Create only - it is not possible to fill it with SyncSetChanges request Modify type.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("CancelTrigger", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? CancelTrigger { get; set; }
+
+        /// <summary>
+        /// Component id for UserComany component. Usually contains 14 characters. In the case of SyncSetChanges queries, if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:".This property is writable for Create only - it is not possible to fill it with SyncSetChanges request Modify type.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("CancelUser", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(38, MinimumLength = 5)]
+        public string CancelUser { get; set; }
+
+        /// <summary>
+        /// ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.This property is writable for Create only - it is not possible to fill it with SyncSetChanges request Modify type.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("CloseDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? CloseDate { get; set; }
+
+        /// <summary>
+        /// ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.This property is writable for Create only - it is not possible to fill it with SyncSetChanges request Modify type.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("CloseRequestDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? CloseRequestDate { get; set; }
+
+        /// <summary>
+        ///  This property is writable for Create only - it is not possible to fill it with SyncSetChanges request Modify type.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("CloseRequestTrigger", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? CloseRequestTrigger { get; set; }
+
+        /// <summary>
+        /// Component id for UserComany component. Usually contains 14 characters. In the case of SyncSetChanges queries, if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:".This property is writable for Create only - it is not possible to fill it with SyncSetChanges request Modify type.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("CloseRequestUser", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(38, MinimumLength = 5)]
+        public string CloseRequestUser { get; set; }
+
+        /// <summary>
+        ///  This property is writable for Create only - it is not possible to fill it with SyncSetChanges request Modify type.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("CloseTrigger", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? CloseTrigger { get; set; }
+
+        /// <summary>
+        /// Component id for UserComany component. Usually contains 14 characters. In the case of SyncSetChanges queries, if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:".This property is writable for Create only - it is not possible to fill it with SyncSetChanges request Modify type.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("CloseUser", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(38, MinimumLength = 5)]
+        public string CloseUser { get; set; }
+
+        /// <summary>
+        /// Component id for Task component. Usually contains 14 characters. In the case of SyncSetChanges queries, if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:".This property is readonly - it is not possible to fill it with SyncSetChanges request.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("CopiedFrom", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(38, MinimumLength = 5)]
+        public string CopiedFrom { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Description { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Done", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncTaskDone? Done { get; set; } = AOSync.APICLIENT.SyncTaskDone.Solving;
+
+        /// <summary>
+        /// ISO-8601 format 1901-01-01T00:00:00.000Z
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("DueDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? DueDate { get; set; }
+
+        /// <summary>
+        ///  This property is writable for Create only - it is not possible to fill it with SyncSetChanges request Modify type.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("EmailOwner", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string EmailOwner { get; set; }
+
+        /// <summary>
+        /// Component id for UserComany component. Usually contains 14 characters. In the case of SyncSetChanges queries, if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:".
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("FirstSolver", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(38, MinimumLength = 5)]
+        public string FirstSolver { get; set; }
+
+        /// <summary>
+        /// ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("FirstSolverDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? FirstSolverDate { get; set; }
+
+        /// <summary>
+        ///  This property is writable for Create only - it is not possible to fill it with SyncSetChanges request Modify type.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("InternalType", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncTaskInternalType? InternalType { get; set; } = AOSync.APICLIENT.SyncTaskInternalType.Public;
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("MinutesPlan", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public double? MinutesPlan { get; set; }
+
+        /// <summary>
+        ///  This property is readonly - it is not possible to fill it with SyncSetChanges request.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("MinutesTaken", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public double? MinutesTaken { get; set; }
+
+        /// <summary>
+        /// Component id for Task component. Usually contains 14 characters. In the case of SyncSetChanges queries, if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:".This property is readonly - it is not possible to fill it with SyncSetChanges request.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("MovedFrom", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(38, MinimumLength = 5)]
+        public string MovedFrom { get; set; }
+
+        /// <summary>
+        /// Component id for Task component. Usually contains 14 characters. In the case of SyncSetChanges queries, if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:".This property is readonly - it is not possible to fill it with SyncSetChanges request.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("MovedTo", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(38, MinimumLength = 5)]
+        public string MovedTo { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        ///  This property is readonly - it is not possible to fill it with SyncSetChanges request.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("NumberId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public double? NumberId { get; set; }
+
+        /// <summary>
+        /// Component id for UserComany component. Usually contains 14 characters. In the case of SyncSetChanges queries, if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:".
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Owner", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(38, MinimumLength = 5)]
+        public string Owner { get; set; }
+
+        /// <summary>
+        /// Component id for Pf component. Usually contains 14 characters. In the case of SyncSetChanges queries, if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:".This property is readonly - it is not possible to fill it with SyncSetChanges request.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Pf", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(38, MinimumLength = 5)]
+        public string Pf { get; set; }
+
+        /// <summary>
+        /// Component id for Phase component. Usually contains 14 characters. In the case of SyncSetChanges queries, if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:".
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Phase", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(38, MinimumLength = 5)]
+        public string Phase { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Priority", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncTaskPriority? Priority { get; set; } = AOSync.APICLIENT.SyncTaskPriority.Normal;
+
+        /// <summary>
+        /// ISO-8601 format 1901-01-01T00:00:00.000ZThis property is readonly - it is not possible to fill it with SyncSetChanges request.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("ProDueDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? ProDueDate { get; set; }
+
+        /// <summary>
+        /// Component id for UserComany component. Usually contains 14 characters. In the case of SyncSetChanges queries, if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:".This property is readonly - it is not possible to fill it with SyncSetChanges request.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("ProDueDateUser", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(38, MinimumLength = 5)]
+        public string ProDueDateUser { get; set; }
+
+        /// <summary>
+        /// Component id for Project,Team,TeamGroup component. Usually contains 14 characters. In the case of SyncSetChanges queries, if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:".
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("ReactionComponent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(38, MinimumLength = 5)]
+        public string ReactionComponent { get; set; }
+
+        /// <summary>
+        /// ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.This property is readonly - it is not possible to fill it with SyncSetChanges request.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("RepairFinished", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? RepairFinished { get; set; }
+
+        /// <summary>
+        ///  This property is readonly - it is not possible to fill it with SyncSetChanges request.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("RepairStatus", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncTaskRepairStatus? RepairStatus { get; set; } = AOSync.APICLIENT.SyncTaskRepairStatus.NoSla;
+
+        /// <summary>
+        /// ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.This property is readonly - it is not possible to fill it with SyncSetChanges request.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("RepairTime", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? RepairTime { get; set; }
+
+        /// <summary>
+        /// ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.This property is readonly - it is not possible to fill it with SyncSetChanges request.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("ResponseFinished", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? ResponseFinished { get; set; }
+
+        /// <summary>
+        ///  This property is readonly - it is not possible to fill it with SyncSetChanges request.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("ResponseStatus", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncTaskResponseStatus? ResponseStatus { get; set; } = AOSync.APICLIENT.SyncTaskResponseStatus.NoSla;
+
+        /// <summary>
+        /// ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.This property is readonly - it is not possible to fill it with SyncSetChanges request.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("ResponseTime", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? ResponseTime { get; set; }
+
+        /// <summary>
+        /// ISO-8601 format 1901-01-01T00:00:00.000Z
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("StartDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? StartDate { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("StoryPoints", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public double? StoryPoints { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("StoryPointsTran", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public double? StoryPointsTran { get; set; }
+
+        /// <summary>
+        ///  This property is writable for Create only - it is not possible to fill it with SyncSetChanges request Modify type.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("SurveyQuality", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncTaskSurveyQuality? SurveyQuality { get; set; } = AOSync.APICLIENT.SyncTaskSurveyQuality.Unknown;
+
+        /// <summary>
+        ///  This property is writable for Create only - it is not possible to fill it with SyncSetChanges request Modify type.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("SurveyTerm", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncTaskSurveyTerm? SurveyTerm { get; set; } = AOSync.APICLIENT.SyncTaskSurveyTerm.Unknown;
+
+        /// <summary>
+        ///  This property is writable for Create only - it is not possible to fill it with SyncSetChanges request Modify type.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("SurveyText", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string SurveyText { get; set; }
+
+        /// <summary>
+        /// Component id for UserComany component. Usually contains 14 characters. In the case of SyncSetChanges queries, if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:".This property is writable for Create only - it is not possible to fill it with SyncSetChanges request Modify type.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("SurveyUser", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(38, MinimumLength = 5)]
+        public string SurveyUser { get; set; }
+
+        /// <summary>
+        /// ISO-8601 format 1901-01-01T00:00:00.000Z
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("SuspendedDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? SuspendedDate { get; set; }
+
+        /// <summary>
+        /// Component id for Task component. Usually contains 14 characters. In the case of SyncSetChanges queries, if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:".This property is readonly - it is not possible to fill it with SyncSetChanges request.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("TemplatedFrom", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(38, MinimumLength = 5)]
+        public string TemplatedFrom { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    /// <summary>
+    /// The syncTeam component.It is possible to Create, Modify, Archive, Activate component. It is not possible to Delete, Change parent component. Possible parents (definition.fieldname) are Company.Teams.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncTeam
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncTeamType? Type { get; set; } = AOSync.APICLIENT.SyncTeamType.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Allways Team
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Def { get; set; } = "Team";
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Description { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("MembersCanAddKoop", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? MembersCanAddKoop { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("MembersTools", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? MembersTools { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        ///  This property is readonly - it is not possible to fill it with SyncSetChanges request.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("NumberId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public double? NumberId { get; set; }
+
+        /// <summary>
+        /// Component id for UserComany component. Usually contains 14 characters. In the case of SyncSetChanges queries, if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:".
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Owner", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(38, MinimumLength = 5)]
+        public string Owner { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("View", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncTeamView? View { get; set; } = AOSync.APICLIENT.SyncTeamView.ManagementTasksList;
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Visibility", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncTeamVisibility? Visibility { get; set; } = AOSync.APICLIENT.SyncTeamVisibility.TeamMembers;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    /// <summary>
+    /// The syncWorkingGroup component.It is possible to Create, Modify, Delete component. It is not possible to Archive, Activate, Change parent component. Possible parents (definition.fieldname) are Project.ProjectMemberGroups, Team.TeamMemberGroups.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncWorkingGroup
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncWorkingGroupType? Type { get; set; } = AOSync.APICLIENT.SyncWorkingGroupType.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Allways TeamGroup
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Def { get; set; } = "TeamGroup";
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Component id for UserComany component. Usually contains 14 characters. In the case of SyncSetChanges queries, if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:".
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Owner", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(38, MinimumLength = 5)]
+        public string Owner { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    /// <summary>
+    /// The syncTimeSheet component.It is possible to Create, Modify, Delete component. It is not possible to Archive, Activate, Change parent component. Possible parents (definition.fieldname) are UserCompany.TimeSheets.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncTimeSheet
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncTimeSheetType? Type { get; set; } = AOSync.APICLIENT.SyncTimeSheetType.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Allways TimeSheet
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Def { get; set; } = "TimeSheet";
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        /// ISO-8601 format 1901-01-01T00:00:00.000Z
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Date", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Date { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// ISO-8601 format 1901-01-01T00:00:00.000Z
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("From", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? From { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Minutes", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public double? Minutes { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        ///  This property is readonly - it is not possible to fill it with SyncSetChanges request.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("NumberId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public double? NumberId { get; set; }
+
+        /// <summary>
+        /// Component id for Company,Task,Project,Team component. Usually contains 14 characters. In the case of SyncSetChanges queries, if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:".
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("SourceComponent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(38, MinimumLength = 5)]
+        public string SourceComponent { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("SourceType", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncTimeSheetSourceType? SourceType { get; set; } = AOSync.APICLIENT.SyncTimeSheetSourceType.TaskInProject;
+
+        /// <summary>
+        /// ISO-8601 format 1901-01-01T00:00:00.000Z
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("To", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? To { get; set; }
+
+        /// <summary>
+        /// ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Verificated", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Verificated { get; set; }
+
+        /// <summary>
+        /// Component id for UserComany component. Usually contains 14 characters. In the case of SyncSetChanges queries, if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:".
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Verificator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(38, MinimumLength = 5)]
+        public string Verificator { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Verified", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncTimeSheetVerified? Verified { get; set; } = AOSync.APICLIENT.SyncTimeSheetVerified.NotVerified;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    /// <summary>
+    /// The syncWorkspace component.It is possible to Modify component. It is not possible to Create, Delete, Archive, Activate, Change parent component. Possible parents (definition.fieldname) are Company.Workspaces.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SyncWorkspace
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncWorkspaceType? Type { get; set; } = AOSync.APICLIENT.SyncWorkspaceType.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Allways Workspace
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Def { get; set; } = "Workspace";
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("CanAddProjects", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? CanAddProjects { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("CanAddTasks", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? CanAddTasks { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Description { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("MembersCanAddKoop", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? MembersCanAddKoop { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("MembersTools", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? MembersTools { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        ///  When closing the parent task, it will be checked that the subtasks are closed.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("SubtaskClose", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? SubtaskClose { get; set; }
+
+        /// <summary>
+        ///  For subtasks in a given workspace, it will be checked that the subtask due date is not higher than the parent task due date.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("SubtaskTerm", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? SubtaskTerm { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("SurveyEmoji", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncWorkspaceSurveyEmoji? SurveyEmoji { get; set; } = AOSync.APICLIENT.SyncWorkspaceSurveyEmoji.Stars;
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("SurveyQualityOnCancel", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? SurveyQualityOnCancel { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("SurveyQualityOnClose", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? SurveyQualityOnClose { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("SurveyTermOnCancel", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? SurveyTermOnCancel { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("SurveyTermOnClose", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? SurveyTermOnClose { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("SurveyText", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? SurveyText { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("TimeSheetOnClosed", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? TimeSheetOnClosed { get; set; }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("View", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public SyncWorkspaceView? View { get; set; } = AOSync.APICLIENT.SyncWorkspaceView.ProjectTasksList;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiAddTaskPriority
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Lowest")]
+        Lowest = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Low")]
+        Low = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Normal")]
+        Normal = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"High")]
+        High = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Highest")]
+        Highest = 4,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiAddTaskInternaltype
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Public")]
+        Public = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Internal")]
+        Internal = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Private")]
+        Private = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiAddTaskDone
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Solving")]
+        Solving = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Reaction")]
+        Reaction = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Suspended")]
+        Suspended = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"CloseRequest")]
+        CloseRequest = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Closed")]
+        Closed = 4,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"CancelRequest")]
+        CancelRequest = 5,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Canceled")]
+        Canceled = 6,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiAddUserCompanyMembertype
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Internal")]
+        Internal = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"External")]
+        External = 1,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiAddUserCompanySupervisor
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"False")]
+        False = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Readonly")]
+        Readonly = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"True")]
+        True = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiAddUserCompanySupervisorm
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"False")]
+        False = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"True")]
+        True = 1,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiAttachmentContenttype
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Empty")]
+        Empty = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"String")]
+        String = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Base64")]
+        Base64 = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Googledrive")]
+        Googledrive = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Overflow")]
+        Overflow = 4,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiAttributeValueType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Logical")]
+        Logical = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Enum")]
+        Enum = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"UserCompany")]
+        UserCompany = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"String")]
+        String = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Text")]
+        Text = 4,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"FormattedText")]
+        FormattedText = 5,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Number")]
+        Number = 6,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Decimal")]
+        Decimal = 7,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Date")]
+        Date = 8,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"DateTime")]
+        DateTime = 9,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Time")]
+        Time = 10,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiDataAttributeType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Logical")]
+        Logical = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Enum")]
+        Enum = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"UserCompany")]
+        UserCompany = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"String")]
+        String = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Text")]
+        Text = 4,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"FormattedText")]
+        FormattedText = 5,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Number")]
+        Number = 6,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Decimal")]
+        Decimal = 7,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Date")]
+        Date = 8,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"DateTime")]
+        DateTime = 9,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Time")]
+        Time = 10,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiDataMemberProjectSupervisor
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"False")]
+        False = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Readonly")]
+        Readonly = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"True")]
+        True = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiDataMemberProjectSupervisorm
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"False")]
+        False = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"True")]
+        True = 1,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiDataMemberTeamSupervisorm
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"False")]
+        False = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"True")]
+        True = 1,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiDataPfVisibility
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"PfMembers")]
+        PfMembers = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"InternalMembers")]
+        InternalMembers = 1,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiDataProjectVisibility
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ProjectMembers")]
+        ProjectMembers = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"InternalMembers")]
+        InternalMembers = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ExternalMembers")]
+        ExternalMembers = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"AllMembers")]
+        AllMembers = 3,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiDataProjectDone
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Plan")]
+        Plan = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Realization")]
+        Realization = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Done")]
+        Done = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Canceled")]
+        Canceled = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Suspended")]
+        Suspended = 4,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiDataSharedAttributeType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Logical")]
+        Logical = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Enum")]
+        Enum = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"UserCompany")]
+        UserCompany = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"String")]
+        String = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Text")]
+        Text = 4,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"FormattedText")]
+        FormattedText = 5,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Number")]
+        Number = 6,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Decimal")]
+        Decimal = 7,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Date")]
+        Date = 8,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"DateTime")]
+        DateTime = 9,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Time")]
+        Time = 10,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiDataTaskDone
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Solving")]
+        Solving = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Reaction")]
+        Reaction = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Suspended")]
+        Suspended = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"CloseRequest")]
+        CloseRequest = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Closed")]
+        Closed = 4,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"CancelRequest")]
+        CancelRequest = 5,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Canceled")]
+        Canceled = 6,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiDataTaskPriority
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Lowest")]
+        Lowest = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Low")]
+        Low = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Normal")]
+        Normal = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"High")]
+        High = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Highest")]
+        Highest = 4,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiDataTaskInternaltype
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Public")]
+        Public = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Internal")]
+        Internal = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Private")]
+        Private = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiDataTaskSurveyquality
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Unknown")]
+        Unknown = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Lowest")]
+        Lowest = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Low")]
+        Low = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Normal")]
+        Normal = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"High")]
+        High = 4,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Highest")]
+        Highest = 5,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiDataTaskSurveyterm
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Unknown")]
+        Unknown = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Lowest")]
+        Lowest = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Low")]
+        Low = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Normal")]
+        Normal = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"High")]
+        High = 4,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Highest")]
+        Highest = 5,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiDataTaskRepairstatus
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"NoSla")]
+        NoSla = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"NoDefinition")]
+        NoDefinition = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Running")]
+        Running = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Waiting")]
+        Waiting = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Finished")]
+        Finished = 4,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiDataTaskResponsestatus
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"NoSla")]
+        NoSla = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"NoDefinition")]
+        NoDefinition = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Running")]
+        Running = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Waiting")]
+        Waiting = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Finished")]
+        Finished = 4,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiDataTimesheetSourcetype
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ProjectTask")]
+        ProjectTask = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ManagementTask")]
+        ManagementTask = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Project")]
+        Project = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Team")]
+        Team = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Company")]
+        Company = 4,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiDataUserCompanyActive
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Inactive")]
+        Inactive = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Active")]
+        Active = 1,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiDataUserCompanyAccepted
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Invitation")]
+        Invitation = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Accepted")]
+        Accepted = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Declined")]
+        Declined = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiDataUserCompanyMembertype
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Internal")]
+        Internal = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"External")]
+        External = 1,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiDataUserCompanySupervisor
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"False")]
+        False = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Readonly")]
+        Readonly = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"True")]
+        True = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiDataUserCompanySupervisorm
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"False")]
+        False = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"True")]
+        True = 1,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiListPfListType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ArrayWithIds")]
+        ArrayWithIds = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ArrayWithNames")]
+        ArrayWithNames = 1,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiListPfTypeListType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ArrayWithIds")]
+        ArrayWithIds = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ArrayWithNames")]
+        ArrayWithNames = 1,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiListProjectListType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ArrayWithIds")]
+        ArrayWithIds = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ArrayWithNames")]
+        ArrayWithNames = 1,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiListSharedAttributeListType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ArrayWithIds")]
+        ArrayWithIds = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ArrayWithNames")]
+        ArrayWithNames = 1,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiListSolverGroupListType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ArrayWithIds")]
+        ArrayWithIds = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ArrayWithNames")]
+        ArrayWithNames = 1,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiListTaskListType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ArrayWithIds")]
+        ArrayWithIds = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ArrayWithNames")]
+        ArrayWithNames = 1,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiListTeamListType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ArrayWithIds")]
+        ArrayWithIds = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ArrayWithNames")]
+        ArrayWithNames = 1,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiListTimesheetListType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ArrayWithIds")]
+        ArrayWithIds = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ArrayWithNames")]
+        ArrayWithNames = 1,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiListUserCompanyListType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ArrayWithIds")]
+        ArrayWithIds = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ArrayWithNames")]
+        ArrayWithNames = 1,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiListUserGroupListType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ArrayWithIds")]
+        ArrayWithIds = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ArrayWithNames")]
+        ArrayWithNames = 1,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiListWorkspaceListType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ArrayWithIds")]
+        ArrayWithIds = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ArrayWithNames")]
+        ArrayWithNames = 1,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiModifyTaskPriority
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Lowest")]
+        Lowest = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Low")]
+        Low = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Normal")]
+        Normal = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"High")]
+        High = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Highest")]
+        Highest = 4,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiModifyTaskDone
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Solving")]
+        Solving = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Reaction")]
+        Reaction = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Suspended")]
+        Suspended = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"CloseRequest")]
+        CloseRequest = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Closed")]
+        Closed = 4,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"CancelRequest")]
+        CancelRequest = 5,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Canceled")]
+        Canceled = 6,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiModifyUserCompanyMembertype
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Internal")]
+        Internal = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"External")]
+        External = 1,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiModifyUserCompanySupervisor
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"False")]
+        False = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Readonly")]
+        Readonly = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"True")]
+        True = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiModifyUserCompanySupervisorm
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"False")]
+        False = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"True")]
+        True = 1,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncChangeType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncChangeDef
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Attachment")]
+        Attachment = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Comment")]
+        Comment = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"CommentPredefined")]
+        CommentPredefined = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Field")]
+        Field = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"FieldShared")]
+        FieldShared = 4,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"FieldVal")]
+        FieldVal = 5,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"FieldValShared")]
+        FieldValShared = 6,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"PfLink")]
+        PfLink = 7,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ProjectLink")]
+        ProjectLink = 8,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Link")]
+        Link = 9,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"MemberProject")]
+        MemberProject = 10,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"MemberTask")]
+        MemberTask = 11,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"MemberTeam")]
+        MemberTeam = 12,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"PfMember")]
+        PfMember = 13,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Merged")]
+        Merged = 14,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"PfContact")]
+        PfContact = 15,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"PfRel")]
+        PfRel = 16,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"PfType")]
+        PfType = 17,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Phase")]
+        Phase = 18,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Section")]
+        Section = 19,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Solver")]
+        Solver = 20,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Subtask")]
+        Subtask = 21,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"MentoredUser")]
+        MentoredUser = 22,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"WorkingGroupItem")]
+        WorkingGroupItem = 23,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ToDo")]
+        ToDo = 24,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"UserCompany")]
+        UserCompany = 25,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"UserGroup")]
+        UserGroup = 26,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"UserGroupItem")]
+        UserGroupItem = 27,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Company")]
+        Company = 28,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Pf")]
+        Pf = 29,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Project")]
+        Project = 30,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Task")]
+        Task = 31,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Team")]
+        Team = 32,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"WorkingGroup")]
+        WorkingGroup = 33,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"TimeSheet")]
+        TimeSheet = 34,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Workspace")]
+        Workspace = 35,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class Components
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ComponentsType? Type { get; set; } = AOSync.APICLIENT.ComponentsType.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Component definition. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ComponentsDef? Def { get; set; } = AOSync.APICLIENT.ComponentsDef.Attachment;
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        /// Fields in array representation. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("fields", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<fields> Fields { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class components
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public componentsType? Type { get; set; } = AOSync.APICLIENT.componentsType.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Component definition. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public componentsDef? Def { get; set; } = AOSync.APICLIENT.componentsDef.Attachment;
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        /// Fields in array representation. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("fields", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<fields2> Fields { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncGetTaskInfoResultTaskType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ProjectTask")]
+        ProjectTask = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ManagementTask")]
+        ManagementTask = 1,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncGetTimesheetInfoResultTimesheetType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"TaskInProject")]
+        TaskInProject = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"TaskManagement")]
+        TaskManagement = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Project")]
+        Project = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Team")]
+        Team = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Company")]
+        Company = 4,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class Changes
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ChangesType? Type { get; set; } = AOSync.APICLIENT.ChangesType.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Component definition. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ChangesDef? Def { get; set; } = AOSync.APICLIENT.ChangesDef.Attachment;
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        /// Fields in array representation. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("fields", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<fields3> Fields { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncParentDef
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Attachment")]
+        Attachment = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Comment")]
+        Comment = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"CommentPredefined")]
+        CommentPredefined = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Field")]
+        Field = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"FieldShared")]
+        FieldShared = 4,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"FieldVal")]
+        FieldVal = 5,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"FieldValShared")]
+        FieldValShared = 6,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"PfLink")]
+        PfLink = 7,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ProjectLink")]
+        ProjectLink = 8,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Link")]
+        Link = 9,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"MemberProject")]
+        MemberProject = 10,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"MemberTask")]
+        MemberTask = 11,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"MemberTeam")]
+        MemberTeam = 12,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"PfMember")]
+        PfMember = 13,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Merged")]
+        Merged = 14,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"PfContact")]
+        PfContact = 15,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"PfRel")]
+        PfRel = 16,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"PfType")]
+        PfType = 17,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Phase")]
+        Phase = 18,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Section")]
+        Section = 19,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Solver")]
+        Solver = 20,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Subtask")]
+        Subtask = 21,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"MentoredUser")]
+        MentoredUser = 22,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"WorkingGroupItem")]
+        WorkingGroupItem = 23,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ToDo")]
+        ToDo = 24,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"UserCompany")]
+        UserCompany = 25,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"UserGroup")]
+        UserGroup = 26,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"UserGroupItem")]
+        UserGroupItem = 27,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Company")]
+        Company = 28,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Pf")]
+        Pf = 29,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Project")]
+        Project = 30,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Task")]
+        Task = 31,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Team")]
+        Team = 32,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"WorkingGroup")]
+        WorkingGroup = 33,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"TimeSheet")]
+        TimeSheet = 34,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Workspace")]
+        Workspace = 35,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncResultChangeType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"NotProcessed")]
+        NotProcessed = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Created")]
+        Created = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modified")]
+        Modified = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Deleted")]
+        Deleted = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"LinkedExternal")]
+        LinkedExternal = 4,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"LinkedUnique")]
+        LinkedUnique = 5,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"LinkedEmailToInvite")]
+        LinkedEmailToInvite = 6,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Error")]
+        Error = 7,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class changes
+    {
+        /// <summary>
+        /// Change type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public changesType? Type { get; set; } = AOSync.APICLIENT.changesType.Create;
+
+        /// <summary>
+        /// If true, the component a single apiSyncChangeSimple class is expected. If false, separate class according to the component definition is expected. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("simple", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Simple { get; set; } = false;
+
+        /// <summary>
+        /// Component definition. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("def", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public changesDef? Def { get; set; } = AOSync.APICLIENT.changesDef.Attachment;
+
+        /// <summary>
+        /// Component id - component id for modify or delete component, null for create. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Component external id - The external id when created will be saved, the external id when modified or deleted will be used to search for the component if no id is specified. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("eid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Eid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SyncParent Parent { get; set; }
+
+        /// <summary>
+        /// Archived component status - null for no change, fill for archive/activate component. For some components only. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("archived", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Company specific fields (attributes). It only makes sense for Task, Project, TimeSheet. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attrs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ApiAttributeValue> Attrs { get; set; }
+
+        /// <summary>
+        /// Component creator - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. if the referenced component was created by the same transaction, the external id can be specified with the prefix "e:". 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("creator", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// Component created datetime - UserCompany id. Populated only for SyncGetInitialChanges, SyncGetSimpleComponent query and for SyncGetChanges query with type Create. Can be used also with SyncSetChanges query. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time. ISO-8601 format 1901-01-01T00:00:00.000Z, UTC time.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("created", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        /// Fields in array representation. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("fields", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<fields4> Fields { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ApiValueType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Logical")]
+        Logical = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Enum")]
+        Enum = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"UserCompany")]
+        UserCompany = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"String")]
+        String = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Text")]
+        Text = 4,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"FormattedText")]
+        FormattedText = 5,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Number")]
+        Number = 6,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Decimal")]
+        Decimal = 7,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Date")]
+        Date = 8,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"DateTime")]
+        DateTime = 9,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Time")]
+        Time = 10,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ComponentPointer")]
+        ComponentPointer = 11,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Color")]
+        Color = 12,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncChangeSimpleType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncChangeSimpleDef
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Attachment")]
+        Attachment = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Comment")]
+        Comment = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"CommentPredefined")]
+        CommentPredefined = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Field")]
+        Field = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"FieldShared")]
+        FieldShared = 4,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"FieldVal")]
+        FieldVal = 5,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"FieldValShared")]
+        FieldValShared = 6,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"PfLink")]
+        PfLink = 7,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ProjectLink")]
+        ProjectLink = 8,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Link")]
+        Link = 9,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"MemberProject")]
+        MemberProject = 10,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"MemberTask")]
+        MemberTask = 11,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"MemberTeam")]
+        MemberTeam = 12,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"PfMember")]
+        PfMember = 13,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Merged")]
+        Merged = 14,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"PfContact")]
+        PfContact = 15,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"PfRel")]
+        PfRel = 16,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"PfType")]
+        PfType = 17,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Phase")]
+        Phase = 18,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Section")]
+        Section = 19,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Solver")]
+        Solver = 20,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Subtask")]
+        Subtask = 21,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"MentoredUser")]
+        MentoredUser = 22,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"WorkingGroupItem")]
+        WorkingGroupItem = 23,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ToDo")]
+        ToDo = 24,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"UserCompany")]
+        UserCompany = 25,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"UserGroup")]
+        UserGroup = 26,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"UserGroupItem")]
+        UserGroupItem = 27,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Company")]
+        Company = 28,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Pf")]
+        Pf = 29,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Project")]
+        Project = 30,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Task")]
+        Task = 31,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Team")]
+        Team = 32,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"WorkingGroup")]
+        WorkingGroup = 33,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"TimeSheet")]
+        TimeSheet = 34,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Workspace")]
+        Workspace = 35,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class Fields
+    {
+        /// <summary>
+        /// Field name. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Data type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public FieldsType? Type { get; set; } = AOSync.APICLIENT.FieldsType.Logical;
+
+        /// <summary>
+        /// Field value in string presentation. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("value", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Value { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncAttachmentType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncAttachmentInternalType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Public")]
+        Public = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Internal")]
+        Internal = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Private")]
+        Private = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncAttachmentContentType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Empty")]
+        Empty = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"String")]
+        String = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Base64")]
+        Base64 = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Googledrive")]
+        Googledrive = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Overflow")]
+        Overflow = 4,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncCommentType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncCommentInternalType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Public")]
+        Public = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Internal")]
+        Internal = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Private")]
+        Private = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncCommentPredefinedType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncFieldType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncFieldEnumView
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Combo")]
+        Combo = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Radio")]
+        Radio = 1,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncFieldSharedType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Attribute")]
+        Attribute = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Shared")]
+        Shared = 1,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncFieldXtype
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Logical")]
+        Logical = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Enum")]
+        Enum = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"UserCompany")]
+        UserCompany = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"String")]
+        String = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Text")]
+        Text = 4,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"FormattedText")]
+        FormattedText = 5,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Number")]
+        Number = 6,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Decimal")]
+        Decimal = 7,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Date")]
+        Date = 8,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"DateTime")]
+        DateTime = 9,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Time")]
+        Time = 10,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncFieldSharedType2
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncFieldSharedXtype
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Logical")]
+        Logical = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Enum")]
+        Enum = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"UserCompany")]
+        UserCompany = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"String")]
+        String = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Text")]
+        Text = 4,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"FormattedText")]
+        FormattedText = 5,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Number")]
+        Number = 6,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Decimal")]
+        Decimal = 7,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Date")]
+        Date = 8,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"DateTime")]
+        DateTime = 9,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Time")]
+        Time = 10,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncFieldValType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncFieldValSharedType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncPfLinkType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncProjectLinkType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncLinkType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncMemberProjectType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncMemberProjectMemberType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Internal")]
+        Internal = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"External")]
+        External = 1,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncMemberProjectSupervisor
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"No")]
+        No = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Readonly")]
+        Readonly = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Yes")]
+        Yes = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncMemberProjectSupervisorM
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"No")]
+        No = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Readonly")]
+        Readonly = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Yes")]
+        Yes = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncMemberTaskType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncMemberTeamType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncMemberTeamMemberType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Internal")]
+        Internal = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"External")]
+        External = 1,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncMemberTeamSupervisorM
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"No")]
+        No = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Readonly")]
+        Readonly = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Yes")]
+        Yes = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncPfMemberType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncMergedType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncPfContactType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncPfRelType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncPfTypeType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncPhaseType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncSectionType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncSolverType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncSubtaskType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncMentoredUserType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncWorkingGroupItemType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncToDoType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncToDoInternalType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Public")]
+        Public = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Internal")]
+        Internal = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Private")]
+        Private = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncUserCompanyType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncUserCompanyAccepted
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Invitation")]
+        Invitation = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Accepted")]
+        Accepted = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Declined")]
+        Declined = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncUserCompanyActive
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Inactive")]
+        Inactive = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Active")]
+        Active = 1,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncUserCompanyMemberType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Internal")]
+        Internal = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"External")]
+        External = 1,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncUserCompanyMyStatus
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ByUser")]
+        ByUser = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Active")]
+        Active = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Silent")]
+        Silent = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Hidden")]
+        Hidden = 3,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncUserCompanySupervisor
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"No")]
+        No = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Readonly")]
+        Readonly = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Yes")]
+        Yes = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncUserCompanySupervisorM
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"No")]
+        No = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Readonly")]
+        Readonly = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Yes")]
+        Yes = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncUserGroupType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncUserGroupItemType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncCompanyType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncPfType2
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncPfActive
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Active")]
+        Active = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"InActive")]
+        InActive = 1,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncPfVisibility
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"PfMembers")]
+        PfMembers = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"InternalMembers")]
+        InternalMembers = 1,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncProjectType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncProjectDone
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Plan")]
+        Plan = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Realization")]
+        Realization = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Done")]
+        Done = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Canceled")]
+        Canceled = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Suspended")]
+        Suspended = 4,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncProjectViaEmailRestrictions
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ProjectMembers")]
+        ProjectMembers = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"CompanyMembers")]
+        CompanyMembers = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Anonymous")]
+        Anonymous = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncProjectView
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ProjectTasksList")]
+        ProjectTasksList = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ProjectTasksKanbanDone")]
+        ProjectTasksKanbanDone = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ProjectTasksKanbanSections")]
+        ProjectTasksKanbanSections = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ProjectTasksGantt")]
+        ProjectTasksGantt = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ManagementTasksList")]
+        ManagementTasksList = 4,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ManagementTasksKanbanDone")]
+        ManagementTasksKanbanDone = 5,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Reaction")]
+        Reaction = 6,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"SLA")]
+        SLA = 7,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Meetings")]
+        Meetings = 8,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Documents")]
+        Documents = 9,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Dashboards")]
+        Dashboards = 10,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Timesheets")]
+        Timesheets = 11,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Members")]
+        Members = 12,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Activities")]
+        Activities = 13,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncProjectVisibility
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ProjectMembers")]
+        ProjectMembers = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"InternalMembers")]
+        InternalMembers = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ExternalMembers")]
+        ExternalMembers = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"AllMembers")]
+        AllMembers = 3,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncTaskType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncTaskDone
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Solving")]
+        Solving = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Reaction")]
+        Reaction = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Suspended")]
+        Suspended = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"CloseRequest")]
+        CloseRequest = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Closed")]
+        Closed = 4,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"CancelRequest")]
+        CancelRequest = 5,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Canceled")]
+        Canceled = 6,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncTaskInternalType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Public")]
+        Public = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Internal")]
+        Internal = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Private")]
+        Private = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncTaskPriority
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Lowest")]
+        Lowest = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Low")]
+        Low = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Normal")]
+        Normal = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"High")]
+        High = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Highest")]
+        Highest = 4,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncTaskRepairStatus
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"NoSla")]
+        NoSla = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"NoDefinition")]
+        NoDefinition = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Running")]
+        Running = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Waiting")]
+        Waiting = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Finished")]
+        Finished = 4,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncTaskResponseStatus
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"NoSla")]
+        NoSla = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"NoDefinition")]
+        NoDefinition = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Running")]
+        Running = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Waiting")]
+        Waiting = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Finished")]
+        Finished = 4,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncTaskSurveyQuality
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Unknown")]
+        Unknown = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Lowest")]
+        Lowest = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Low")]
+        Low = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Normal")]
+        Normal = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"High")]
+        High = 4,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Highest")]
+        Highest = 5,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncTaskSurveyTerm
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Unknown")]
+        Unknown = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Lowest")]
+        Lowest = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Low")]
+        Low = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Normal")]
+        Normal = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"High")]
+        High = 4,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Highest")]
+        Highest = 5,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncTeamType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncTeamView
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ManagementTasksList")]
+        ManagementTasksList = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ManagementTasksKanbanDone")]
+        ManagementTasksKanbanDone = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Reaction")]
+        Reaction = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Meetings")]
+        Meetings = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Documents")]
+        Documents = 4,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Timesheets")]
+        Timesheets = 5,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Members")]
+        Members = 6,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Activities")]
+        Activities = 7,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncTeamVisibility
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"TeamMembers")]
+        TeamMembers = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"InternalMembers")]
+        InternalMembers = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ExternalMembers")]
+        ExternalMembers = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"AllMembers")]
+        AllMembers = 3,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncWorkingGroupType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncTimeSheetType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncTimeSheetSourceType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"TaskInProject")]
+        TaskInProject = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Task")]
+        Task = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Project")]
+        Project = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Team")]
+        Team = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Company")]
+        Company = 4,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncTimeSheetVerified
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"NotVerified")]
+        NotVerified = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Verified")]
+        Verified = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Declined")]
+        Declined = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncWorkspaceType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncWorkspaceSurveyEmoji
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Stars")]
+        Stars = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Emoji")]
+        Emoji = 1,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum SyncWorkspaceView
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ProjectTasksList")]
+        ProjectTasksList = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ProjectTasksKanbanDone")]
+        ProjectTasksKanbanDone = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ProjectTasksKanbanSections")]
+        ProjectTasksKanbanSections = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ProjectTasksGantt")]
+        ProjectTasksGantt = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ManagementTasksList")]
+        ManagementTasksList = 4,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ManagementTasksKanbanDone")]
+        ManagementTasksKanbanDone = 5,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Reaction")]
+        Reaction = 6,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"SLA")]
+        SLA = 7,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Meetings")]
+        Meetings = 8,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Documents")]
+        Documents = 9,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Dashboards")]
+        Dashboards = 10,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Timesheets")]
+        Timesheets = 11,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Members")]
+        Members = 12,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Activities")]
+        Activities = 13,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ComponentsType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ComponentsDef
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Attachment")]
+        Attachment = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Comment")]
+        Comment = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"CommentPredefined")]
+        CommentPredefined = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Field")]
+        Field = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"FieldShared")]
+        FieldShared = 4,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"FieldVal")]
+        FieldVal = 5,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"FieldValShared")]
+        FieldValShared = 6,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"PfLink")]
+        PfLink = 7,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ProjectLink")]
+        ProjectLink = 8,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Link")]
+        Link = 9,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"MemberProject")]
+        MemberProject = 10,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"MemberTask")]
+        MemberTask = 11,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"MemberTeam")]
+        MemberTeam = 12,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"PfMember")]
+        PfMember = 13,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Merged")]
+        Merged = 14,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"PfContact")]
+        PfContact = 15,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"PfRel")]
+        PfRel = 16,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"PfType")]
+        PfType = 17,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Phase")]
+        Phase = 18,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Section")]
+        Section = 19,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Solver")]
+        Solver = 20,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Subtask")]
+        Subtask = 21,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"MentoredUser")]
+        MentoredUser = 22,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"WorkingGroupItem")]
+        WorkingGroupItem = 23,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ToDo")]
+        ToDo = 24,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"UserCompany")]
+        UserCompany = 25,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"UserGroup")]
+        UserGroup = 26,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"UserGroupItem")]
+        UserGroupItem = 27,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Company")]
+        Company = 28,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Pf")]
+        Pf = 29,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Project")]
+        Project = 30,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Task")]
+        Task = 31,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Team")]
+        Team = 32,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"WorkingGroup")]
+        WorkingGroup = 33,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"TimeSheet")]
+        TimeSheet = 34,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Workspace")]
+        Workspace = 35,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class fields
+    {
+        /// <summary>
+        /// Field name. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Data type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public fieldsType? Type { get; set; } = AOSync.APICLIENT.fieldsType.Logical;
+
+        /// <summary>
+        /// Field value in string presentation. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("value", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Value { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum componentsType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum componentsDef
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Attachment")]
+        Attachment = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Comment")]
+        Comment = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"CommentPredefined")]
+        CommentPredefined = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Field")]
+        Field = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"FieldShared")]
+        FieldShared = 4,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"FieldVal")]
+        FieldVal = 5,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"FieldValShared")]
+        FieldValShared = 6,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"PfLink")]
+        PfLink = 7,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ProjectLink")]
+        ProjectLink = 8,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Link")]
+        Link = 9,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"MemberProject")]
+        MemberProject = 10,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"MemberTask")]
+        MemberTask = 11,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"MemberTeam")]
+        MemberTeam = 12,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"PfMember")]
+        PfMember = 13,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Merged")]
+        Merged = 14,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"PfContact")]
+        PfContact = 15,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"PfRel")]
+        PfRel = 16,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"PfType")]
+        PfType = 17,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Phase")]
+        Phase = 18,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Section")]
+        Section = 19,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Solver")]
+        Solver = 20,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Subtask")]
+        Subtask = 21,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"MentoredUser")]
+        MentoredUser = 22,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"WorkingGroupItem")]
+        WorkingGroupItem = 23,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ToDo")]
+        ToDo = 24,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"UserCompany")]
+        UserCompany = 25,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"UserGroup")]
+        UserGroup = 26,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"UserGroupItem")]
+        UserGroupItem = 27,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Company")]
+        Company = 28,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Pf")]
+        Pf = 29,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Project")]
+        Project = 30,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Task")]
+        Task = 31,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Team")]
+        Team = 32,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"WorkingGroup")]
+        WorkingGroup = 33,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"TimeSheet")]
+        TimeSheet = 34,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Workspace")]
+        Workspace = 35,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class fields2
+    {
+        /// <summary>
+        /// Field name. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Data type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public Fields2Type? Type { get; set; } = AOSync.APICLIENT.Fields2Type.Logical;
+
+        /// <summary>
+        /// Field value in string presentation. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("value", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Value { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ChangesType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum ChangesDef
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Attachment")]
+        Attachment = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Comment")]
+        Comment = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"CommentPredefined")]
+        CommentPredefined = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Field")]
+        Field = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"FieldShared")]
+        FieldShared = 4,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"FieldVal")]
+        FieldVal = 5,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"FieldValShared")]
+        FieldValShared = 6,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"PfLink")]
+        PfLink = 7,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ProjectLink")]
+        ProjectLink = 8,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Link")]
+        Link = 9,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"MemberProject")]
+        MemberProject = 10,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"MemberTask")]
+        MemberTask = 11,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"MemberTeam")]
+        MemberTeam = 12,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"PfMember")]
+        PfMember = 13,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Merged")]
+        Merged = 14,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"PfContact")]
+        PfContact = 15,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"PfRel")]
+        PfRel = 16,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"PfType")]
+        PfType = 17,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Phase")]
+        Phase = 18,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Section")]
+        Section = 19,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Solver")]
+        Solver = 20,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Subtask")]
+        Subtask = 21,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"MentoredUser")]
+        MentoredUser = 22,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"WorkingGroupItem")]
+        WorkingGroupItem = 23,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ToDo")]
+        ToDo = 24,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"UserCompany")]
+        UserCompany = 25,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"UserGroup")]
+        UserGroup = 26,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"UserGroupItem")]
+        UserGroupItem = 27,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Company")]
+        Company = 28,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Pf")]
+        Pf = 29,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Project")]
+        Project = 30,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Task")]
+        Task = 31,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Team")]
+        Team = 32,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"WorkingGroup")]
+        WorkingGroup = 33,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"TimeSheet")]
+        TimeSheet = 34,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Workspace")]
+        Workspace = 35,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class fields3
+    {
+        /// <summary>
+        /// Field name. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Data type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public Fields3Type? Type { get; set; } = AOSync.APICLIENT.Fields3Type.Logical;
+
+        /// <summary>
+        /// Field value in string presentation. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("value", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Value { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum changesType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Create")]
+        Create = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Modify")]
+        Modify = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Delete")]
+        Delete = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum changesDef
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Attachment")]
+        Attachment = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Comment")]
+        Comment = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"CommentPredefined")]
+        CommentPredefined = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Field")]
+        Field = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"FieldShared")]
+        FieldShared = 4,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"FieldVal")]
+        FieldVal = 5,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"FieldValShared")]
+        FieldValShared = 6,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"PfLink")]
+        PfLink = 7,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ProjectLink")]
+        ProjectLink = 8,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Link")]
+        Link = 9,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"MemberProject")]
+        MemberProject = 10,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"MemberTask")]
+        MemberTask = 11,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"MemberTeam")]
+        MemberTeam = 12,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"PfMember")]
+        PfMember = 13,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Merged")]
+        Merged = 14,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"PfContact")]
+        PfContact = 15,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"PfRel")]
+        PfRel = 16,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"PfType")]
+        PfType = 17,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Phase")]
+        Phase = 18,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Section")]
+        Section = 19,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Solver")]
+        Solver = 20,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Subtask")]
+        Subtask = 21,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"MentoredUser")]
+        MentoredUser = 22,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"WorkingGroupItem")]
+        WorkingGroupItem = 23,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ToDo")]
+        ToDo = 24,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"UserCompany")]
+        UserCompany = 25,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"UserGroup")]
+        UserGroup = 26,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"UserGroupItem")]
+        UserGroupItem = 27,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Company")]
+        Company = 28,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Pf")]
+        Pf = 29,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Project")]
+        Project = 30,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Task")]
+        Task = 31,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Team")]
+        Team = 32,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"WorkingGroup")]
+        WorkingGroup = 33,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"TimeSheet")]
+        TimeSheet = 34,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Workspace")]
+        Workspace = 35,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class fields4
+    {
+        /// <summary>
+        /// Field name. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Data type. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public Fields4Type? Type { get; set; } = AOSync.APICLIENT.Fields4Type.Logical;
+
+        /// <summary>
+        /// Field value in string presentation. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("value", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Value { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum FieldsType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Logical")]
+        Logical = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Enum")]
+        Enum = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"UserCompany")]
+        UserCompany = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"String")]
+        String = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Text")]
+        Text = 4,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"FormattedText")]
+        FormattedText = 5,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Number")]
+        Number = 6,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Decimal")]
+        Decimal = 7,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Date")]
+        Date = 8,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"DateTime")]
+        DateTime = 9,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Time")]
+        Time = 10,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ComponentPointer")]
+        ComponentPointer = 11,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Color")]
+        Color = 12,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum fieldsType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Logical")]
+        Logical = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Enum")]
+        Enum = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"UserCompany")]
+        UserCompany = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"String")]
+        String = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Text")]
+        Text = 4,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"FormattedText")]
+        FormattedText = 5,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Number")]
+        Number = 6,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Decimal")]
+        Decimal = 7,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Date")]
+        Date = 8,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"DateTime")]
+        DateTime = 9,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Time")]
+        Time = 10,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ComponentPointer")]
+        ComponentPointer = 11,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Color")]
+        Color = 12,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum Fields2Type
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Logical")]
+        Logical = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Enum")]
+        Enum = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"UserCompany")]
+        UserCompany = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"String")]
+        String = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Text")]
+        Text = 4,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"FormattedText")]
+        FormattedText = 5,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Number")]
+        Number = 6,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Decimal")]
+        Decimal = 7,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Date")]
+        Date = 8,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"DateTime")]
+        DateTime = 9,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Time")]
+        Time = 10,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ComponentPointer")]
+        ComponentPointer = 11,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Color")]
+        Color = 12,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum Fields3Type
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Logical")]
+        Logical = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Enum")]
+        Enum = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"UserCompany")]
+        UserCompany = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"String")]
+        String = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Text")]
+        Text = 4,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"FormattedText")]
+        FormattedText = 5,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Number")]
+        Number = 6,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Decimal")]
+        Decimal = 7,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Date")]
+        Date = 8,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"DateTime")]
+        DateTime = 9,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Time")]
+        Time = 10,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ComponentPointer")]
+        ComponentPointer = 11,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Color")]
+        Color = 12,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum Fields4Type
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Logical")]
+        Logical = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Enum")]
+        Enum = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"UserCompany")]
+        UserCompany = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"String")]
+        String = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Text")]
+        Text = 4,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"FormattedText")]
+        FormattedText = 5,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Number")]
+        Number = 6,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Decimal")]
+        Decimal = 7,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Date")]
+        Date = 8,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"DateTime")]
+        DateTime = 9,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Time")]
+        Time = 10,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"ComponentPointer")]
+        ComponentPointer = 11,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Color")]
+        Color = 12,
+
+    }
 
 
 
