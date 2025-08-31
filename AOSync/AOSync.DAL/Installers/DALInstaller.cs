@@ -23,6 +23,17 @@ namespace AOSync.DAL.Installers
             services.AddScoped(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
             services.AddScoped<ITransactionRepository, TransactionRepository>();
             services.AddScoped<IProjectRepository, ProjectRepository>();
+            services.AddScoped<IWorkspaceRepository, WorkspaceRepository>();
+            services.AddScoped<ITaskRepository, TaskRepository>();
+            services.AddScoped<IAttributeRepository, AttributeRepository>();
+            services.AddScoped<IAttachmentRepository, AttachmentRepository>();
+            services.AddScoped<ICommentRepository, CommentRepository>();
+            services.AddScoped<ISectionRepository, SectionRepository>();
+            services.AddScoped<IStageRepository, StageRepository>();
+            services.AddScoped<ITeamRepository, TeamRepository>();
+            services.AddScoped<ITimesheetRepository, TimesheetRepository>();
+            services.AddScoped<IUserGroupRepository, UserGroupRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
         }
     }
 }

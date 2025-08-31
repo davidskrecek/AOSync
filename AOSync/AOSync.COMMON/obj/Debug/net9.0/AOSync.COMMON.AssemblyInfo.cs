@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AOSync.COMMON")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bd48db4862d5e94fb4fe98af67a66a9a69d107f7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3c13a4814a099347c8c71b9ac67c6607c661e10f")]
 [assembly: System.Reflection.AssemblyProductAttribute("AOSync.COMMON")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AOSync.COMMON")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
